@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.test.Main
+Class-Path: dependencies/poi-3.17/poi-3.17.jar
+

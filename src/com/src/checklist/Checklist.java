@@ -25,7 +25,7 @@ import java.util.*;
  * @author Manpreet Singh (2854787)
  *         FedEx Smartport SEWA/5983
  */
-class Checklist {
+public class Checklist {
 
     // Containers, Lists, and Hash Sets needed for use later on.
     private ArrayList<String> mCheckList = new ArrayList<>();
@@ -48,7 +48,7 @@ class Checklist {
      * @param outputFile The Name of the Output file to output to.
      * @param destinationTag The Destination Tag to print into the Output file.
      */
-    Checklist(String fileName, String outputFile, String destinationTag) {
+    public Checklist(String fileName, String outputFile, String destinationTag) {
         // Initialize Variables
         this.mOutputFileName = outputFile;
         this.mDestinationTag = destinationTag;

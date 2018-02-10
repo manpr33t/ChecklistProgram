@@ -16,10 +16,13 @@
 
 package com.src.config;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
 
+/**
+ * @author Manpreet Singh (2854787)
+ *         FedEx Smartport SEWA/5983
+ */
 public class ConfigManager {
 
     private Map<String, ConfigParser> mConfigMap;
@@ -33,7 +36,13 @@ public class ConfigManager {
 
         for (String s : mConfigReader.getProperty("config_filesnames").split(",")) {
             if (!s.isEmpty()) {
-                mConfigMap.put(s.split(".")[0], new ConfigParser(s));
+                try {
+                    mConfigMap.put(s.split(".")[0], new ConfigParser(s));
+                }
+                catch (Exception e) {throw new Exception("Unable to Open config file " + s);}
+                finally {
+                    // Add code to create a new Config file
+                }
             }
         }
     }

@@ -16,11 +16,17 @@
 
 package com.src.config;
 
+import com.src.checklist.Checklist;
+
 import java.io.*;
 import java.util.Collection;
 import java.util.Properties;
 import java.util.TreeSet;
 
+/**
+ * @author Manpreet Singh (2854787)
+ *         FedEx Smartport SEWA/5983
+ */
 public class ConfigParser {
     private Properties mConfigReader;
 
@@ -29,6 +35,8 @@ public class ConfigParser {
     private String mMasterCheckListFileName;
     private String mOutputFileName;
     private String mDestinationTitle;
+
+    private Checklist mDispatchCheckList;
 
 //    private Properties mProp;
 //    public ConfigParser() {
@@ -58,16 +66,16 @@ public class ConfigParser {
         mConfigReader.load(new FileInputStream(fileName));
     }
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        ConfigParser cp = new ConfigParser();
-        Properties rProp = new Properties();
-        try {
-            InputStream in = new FileInputStream("dependencies/main_config.properties");
-            rProp.load(in);
-            for (String s : rProp.getProperty("route_config_filenames").split(","))
-                System.out.println(s);
-        } catch (Exception e ) {
-            e.printStackTrace();
-        }
-    }
+//        Properties rProp = new Properties();
+//        try {
+//            InputStream in = new FileInputStream("dependencies/main_config.properties");
+//            rProp.load(in);
+//            for (String s : rProp.getProperty("route_config_filenames").split(","))
+//                System.out.println(s);
+//        } catch (Exception e ) {
+//            e.printStackTrace();
+//        }
+//    }
 }

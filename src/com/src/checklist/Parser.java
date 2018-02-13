@@ -37,9 +37,9 @@ public class Parser {
     private Collection<String> mSpringfieldList = new ArrayList<>();
     private Collection<String> mKennewickList   = new ArrayList<>();
     private Collection<String> mLocalList       = new ArrayList<>();
+    private Collection<String> mLVGBagsList     = new ArrayList<>();
 
     // Not used yet
-    private Collection<String> mLVGBagsList     = new ArrayList<>();
     private Collection<String> mAlaskaList      = new ArrayList<>();
 
     // Checklist Objects
@@ -47,7 +47,8 @@ public class Parser {
                         mSpokaneDispatchList,
                         mSpringfieldDispatchList,
                         mKennewickDispatchList,
-                        mLocalDispatchList;
+                        mLocalDispatchList,
+                        mLVGDispatchList;
 
     // Enumeration to Contain destination codes.
     public enum Destination {
@@ -95,6 +96,10 @@ public class Parser {
         this.mLocalDispatchList = new Checklist(
                 "checklists/LocalsDispatchCheckListMASTER.csv",
                 "LocalsDispatchCheckList.csv", "Locals");
+
+        this.mLVGDispatchList = new Checklist(
+                "checklists/LVDDispatchChecklistMASTER.csv",
+                "LVGDispatchChecklist.csv", "LVG");
     }
 
     public void run() throws IOException{
@@ -107,6 +112,7 @@ public class Parser {
         mKennewickDispatchList.generateDifference(mKennewickList);
         mSpringfieldDispatchList.generateDifference(mSpringfieldList);
         mLocalDispatchList.generateDifference(mLocalList);
+        mLVGDispatchList.generateDifference(mLVGBagsList);
 
         // Output the final data to the disk.
         mSherwoodDispatchList.outputChecklistToFile();
@@ -114,6 +120,7 @@ public class Parser {
         mKennewickDispatchList.outputChecklistToFile();
         mSpringfieldDispatchList.outputChecklistToFile();
         mLocalDispatchList.outputChecklistToFile();
+        mLVGDispatchList.outputChecklistToFile();
 
         // Prep data structures for next run
         prepForNextRun();

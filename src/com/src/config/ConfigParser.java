@@ -60,12 +60,7 @@ public class ConfigParser {
 //            }
 //        }
 //    }
-
-    public ConfigParser(String fileName) throws Exception{
-        mSortGroupsList = new TreeSet<>();
-        mConfigReader.load(new FileInputStream(fileName));
-    }
-
+//
 //    public static void main(String[] args) {
 //        ConfigParser cp = new ConfigParser();
 //        Properties rProp = new Properties();
@@ -78,4 +73,11 @@ public class ConfigParser {
 //            e.printStackTrace();
 //        }
 //    }
+
+    public ConfigParser(String fileName) throws Exception{
+        mSortGroupsList = new TreeSet<>();
+        mConfigReader.load(new FileInputStream(fileName));
+    }
+
+
 }

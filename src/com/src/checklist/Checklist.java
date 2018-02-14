@@ -74,7 +74,7 @@ public class Checklist {
 
                 // Only add zipcode to the checklist if it has anything in the zip code cell and it's a number
                 if (lineBuffer.length > 1 && lineBuffer[1] != null && lineBuffer[1].matches(".*\\d+.*")) {
-                    mCheckList.add(lineBuffer[1]);
+                    mCheckList.add(Utility.removeZipcodePrefix(lineBuffer[1]));
                     outputBuffer.add(lineBuffer);
                 }
             }
@@ -139,7 +139,7 @@ public class Checklist {
             pw.write(output);
         }
         pw.write("\n");
-        pw.write("Number of Pallets:," + mFinalOutput.size() + "\n");
+        pw.write("Number of Containers:," + mFinalOutput.size() + "\n");
         pw.write("Generated at:," + mGenerationFormat.format(new Date()));
         pw.close();
         prepForNextRun();

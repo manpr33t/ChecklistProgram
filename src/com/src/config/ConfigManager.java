@@ -39,9 +39,9 @@ public class ConfigManager {
                 try {
                     mConfigMap.put(s.split(".")[0], new ConfigParser(s));
                 }
-                catch (Exception e) {throw new Exception("Unable to Open config file " + s);}
+                catch (Exception e) {throw new Exception("Unable to open config file: " + s);}
                 finally {
-                    // Add code to create a new Config file
+                    // TODO Add code to create a new empty Config file
                 }
             }
         }

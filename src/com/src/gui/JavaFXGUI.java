@@ -18,6 +18,7 @@ package com.src.gui;
 
 import com.src.checklist.Utility;
 import com.src.checklist.Parser;
+import com.src.config.ConfigManager;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -27,6 +28,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
@@ -36,6 +38,7 @@ import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 /**
@@ -46,8 +49,8 @@ import java.io.IOException;
 public class JavaFXGUI extends Application{
 
     // Window Dimensions
-    private final int WINDOW_HEIGHT = 215;
-    private final int WINDOW_WIDTH = 325;
+    private final int WINDOW_HEIGHT = 300;
+    private final int WINDOW_WIDTH = 350;
 
     private final String mLicence = "Copyright 2018 Manpreet Singh\n\n" +
             "Licensed under the Apache License, Version 2.0 (the \"License\");\n" +
@@ -63,14 +66,24 @@ public class JavaFXGUI extends Application{
             "limitations under the License.";
 
     // GUI elements
-    private TextArea mLog;
+    private TextArea    mLog;
+
     private FileChooser mFileChooser;
-    private Button mOpenFile, mGenerateFiles;
-    private GridPane mGridPane;
-    private Desktop mDesktop = Desktop.getDesktop();
-    private Parser mParser;
-    private Hyperlink mName;
-    private File mDescription;
+
+    private Button      mOpenFile;
+    private Button      mGenerateFiles;
+    private Button      mConfigButton;
+
+    private Image       mConfigIcon;
+
+    private GridPane    mGridPane;
+    private Desktop     mDesktop = Desktop.getDesktop();
+    private Parser      mParser;
+
+    private Hyperlink   mName;
+    private File        mDescription;
+
+    private ConfigManager mConfig;
 
     /**
      * GUI Built using JavaFX
@@ -78,10 +91,13 @@ public class JavaFXGUI extends Application{
     public JavaFXGUI() {
         // Set up log area
         mLog = new TextArea();
+
         mLog.setMinWidth(290);
         mLog.setMaxWidth(300);
+
         mLog.setMinHeight(50);
         mLog.setMaxHeight(100);
+
         mLog.setEditable(false);
 
         ScrollPane mLogScrollPane = new ScrollPane(mLog);
@@ -97,6 +113,18 @@ public class JavaFXGUI extends Application{
         mGenerateFiles = new Button("Generate From File");
         mGenerateFiles.setStyle("-fx-font:14 arial; -fx-base: #C3FAFF;");
 
+        mConfigButton = new Button("Config");
+        mConfigButton.setStyle("-fx-font:14 arial; -fx-base: #FF5100;");
+
+        try {
+            mConfigIcon = new Image(getClass().getResourceAsStream("dependencies//gear.png"));
+            mConfigButton.setGraphic(new ImageView(mConfigIcon));
+        } catch (Exception e) {
+            //mConfigButton.setText("Config");
+        }
+
+        mConfigButton = new Button();
+
         mName = new Hyperlink("Manpreet Singh 2017-2018");
         mName.setBorder(Border.EMPTY);
         Tooltip.install(mName, new Tooltip(mLicence));
@@ -111,17 +139,27 @@ public class JavaFXGUI extends Application{
 
         mGridPane = new GridPane();
         mGridPane.setAlignment(Pos.TOP_LEFT);
+
         mGridPane.setHgap(25);
         mGridPane.setVgap(25);
         mGridPane.setPadding(new Insets(10,10,10,10));
 
         mGridPane.add(mOpenFile, 0, 0);
         mGridPane.add(mGenerateFiles, 1,0);
-        mGridPane.add(mLogScrollPane, 0, 1,2,1);
+        mGridPane.add(mLogScrollPane, 0, 1,3,1);
         mGridPane.add(mName, 1, 2);
         mGridPane.add(mLocation, 0, 2);
+        mGridPane.add(mConfigButton, 2, 0);
 
         mParser = new Parser("UCR.csv");
+
+        try {
+            mConfig = new ConfigManager(new FileInputStream("dependencies/main_config.properties"));
+        } catch (Exception e) {
+            mLog.appendText(e.getLocalizedMessage());
+            mLog.appendText("Generating empty config file\n");
+
+        }
     }
 
     /**
@@ -184,6 +222,7 @@ public class JavaFXGUI extends Application{
         openFile(new File("SpringfieldDispatchCheckList.csv"));
         openFile(new File("KennewickDispatchCheckList.csv"));
         openFile(new File("LocalsDispatchCheckList.csv"));
+        openFile(new File("LVGDispatchChecklist.csv"));
     }
 
     /**

@@ -19,6 +19,7 @@ package com.src.gui;
 import com.src.checklist.Utility;
 import com.src.checklist.Parser;
 import com.src.config.ConfigManager;
+
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -46,7 +47,7 @@ import java.io.IOException;
  * @author Manpreet Singh (2854787)
  *         FedEx Smartport SEWA/5983
  */
-public class JavaFXGUI extends Application{
+public class MainGUI extends Application{
 
     // Window Dimensions
     private final int WINDOW_HEIGHT = 300;
@@ -84,11 +85,12 @@ public class JavaFXGUI extends Application{
     private File        mDescription;
 
     private ConfigManager mConfig;
+    private ConfigSetupGUI configSetupGUI;
 
     /**
      * GUI Built using JavaFX
      */
-    public JavaFXGUI() {
+    public MainGUI() {
         // Set up log area
         mLog = new TextArea();
 
@@ -113,17 +115,16 @@ public class JavaFXGUI extends Application{
         mGenerateFiles = new Button("Generate From File");
         mGenerateFiles.setStyle("-fx-font:14 arial; -fx-base: #C3FAFF;");
 
-        mConfigButton = new Button("Config");
+        mConfigButton = new Button();
         mConfigButton.setStyle("-fx-font:14 arial; -fx-base: #FF5100;");
 
         try {
-            mConfigIcon = new Image(getClass().getResourceAsStream("dependencies//gear.png"));
+            mConfigIcon = new Image(new FileInputStream("dependencies/gear.png"));
             mConfigButton.setGraphic(new ImageView(mConfigIcon));
         } catch (Exception e) {
-            //mConfigButton.setText("Config");
+            mConfigButton.setText("Config");
+            e.printStackTrace();
         }
-
-        mConfigButton = new Button();
 
         mName = new Hyperlink("Manpreet Singh 2017-2018");
         mName.setBorder(Border.EMPTY);
@@ -152,6 +153,7 @@ public class JavaFXGUI extends Application{
         mGridPane.add(mConfigButton, 2, 0);
 
         mParser = new Parser("UCR.csv");
+        configSetupGUI = new ConfigSetupGUI();
 
         try {
             mConfig = new ConfigManager(new FileInputStream("dependencies/main_config.properties"));
@@ -199,6 +201,14 @@ public class JavaFXGUI extends Application{
                 openFile(mDescription);
             } catch (IOException e) {
                 mLog.appendText(e.getMessage() + "\n\n");
+            }
+        });
+
+        mConfigButton.setOnAction(event -> {
+            try {
+                configSetupGUI.run();
+            } catch (Exception e) {
+                mLog.appendText(e.getLocalizedMessage());
             }
         });
     }

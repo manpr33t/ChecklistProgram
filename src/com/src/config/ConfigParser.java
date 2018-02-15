@@ -30,13 +30,15 @@ import java.util.TreeSet;
 public class ConfigParser {
     private Properties mConfigReader;
 
-    private Collection<String> mSortGroupsList;
+    private static Collection<String> kSortGroupsList;
 
-    private String mMasterCheckListFileName;
-    private String mOutputFileName;
-    private String mDestinationTitle;
+    private String mInputFileName;
+    private String      mOutputFileName;
+    private String      mDestinationTitle;
 
-    private Checklist mDispatchCheckList;
+    private Checklist   mDispatchCheckList;
+
+    private boolean     mValuesUpdated = false;
 
 //    private Properties mProp;
 //    public ConfigParser() {
@@ -75,9 +77,27 @@ public class ConfigParser {
 //    }
 
     public ConfigParser(String fileName) throws Exception{
-        mSortGroupsList = new TreeSet<>();
+        if (kSortGroupsList == null)
+            kSortGroupsList = new TreeSet<>();
+
         mConfigReader.load(new FileInputStream(fileName));
+
+        this.mInputFileName = this.mConfigReader.getProperty("input_file");
+        this.mOutputFileName = this.mConfigReader.getProperty("output_file");
+        this.mDestinationTitle = this.mConfigReader.getProperty("destination_tag");
+
+        kSortGroupsList.add(this.mDestinationTitle);
     }
 
+    public String getInputFileName() {
+        return mInputFileName;
+    }
 
+    public String getOutputFileName() {
+        return mOutputFileName;
+    }
+
+    public String getTitle() {
+        return mDestinationTitle;
+    }
 }

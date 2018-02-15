@@ -14,17 +14,32 @@
    limitations under the License.
  */
 
-package com.test;
+package com.src.gui;
 
-import com.src.gui.MainGUI;
-import javafx.application.Application;
+import com.src.config.ConfigManager;
+import javafx.scene.control.ComboBox;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
 /**
  * @author Manpreet Singh (2854787)
  *         FedEx Smartport SEWA/5983
  */
-public class Main {
-    public static void main(String[] args) {
-        Application.launch(MainGUI.class, args);
+public class ConfigManagerGUI {
+
+    private final int WINDOW_HEIGHT = 215;
+    private final int WINDOW_WIDTH = 325;
+
+    private ComboBox<String> mDestComboBox;
+
+    private Stage mStage;
+
+    private GridPane mGridPane;
+
+    public ConfigManagerGUI(ConfigManager configManager) throws Exception {
+        mGridPane = new GridPane();
+
+        mDestComboBox = new ComboBox<>();
+        mDestComboBox.getItems().addAll(configManager.getKeys());
     }
 }

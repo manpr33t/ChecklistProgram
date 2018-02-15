@@ -28,6 +28,8 @@ public class ConfigManager {
     private Map<String, ConfigParser> mConfigMap;
     private Properties mConfigReader;
 
+    private boolean mValuesReady = false;
+
     public ConfigManager(InputStream inputStream) throws Exception{
         this.mConfigMap = new TreeMap<>();
         mConfigReader = new Properties();
@@ -40,14 +42,19 @@ public class ConfigManager {
                     mConfigMap.put(s.split(".")[0], new ConfigParser(s));
                 }
                 catch (Exception e) {throw new Exception("Unable to open config file: " + s);}
-                finally {
-                    // TODO Add code to create a new empty Config file
-                }
             }
         }
+        this.mValuesReady = !this.mConfigMap.isEmpty();
+        inputStream.close();
     }
 
-    private Map dataMap() {
-        return this.mConfigMap;
+    public Set<String> getKeys() throws Exception {
+        if (this.mValuesReady)
+            return this.mConfigMap.keySet();
+        throw new Exception("No destination config files found");
+    }
+
+    public void addNewConfig() {
+        // TODO Add code to update the main config file to include the new config files created
     }
 }

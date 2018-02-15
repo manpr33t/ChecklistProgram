@@ -35,23 +35,23 @@ import java.util.Properties;
  */
 public class ConfigSetupGUI {
 
-    private final int WINDOW_HEIGHT = 215;
-    private final int WINDOW_WIDTH = 325;
+    private final int WINDOW_HEIGHT = 150;
+    private final int WINDOW_WIDTH = 250;
 
-    private Stage mStage;
+    private Stage       mStage;
 
-    private GridPane mGridPane;
-    private Button mSubmitButton;
+    private GridPane    mGridPane;
+    private Button      mSubmitButton;
 
-    private Button mChooseInputFile;
+    private Button      mChooseInputFile;
 
     private FileChooser mFileChooser;
 
-    private TextField mFileName;
-    private TextField mOutputName;
-    private TextField mDestinationTag;
+    private TextField   mFileName;
+    private TextField   mOutputName;
+    private TextField   mDestinationTag;
 
-    private Properties mProperties;
+    private Properties  mProperties;
     private OutputStream mOutput;
 
     public ConfigSetupGUI() {
@@ -73,7 +73,7 @@ public class ConfigSetupGUI {
 
         mDestinationTag = new TextField();
         mDestinationTag.setEditable(true);
-        mDestinationTag.setPromptText("Destination name");
+        mDestinationTag.setPromptText("Sort Group name");
 
         mGridPane = new GridPane();
         mGridPane.setAlignment(Pos.TOP_LEFT);
@@ -125,6 +125,9 @@ public class ConfigSetupGUI {
                     if (mOutput != null) {
                         try {
                             mOutput.close();
+                            mDestinationTag.clear();
+                            mFileName.clear();
+                            mOutputName.clear();
                         } catch (IOException e) { e.printStackTrace(); }
                     }
                 }

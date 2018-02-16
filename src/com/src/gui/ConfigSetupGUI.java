@@ -35,8 +35,8 @@ import java.util.Properties;
  */
 public class ConfigSetupGUI {
 
-    private final int WINDOW_HEIGHT = 150;
-    private final int WINDOW_WIDTH = 250;
+    private final int   WINDOW_HEIGHT = 150;
+    private final int   WINDOW_WIDTH = 250;
 
     private Stage       mStage;
 
@@ -52,6 +52,7 @@ public class ConfigSetupGUI {
     private TextField   mDestinationTag;
 
     private Properties  mProperties;
+
     private OutputStream mOutput;
 
     public ConfigSetupGUI() {

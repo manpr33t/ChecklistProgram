@@ -18,6 +18,7 @@ package com.src.gui;
 
 import com.src.config.ConfigManager;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -30,16 +31,31 @@ public class ConfigManagerGUI {
     private final int WINDOW_HEIGHT = 215;
     private final int WINDOW_WIDTH = 325;
 
-    private ComboBox<String> mDestComboBox;
+    private ComboBox<String>    mDestComboBox;
 
-    private Stage mStage;
+    private TableView<String>   mDataTable;
 
-    private GridPane mGridPane;
+    private Stage               mStage;
+
+    private GridPane            mGridPane;
 
     public ConfigManagerGUI(ConfigManager configManager) throws Exception {
         mGridPane = new GridPane();
 
         mDestComboBox = new ComboBox<>();
         mDestComboBox.getItems().addAll(configManager.getKeys());
+
+        mDataTable = new TableView<>();
+
+
+    }
+
+    public void eventHandler() {
+
+    }
+
+    public void run() {
+        eventHandler();
+        mStage.show();
     }
 }

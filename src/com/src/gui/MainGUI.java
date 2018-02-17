@@ -95,10 +95,10 @@ public class MainGUI extends Application{
         mLog = new TextArea();
 
         mLog.setMinWidth(290);
-        mLog.setMaxWidth(300);
+        mLog.setMaxWidth(338);
 
         mLog.setMinHeight(50);
-        mLog.setMaxHeight(100);
+        mLog.setMaxHeight(200);
 
         mLog.setEditable(false);
 
@@ -156,7 +156,7 @@ public class MainGUI extends Application{
         configSetupGUI = new ConfigSetupGUI();
 
         try {
-            mConfig = new ConfigManager(new FileInputStream("dependencies/main_config.properties"));
+            mConfig = new ConfigManager("dependencies/main_config.properties");
         } catch (Exception e) {
             mLog.appendText(e.getLocalizedMessage());
             mLog.appendText("Generating empty config file\n");
@@ -247,5 +247,10 @@ public class MainGUI extends Application{
         eventHandler(primaryStage);
         primaryStage.setScene(scene);
         primaryStage.show();
+    }
+
+    @Override
+    public void stop() {
+        System.out.println("The show is over kids...");
     }
 }

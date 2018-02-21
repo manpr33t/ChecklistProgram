@@ -3,7 +3,7 @@ package com.test
 // Messing around with kotlin
 
 fun main(args : Array<String>) {
-    println("Hello World");
+    println("Hello World")
 }
 
 class Test : Comparable<Test> {

@@ -20,12 +20,12 @@ import com.src.config.ConfigManager;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-import java.applet.Applet;
 
 /**
  * @author Manpreet Singh (2854787)
@@ -36,21 +36,29 @@ public class ConfigManagerGUI {
     private final int WINDOW_HEIGHT = 215;
     private final int WINDOW_WIDTH = 325;
 
-    private ComboBox<String> mDestComboBox;
+    private ComboBox<String>    mDestComboBox;
 
-    private TableView<String> mDataTable;
+    private TableView<String>   mDataTable;
 
-    private Stage mStage;
+    private Button  mNewConfigButton;
 
-    private Scene mScene;
+    private Stage   mStage;
+
+    private Scene   mScene;
 
     private GridPane mGridPane;
 
+    private ConfigManager mConfigManager;
+
     public ConfigManagerGUI(ConfigManager configManager) throws Exception {
+        mConfigManager = configManager;
+
         mDestComboBox = new ComboBox<>();
-        mDestComboBox.getItems().addAll(configManager.getKeys());
+        mDestComboBox.getItems().addAll(mConfigManager.getKeys());
 
         mDataTable = new TableView<>();
+
+        mNewConfigButton = new Button("Add New Config");
 
         mGridPane = new GridPane();
         mGridPane.setAlignment(Pos.TOP_LEFT);
@@ -62,11 +70,24 @@ public class ConfigManagerGUI {
 
     }
 
-    public void eventHandler() {
-
+    private void eventHandler() throws Exception {
+        mNewConfigButton.setOnAction(event -> {
+            ConfigSetupGUI newConfig = new ConfigSetupGUI();
+            try {
+                newConfig.run();
+                this.mConfigManager.addNewConfig(newConfig.getNewFileName());
+                this.mConfigManager.saveCurrentConfig();
+            } catch (Exception e) {
+                try {
+                    throw e;
+                } catch (Exception e1) {
+                    e1.printStackTrace();
+                }
+            }
+        });
     }
 
-    public void run() {
+    public void run() throws Exception {
         eventHandler();
         mStage.show();
     }

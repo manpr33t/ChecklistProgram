@@ -40,42 +40,6 @@ public class ConfigParser {
 
     private boolean     mValuesUpdated = false;
 
-//    private Properties mProp;
-//    public ConfigParser() {
-//        mProp = new Properties();
-//        try {
-//            oi = new FileOutputStream("dependencies/main_config.properties");
-//            mProp.setProperty("route_config_filenames","sherwood.properties,spokane.properties,kennewick.properties,springfield.properties,locals.properties");
-//
-//            mProp.store(oi, null);
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            if (oi != null) {
-//                try {
-//                    oi.close();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//    }
-//
-//    public static void main(String[] args) {
-//        ConfigParser cp = new ConfigParser();
-//        Properties rProp = new Properties();
-//        try {
-//            InputStream in = new FileInputStream("dependencies/main_config.properties");
-//            rProp.load(in);
-//            for (String s : rProp.getProperty("route_config_filenames").split(","))
-//                System.out.println(s);
-//        } catch (Exception e ) {
-//            e.printStackTrace();
-//        }
-//    }
-
     public ConfigParser(String fileName) throws Exception{
         if (kSortGroupsList == null)
             kSortGroupsList = new TreeSet<>();

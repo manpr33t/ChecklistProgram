@@ -98,6 +98,12 @@ public class ConfigSetupGUI {
         mProperties = new Properties();
     }
 
+    public String getNewFileName() throws Exception{
+        if (!this.mFileName.getText().isEmpty())
+            return this.mFileName.getText() + ".properties";
+        throw new Exception("Now File name specified");
+    }
+
     private void eventHandler() throws Exception {
         mChooseInputFile.setOnAction(event -> {
             File file = mFileChooser.showOpenDialog(this.mStage);
@@ -121,7 +127,14 @@ public class ConfigSetupGUI {
                     mProperties.setProperty("destination_tag", mDestinationTag.getText());
 
                     mProperties.store(mOutput, null);
-                } catch (IOException e) { e.printStackTrace(); }
+                } catch (IOException e) {
+                    try {
+                        e.printStackTrace();
+                        throw e;
+                    } catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                }
                 finally {
                     if (mOutput != null) {
                         try {

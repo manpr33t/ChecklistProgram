@@ -159,7 +159,7 @@ public class MainGUI extends Application{
             mConfig = new ConfigManager("dependencies/main_config.properties");
         } catch (Exception e) {
             mLog.appendText(e.getLocalizedMessage());
-            mLog.appendText("Generating empty config file\n");
+            mLog.appendText("\nGenerating empty config file\n");
 
         }
     }

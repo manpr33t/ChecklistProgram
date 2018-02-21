@@ -17,6 +17,7 @@
 package com.src.config;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.*;
@@ -32,11 +33,8 @@ public class ConfigManager {
     private Properties mInputProperties;
     private Properties mOutputProperties;
     private FileOutputStream mFileOutput;
-    private InputStream mFileInput;
 
     private String mInputFileName;
-
-    private boolean mValuesReady = false;
 
     public ConfigManager(String inputFileName) throws Exception {
         mInputFileName = inputFileName;
@@ -45,10 +43,20 @@ public class ConfigManager {
         mConfigFileNames = new TreeSet<>();
 
         mInputProperties = new Properties();
-        mFileInput = new FileInputStream(this.mInputFileName);
+        mOutputProperties = new Properties();
 
-        mInputProperties.load(mFileInput);
-        mConfigFileNames.addAll(Arrays.asList(mInputProperties.getProperty("config_filesnames").split(",")));
+        InputStream fileInput = new FileInputStream("");
+
+        try {
+            fileInput = new FileInputStream(inputFileName);
+            mInputProperties.load(fileInput);
+            mConfigFileNames.addAll(Arrays.asList(mInputProperties.getProperty("config_filesnames").split(",")));
+        } catch (FileNotFoundException e) {
+
+        } catch (NullPointerException e) {
+            saveCurrentConfig();
+            throw new Exception("Main Config File Empty");
+        }
 
         for (String s : mConfigFileNames) {
             if (!s.isEmpty()) {
@@ -58,28 +66,31 @@ public class ConfigManager {
                 catch (Exception e) {throw new Exception("Unable to open config file: " + s);}
             }
         }
-        this.mValuesReady = !this.mConfigMap.isEmpty();
-        mFileInput.close();
+        fileInput.close();
     }
 
     public Set<String> getKeys() throws Exception {
-        if (this.mValuesReady)
+        if (!this.mConfigMap.isEmpty())
             return this.mConfigMap.keySet();
         throw new Exception("No destination config files found");
     }
 
+    public ConfigParser getValue(String key) {
+        return this.mConfigMap.get(key);
+    }
+
     public void addNewConfig(String configFileName) {
-        // TODO Add code to update the main config file to include the new config files created
+        mConfigFileNames.add(configFileName);
     }
 
     public void saveCurrentConfig() throws Exception{
+        if (this.mFileOutput == null)
+            mFileOutput = new FileOutputStream(this.mInputFileName);
+
         StringBuilder sb = new StringBuilder();
 
-        mFileOutput = new FileOutputStream(this.mInputFileName);
-        mOutputProperties = new Properties();
-
         for (String s : mConfigFileNames)
-            sb.append(s + ",");
+            sb.append(s).append(",");
 
         this.mOutputProperties.setProperty("config_filesnames", sb.toString());
         this.mOutputProperties.store(this.mFileOutput,null);

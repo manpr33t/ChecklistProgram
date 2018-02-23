@@ -16,6 +16,8 @@
 
 package com.src.config;
 
+import com.src.checklist.Utility;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -45,17 +47,22 @@ public class ConfigManager {
         mInputProperties = new Properties();
         mOutputProperties = new Properties();
 
-        InputStream fileInput = new FileInputStream("");
+        InputStream fileInput;
 
         try {
             fileInput = new FileInputStream(inputFileName);
             mInputProperties.load(fileInput);
-            mConfigFileNames.addAll(Arrays.asList(mInputProperties.getProperty("config_filesnames").split(",")));
         } catch (FileNotFoundException e) {
+            Utility.makeFile(inputFileName);
+            saveCurrentConfig();
+            throw new FileNotFoundException(e.getLocalizedMessage());
+        }
 
+        try {
+            mConfigFileNames.addAll(Arrays.asList(mInputProperties.getProperty("config_filenames").split(",")));
         } catch (NullPointerException e) {
             saveCurrentConfig();
-            throw new Exception("Main Config File Empty");
+            throw new NullPointerException("Config File Empty");
         }
 
         for (String s : mConfigFileNames) {
@@ -84,15 +91,19 @@ public class ConfigManager {
     }
 
     public void saveCurrentConfig() throws Exception{
-        if (this.mFileOutput == null)
-            mFileOutput = new FileOutputStream(this.mInputFileName);
+        mFileOutput = new FileOutputStream(this.mInputFileName);
+
+        System.out.println("Saving current Config");
 
         StringBuilder sb = new StringBuilder();
 
         for (String s : mConfigFileNames)
             sb.append(s).append(",");
 
-        this.mOutputProperties.setProperty("config_filesnames", sb.toString());
+        this.mOutputProperties.setProperty("config_filenames",
+                sb.toString().length() < 2 ? "" : sb.toString());
         this.mOutputProperties.store(this.mFileOutput,null);
+
+        mFileOutput.close();
     }
 }

@@ -141,7 +141,7 @@ public class MainGUI extends Application{
         mGridPane = new GridPane();
         mGridPane.setAlignment(Pos.TOP_LEFT);
 
-        mGridPane.setHgap(25);
+        mGridPane.setHgap(15);
         mGridPane.setVgap(25);
         mGridPane.setPadding(new Insets(10,10,10,10));
 
@@ -160,7 +160,11 @@ public class MainGUI extends Application{
         } catch (Exception e) {
             mLog.appendText(e.getLocalizedMessage());
             mLog.appendText("\nGenerating empty config file\n");
-
+            try {
+                mConfig = new ConfigManager("dependencies/main_config.properties");
+            } catch (Exception e1) {
+                e1.printStackTrace();
+            }
         }
     }
 
@@ -252,5 +256,10 @@ public class MainGUI extends Application{
     @Override
     public void stop() {
         System.out.println("The show is over kids...");
+        try {
+            mConfig.saveCurrentConfig();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

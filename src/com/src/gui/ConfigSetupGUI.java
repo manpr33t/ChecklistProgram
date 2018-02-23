@@ -89,11 +89,11 @@ public class ConfigSetupGUI {
 
         mGridPane.add(mSubmitButton, 1, 4);
 
-        mStage.setResizable(false);
-
         Scene scene = new Scene(mGridPane, WINDOW_WIDTH, WINDOW_HEIGHT);
 
         mStage.setScene(scene);
+        mStage.setResizable(false);
+        mStage.setTitle("Add new config");
 
         mProperties = new Properties();
     }

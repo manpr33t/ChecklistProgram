@@ -86,4 +86,10 @@ public class Utility {
             return s;
         return s.substring(4);
     }
+
+    public static void makeFile(String fileName) throws IOException{
+        File f = new File(fileName);
+        f.getParentFile().mkdirs();
+        f.createNewFile();
+    }
 }

@@ -88,7 +88,7 @@ public class Checklist {
      * Filter the date passed into this Method based on the filters set up prior to calling this method.
      * @param list The Set of date to filter.
      */
-    void generateDifference(Collection<String> list) {
+    void generateDifference(Collection<String> list) throws FileNotFoundException{
         mSimilar.addAll(mCheckList);
 
         // Add all elements from the Checklist to the Difference buffer.
@@ -107,6 +107,7 @@ public class Checklist {
         mDifferent.removeAll(mSimilar);
 
         generateFinalCutlist();
+        outputChecklistToFile();
     }
 
     /**
@@ -132,7 +133,7 @@ public class Checklist {
      * Output the Final Cutlist Buffer into a the file name specified in the constructor.
      * @throws FileNotFoundException Unable to open the Output File to write data to.
      */
-    void outputChecklistToFile() throws FileNotFoundException {
+    private void outputChecklistToFile() throws FileNotFoundException {
         PrintWriter pw = new PrintWriter(new File(this.mOutputFileName));
         pw.write("DDU,Zipcode,Location," + mDateFormat.format(new Date()) + "," + mDestinationTag + "\n");
         for (String output : mFinalOutput) {

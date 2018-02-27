@@ -22,6 +22,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -38,9 +39,15 @@ public class ConfigManagerGUI {
 
     private ComboBox<String>    mDestComboBox;
 
-    private TableView<String>   mDataTable;
+    private TableView   mDataTable;
+
+    private TableColumn mConfigProperty;
+
+    private TableColumn mConfigValue;
 
     private Button  mNewConfigButton;
+
+    private Button mLoadConfig;
 
     private Stage   mStage;
 
@@ -51,14 +58,21 @@ public class ConfigManagerGUI {
     private ConfigManager mConfigManager;
 
     public ConfigManagerGUI(ConfigManager configManager) throws Exception {
+        mStage = new Stage();
+
         mConfigManager = configManager;
 
         mDestComboBox = new ComboBox<>();
         mDestComboBox.getItems().addAll(mConfigManager.getKeys());
 
-        mDataTable = new TableView<>();
+        mDataTable = new TableView();
+        mConfigProperty = new TableColumn("Property");
+        mConfigValue = new TableColumn("Value");
+
+        mDataTable.getItems().addAll(mConfigProperty,mConfigValue);
 
         mNewConfigButton = new Button("Add New Config");
+        mLoadConfig = new Button("Load");
 
         mGridPane = new GridPane();
         mGridPane.setAlignment(Pos.TOP_LEFT);
@@ -67,7 +81,13 @@ public class ConfigManagerGUI {
         mGridPane.setPadding(new Insets(5,5,5,5));
 
         mGridPane.add(mDestComboBox, 0, 0);
+        mGridPane.add(mLoadConfig, 1, 0);
 
+        mScene = new Scene(mGridPane, WINDOW_WIDTH, WINDOW_HEIGHT);
+
+        mStage.setScene(mScene);
+        mStage.setResizable(false);
+        mStage.setTitle("Config Manager");
     }
 
     private void eventHandler() throws Exception {
@@ -85,6 +105,12 @@ public class ConfigManagerGUI {
                 }
             }
         });
+
+        // When user clicks on choice
+        mDestComboBox.setOnMouseReleased(event -> {
+            // TODO Update the table view items
+        });
+
     }
 
     public void run() throws Exception {

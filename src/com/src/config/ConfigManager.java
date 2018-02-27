@@ -90,7 +90,7 @@ public class ConfigManager {
         mConfigFileNames.add(configFileName);
     }
 
-    public void saveCurrentConfig() throws Exception{
+    public void saveCurrentConfig() throws Exception {
         mFileOutput = new FileOutputStream(this.mInputFileName);
 
         System.out.println("Saving current Config");

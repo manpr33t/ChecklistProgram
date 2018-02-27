@@ -101,7 +101,7 @@ public class ConfigSetupGUI {
     public String getNewFileName() throws Exception{
         if (!this.mFileName.getText().isEmpty())
             return this.mFileName.getText() + ".properties";
-        throw new Exception("Now File name specified");
+        throw new Exception("No File name specified");
     }
 
     private void eventHandler() throws Exception {

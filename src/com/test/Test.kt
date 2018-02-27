@@ -2,13 +2,24 @@ package com.test
 
 // Messing around with kotlin
 
-fun main(args : Array<String>) {
-    println("Hello World")
+fun odd(x: Int) = x % 2 == 1
+fun even(x: Int) = x % 2 == 0
+
+fun size(s: String) = s.length
+
+fun doThis(f: (String) -> Int): (String) -> Int {
+    return {s -> f.invoke(s)}
 }
 
-class Test : Comparable<Test> {
-    override fun compareTo(other: Test): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
+fun not(f: (Int) -> Boolean): (Int) ->Boolean {
+    return {n -> !f.invoke(n)}
+}
 
+val notOdd = not(::odd)
+val notEven = not(::even)
+val stringSize = doThis(::size)
+
+fun main(args: Array<String>) {
+    println(notOdd(5))
+    println(stringSize("Hello"))
 }

@@ -23,5 +23,5 @@ package com.src.gui;
  *         FedEx Smartport SEWA/5983
  */
 public class ErrorWindowGUI {
-    // TODO make this class
+
 }

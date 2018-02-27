@@ -30,8 +30,6 @@ import java.util.TreeSet;
 public class ConfigParser {
     private Properties mConfigReader;
 
-    private static Collection<String> kSortGroupsList;
-
     private String mInputFileName;
     private String      mOutputFileName;
     private String      mDestinationTitle;
@@ -41,8 +39,6 @@ public class ConfigParser {
     private boolean     mValuesUpdated = false;
 
     public ConfigParser(String fileName) throws Exception{
-        if (kSortGroupsList == null)
-            kSortGroupsList = new TreeSet<>();
 
         mConfigReader.load(new FileInputStream(fileName));
 
@@ -50,7 +46,7 @@ public class ConfigParser {
         this.mOutputFileName = this.mConfigReader.getProperty("output_file");
         this.mDestinationTitle = this.mConfigReader.getProperty("destination_tag");
 
-        kSortGroupsList.add(this.mDestinationTitle);
+        SortGroups.kSortGroups.add(this.mDestinationTitle);
     }
 
     public String getInputFileName() {

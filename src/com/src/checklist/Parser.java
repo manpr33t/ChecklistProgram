@@ -107,20 +107,13 @@ public class Parser {
         parseUCR(this.mFileName);
 
         // Generate final Cut lists based on the sorted data.
+        // And output the files
         mSherwoodDispatchList.generateDifference(mSherwoodList);
         mSpokaneDispatchList.generateDifference(mSpokaneList);
         mKennewickDispatchList.generateDifference(mKennewickList);
         mSpringfieldDispatchList.generateDifference(mSpringfieldList);
         mLocalDispatchList.generateDifference(mLocalList);
         mLVGDispatchList.generateDifference(mLVGBagsList);
-
-        // Output the final data to the disk.
-        mSherwoodDispatchList.outputChecklistToFile();
-        mSpokaneDispatchList.outputChecklistToFile();
-        mKennewickDispatchList.outputChecklistToFile();
-        mSpringfieldDispatchList.outputChecklistToFile();
-        mLocalDispatchList.outputChecklistToFile();
-        mLVGDispatchList.outputChecklistToFile();
 
         // Prep data structures for next run
         prepForNextRun();

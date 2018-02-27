@@ -30,6 +30,8 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
@@ -85,7 +87,7 @@ public class MainGUI extends Application{
     private File        mDescription;
 
     private ConfigManager mConfig;
-    private ConfigSetupGUI configSetupGUI;
+    private ConfigManagerGUI mConfigManagerGUI;
 
     /**
      * GUI Built using JavaFX
@@ -101,6 +103,7 @@ public class MainGUI extends Application{
         mLog.setMaxHeight(200);
 
         mLog.setEditable(false);
+        mLog.setWrapText(true);
 
         ScrollPane mLogScrollPane = new ScrollPane(mLog);
         mLogScrollPane.setStyle("-fx-background-color:transparent;");
@@ -153,8 +156,8 @@ public class MainGUI extends Application{
         mGridPane.add(mConfigButton, 2, 0);
 
         mParser = new Parser("UCR.csv");
-        configSetupGUI = new ConfigSetupGUI();
 
+        // Custom GUI Classes
         try {
             mConfig = new ConfigManager("dependencies/main_config.properties");
         } catch (Exception e) {
@@ -165,6 +168,13 @@ public class MainGUI extends Application{
             } catch (Exception e1) {
                 e1.printStackTrace();
             }
+        }
+
+        try {
+            mConfigManagerGUI = new ConfigManagerGUI(mConfig);
+        } catch (Exception e) {
+            mLog.appendText(e.getLocalizedMessage()+"\n");
+
         }
     }
 
@@ -210,10 +220,15 @@ public class MainGUI extends Application{
 
         mConfigButton.setOnAction(event -> {
             try {
-                configSetupGUI.run();
+                mConfigManagerGUI.run();
             } catch (Exception e) {
                 mLog.appendText(e.getLocalizedMessage());
             }
+        });
+
+        stage.addEventHandler(KeyEvent.KEY_RELEASED, (KeyEvent event) -> {
+            if (KeyCode.ESCAPE == event.getCode())
+                stage.close();
         });
     }
 
@@ -223,7 +238,7 @@ public class MainGUI extends Application{
      * @throws IOException Either a file Read/Write error or file not found
      */
     private void openFile(File file) throws IOException {
-            mDesktop.open(file);
+        mDesktop.open(file);
     }
 
     /**

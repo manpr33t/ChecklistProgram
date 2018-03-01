@@ -31,6 +31,7 @@ import java.util.*;
 public class ConfigManager {
 
     private Map<String, ConfigParser> mConfigMap;
+    private Map<String, Set<String>> mUCRData;
     private Set<String> mConfigFileNames;
     private Properties mInputProperties;
     private Properties mOutputProperties;
@@ -68,9 +69,12 @@ public class ConfigManager {
         for (String s : mConfigFileNames) {
             if (!s.isEmpty()) {
                 try {
-                    mConfigMap.put(s.split(".")[0], new ConfigParser(s));
+                    mConfigMap.put(s.split("\\.")[0], new ConfigParser(s));
                 }
-                catch (Exception e) {throw new Exception("Unable to open config file: " + s);}
+                catch (Exception e) {
+                    e.printStackTrace();
+                    throw new Exception("Unable to open config file: " + s);
+                }
             }
         }
         fileInput.close();
@@ -97,8 +101,10 @@ public class ConfigManager {
 
         StringBuilder sb = new StringBuilder();
 
-        for (String s : mConfigFileNames)
-            sb.append(s).append(",");
+        for (String s : mConfigFileNames) {
+            if (!s.isEmpty())
+                sb.append(s).append(",");
+        }
 
         this.mOutputProperties.setProperty("config_filenames",
                 sb.toString().length() < 2 ? "" : sb.toString());

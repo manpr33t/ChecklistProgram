@@ -1,8 +1,15 @@
 package com.src.config;
 
-import java.util.Collection;
-import java.util.TreeSet;
+import java.util.*;
 
+/**
+ * Object to statically hold sort groups used to sort values from UCR
+ */
 public class SortGroups {
-    public static final Collection<String> kSortGroups = new TreeSet<>();
+    /**
+     * Sort groups set
+     */
+    public static final Collection<String> kSortGroupsSet = new TreeSet<>();
+
+    public static final Map<String, Set<String>> kSortGroupsMap = new TreeMap<>();
 }

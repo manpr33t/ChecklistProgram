@@ -16,6 +16,7 @@
 
 package com.src.gui;
 
+import com.src.config.ConfigManager;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -100,11 +101,11 @@ public class ConfigSetupGUI {
 
     public String getNewFileName() throws Exception{
         if (!this.mFileName.getText().isEmpty())
-            return this.mFileName.getText() + ".properties";
+            return this.mDestinationTag.getText() + ".properties";
         throw new Exception("No File name specified");
     }
 
-    private void eventHandler() throws Exception {
+    private void eventHandler(ConfigManager manager) throws Exception {
         mChooseInputFile.setOnAction(event -> {
             File file = mFileChooser.showOpenDialog(this.mStage);
             if (file != null) {
@@ -139,10 +140,21 @@ public class ConfigSetupGUI {
                     if (mOutput != null) {
                         try {
                             mOutput.close();
+
+                            manager.addNewConfig(this.getNewFileName());
+                            manager.saveCurrentConfig();
+
                             mDestinationTag.clear();
                             mFileName.clear();
                             mOutputName.clear();
-                        } catch (IOException e) { e.printStackTrace(); }
+                        } catch (Exception e) {
+                            try {
+                                throw new Exception(e.getMessage());
+                            } catch (Exception e1) {
+                                e1.printStackTrace();
+                            }
+                        }
+                        mStage.close();
                     }
                 }
 
@@ -150,8 +162,8 @@ public class ConfigSetupGUI {
         });
     }
 
-    public void run() throws Exception {
-        eventHandler();
+    public void run(ConfigManager manager) throws Exception {
+        eventHandler(manager);
         mStage.show();
     }
 }

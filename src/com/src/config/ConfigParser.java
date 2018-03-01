@@ -19,9 +19,7 @@ package com.src.config;
 import com.src.checklist.Checklist;
 
 import java.io.*;
-import java.util.Collection;
 import java.util.Properties;
-import java.util.TreeSet;
 
 /**
  * @author Manpreet Singh (2854787)
@@ -30,23 +28,25 @@ import java.util.TreeSet;
 public class ConfigParser {
     private Properties mConfigReader;
 
-    private String mInputFileName;
+    private String      mInputFileName;
     private String      mOutputFileName;
     private String      mDestinationTitle;
 
     private Checklist   mDispatchCheckList;
 
-    private boolean     mValuesUpdated = false;
-
     public ConfigParser(String fileName) throws Exception{
 
-        mConfigReader.load(new FileInputStream(fileName));
+        mConfigReader = new Properties();
+
+        mConfigReader.load(new FileInputStream("dependencies/" + fileName));
 
         this.mInputFileName = this.mConfigReader.getProperty("input_file");
         this.mOutputFileName = this.mConfigReader.getProperty("output_file");
         this.mDestinationTitle = this.mConfigReader.getProperty("destination_tag");
 
-        SortGroups.kSortGroups.add(this.mDestinationTitle);
+        this.mDispatchCheckList = new Checklist(this.mInputFileName, this.mOutputFileName, this.mDestinationTitle);
+
+        SortGroups.kSortGroupsSet.add(this.mDestinationTitle);
     }
 
     public String getInputFileName() {

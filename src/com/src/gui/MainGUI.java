@@ -161,8 +161,8 @@ public class MainGUI extends Application{
         try {
             mConfig = new ConfigManager("dependencies/main_config.properties");
         } catch (Exception e) {
-            mLog.appendText(e.getLocalizedMessage());
-            mLog.appendText("\nGenerating empty config file\n");
+            mLog.appendText(e.getLocalizedMessage() + "\n");
+            mLog.appendText("Generating empty config file\n");
             try {
                 mConfig = new ConfigManager("dependencies/main_config.properties");
             } catch (Exception e1) {
@@ -180,7 +180,7 @@ public class MainGUI extends Application{
 
     /**
      * Event handler to handel Buttons events
-     * @param stage Stage object to read file information from
+     * @param stage Stage object to aquire information from
      */
     private void eventHandler(Stage stage) {
         mOpenFile.setOnAction(event -> {
@@ -192,7 +192,7 @@ public class MainGUI extends Application{
                     mParser.run();
                     openChecklists();
                 } catch (IOException e) {
-                    mLog.appendText(e.getLocalizedMessage());
+                    mLog.appendText(e.getLocalizedMessage() + "\n");
                     e.printStackTrace();
                 }
             }
@@ -204,7 +204,7 @@ public class MainGUI extends Application{
                 mParser.run();
                 openChecklists();
             } catch (IOException e) {
-                mLog.appendText(e.getMessage());
+                mLog.appendText(e.getMessage() + "\n");
                 e.printStackTrace();
             }
         });
@@ -222,7 +222,7 @@ public class MainGUI extends Application{
             try {
                 mConfigManagerGUI.run();
             } catch (Exception e) {
-                mLog.appendText(e.getLocalizedMessage());
+                mLog.appendText(e.getLocalizedMessage() + "\n");
             }
         });
 

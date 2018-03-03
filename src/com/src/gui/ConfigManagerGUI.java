@@ -57,13 +57,13 @@ public class ConfigManagerGUI {
 
     private ConfigManager mConfigManager;
 
-    public ConfigManagerGUI(ConfigManager configManager) /*throws Exception */{
+    public ConfigManagerGUI(ConfigManager configManager) throws Exception {
         mStage = new Stage();
 
         mConfigManager = configManager;
 
         mDestComboBox = new ComboBox<>();
-//        mDestComboBox.getItems().addAll(mConfigManager.getKeys());
+        mDestComboBox.getItems().addAll(mConfigManager.getKeys());
 
         mDataTable = new TableView();
         mConfigProperty = new TableColumn("Property");
@@ -81,7 +81,7 @@ public class ConfigManagerGUI {
         mGridPane.setPadding(new Insets(5,5,5,5));
 
         mGridPane.add(mDestComboBox, 0, 0);
-        mGridPane.add(mNewConfigButton, 1,0);
+        mGridPane.add(mNewConfigButton, 2,0);
         mGridPane.add(mLoadConfig, 1, 0);
 
         mScene = new Scene(mGridPane, WINDOW_WIDTH, WINDOW_HEIGHT);

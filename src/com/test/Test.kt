@@ -1,25 +1,45 @@
 package com.test
 
-// Messing around with kotlin
+import com.src.checklist.Utility
+import org.apache.poi.ss.usermodel.Row
+import org.apache.poi.hssf.usermodel.HSSFRow
+import org.apache.poi.hssf.usermodel.HSSFSheet
+import org.apache.poi.hssf.usermodel.HSSFWorkbook
+import org.apache.poi.poifs.filesystem.POIFSFileSystem
 
-fun odd(x: Int) = x % 2 == 1
-fun even(x: Int) = x % 2 == 0
+import java.io.File
 
-fun size(s: String) = s.length
+private var spreadSheetRows: ArrayList<HSSFRow>? = null
+private var dataMap: MutableMap<String, String>? = null
 
-fun doThis(f: (String) -> Int): (String) -> Int {
-    return {s -> f.invoke(s)}
+/**
+ * Create a Map from a UCR Excel Spreadsheet
+ *
+ */
+fun readDataFromFile(inputFile: File) {
+
+    spreadSheetRows = ArrayList()
+    dataMap = HashMap()
+
+    val fileSystem: POIFSFileSystem = POIFSFileSystem(inputFile)
+    val workBook: HSSFWorkbook = HSSFWorkbook(fileSystem)
+    val spreadSheet: HSSFSheet = workBook.getSheetAt(0)
+
+    val rowIterator: Iterator<Row> = spreadSheet.rowIterator()
+
+    while (rowIterator.hasNext()) spreadSheetRows?.add(rowIterator.next() as HSSFRow)
+
+    spreadSheetRows!!.forEach({
+        dataMap!!.put (
+            it.getCell(8).toString(),
+            Utility.removeZipcodePrefix(it.getCell(it.firstCellNum.toInt()).toString())
+    )})
+
 }
 
-fun not(f: (Int) -> Boolean): (Int) ->Boolean {
-    return {n -> !f.invoke(n)}
+fun getDataMap() : MutableMap<String, String>? {
+    return dataMap
 }
-
-val notOdd = not(::odd)
-val notEven = not(::even)
-val stringSize = doThis(::size)
 
 fun main(args: Array<String>) {
-    println(notOdd(5))
-    println(stringSize("Hello"))
 }

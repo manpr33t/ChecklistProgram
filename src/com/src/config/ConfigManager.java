@@ -31,7 +31,7 @@ import java.util.*;
 public class ConfigManager {
 
     private Map<String, ConfigParser> mConfigMap;
-    private Map<String, Set<String>> mUCRData;
+    private UCRParser mUCRData;
     private Set<String> mConfigFileNames;
     private Properties mInputProperties;
     private Properties mOutputProperties;
@@ -41,6 +41,8 @@ public class ConfigManager {
 
     public ConfigManager(String inputFileName) throws Exception {
         mInputFileName = inputFileName;
+
+        mUCRData = new UCRParser();
 
         mConfigMap = new TreeMap<>();
         mConfigFileNames = new TreeSet<>();

@@ -63,13 +63,18 @@ public class ConfigManagerGUI {
         mConfigManager = configManager;
 
         mDestComboBox = new ComboBox<>();
-        mDestComboBox.getItems().addAll(mConfigManager.getKeys());
+
+        try {
+            mDestComboBox.getItems().addAll(mConfigManager.getKeys());
+        } catch (Exception e) {
+            throw e;
+        }
 
         mDataTable = new TableView();
         mConfigProperty = new TableColumn("Property");
         mConfigValue = new TableColumn("Value");
 
-        mDataTable.getItems().addAll(mConfigProperty,mConfigValue);
+//        mDataTable.getItems().addAll(mConfigProperty,mConfigValue);
 
         mNewConfigButton = new Button("Add New Config");
         mLoadConfig = new Button("Load");

@@ -1,4 +1,4 @@
-package com.test
+package com.src.config
 
 import com.src.checklist.Utility
 import org.apache.poi.ss.usermodel.Row
@@ -12,16 +12,15 @@ import java.io.PrintWriter
 
 class UCRParser {
 
-
     private var spreadSheetRows: ArrayList<HSSFRow>? = null
     private var dataMap: MutableMap<String, MutableSet<String>>? = null
 
     /**
      * Create a Map from a UCR Excel Spreadsheet
-     *
      */
     fun readDataFromFile(inputFile: File) {
 
+        // Re-establish objects every time this method is run
         spreadSheetRows = ArrayList()
         dataMap = HashMap()
 
@@ -52,16 +51,25 @@ class UCRParser {
         })
     }
 
-    fun checkForData(row: HSSFRow): Boolean {
+    /**
+     * Check if the row contains actual usable data
+     */
+    private fun checkForData(row: HSSFRow): Boolean {
         return row.getCell(row.firstCellNum.toInt()).toString().startsWith("D") ||
                 row.getCell(row.firstCellNum.toInt()).toString().startsWith("P") ||
                 !row.getCell(row.firstCellNum.toInt()).toString().startsWith("S")
     }
 
+    /**
+     * Get the mapped data
+     */
     fun getDataMap(): MutableMap<String, MutableSet<String>>? {
         return dataMap
     }
 
+    /**
+     * Output the map into a CSV file for debugging purposes
+     */
     fun outputMap() {
         val file: File = File("DataMap.csv")
         val pw = PrintWriter(file)
@@ -78,15 +86,5 @@ class UCRParser {
         pw.close()
     }
 
-    companion object {
-        fun run(s: String) {
-            val p = UCRParser()
-            p.readDataFromFile(File(s))
-            p.outputMap()
-        }
-    }
-}
 
-fun main(args: Array<String>) {
-    UCRParser.run("UCR.xls")
 }

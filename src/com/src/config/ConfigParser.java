@@ -45,8 +45,6 @@ public class ConfigParser {
         this.mDestinationTitle = this.mConfigReader.getProperty("destination_tag");
 
         this.mDispatchCheckList = new Checklist(this.mInputFileName, this.mOutputFileName, this.mDestinationTitle);
-
-        SortGroups.kSortGroupsSet.add(this.mDestinationTitle);
     }
 
     public String getInputFileName() {

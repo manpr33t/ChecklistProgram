@@ -88,7 +88,7 @@ public class Checklist {
      * Filter the date passed into this Method based on the filters set up prior to calling this method.
      * @param list The Set of date to filter.
      */
-    void generateDifference(Collection<String> list) throws FileNotFoundException{
+    public void generateDifference(Collection<String> list) throws FileNotFoundException{
         mSimilar.addAll(mCheckList);
 
         // Add all elements from the Checklist to the Difference buffer.

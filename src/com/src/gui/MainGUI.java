@@ -188,10 +188,11 @@ public class MainGUI extends Application{
             if (file != null) {
                 mLog.appendText("Opening file: " + file.getName() + "\n");
                 try {
-                    Utility.convertExcelToCsv(file);
-                    mParser.run();
-                    openChecklists();
-                } catch (IOException e) {
+//                    Utility.convertExcelToCsv(file);
+//                    mParser.run();
+//                    openChecklists();
+                    mConfigManagerGUI.parseUCR(file);
+                } catch (Exception e) {
                     mLog.appendText(e.getLocalizedMessage() + "\n");
                     e.printStackTrace();
                 }

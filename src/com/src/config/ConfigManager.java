@@ -18,10 +18,7 @@ package com.src.config;
 
 import com.src.checklist.Utility;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.InputStream;
+import java.io.*;
 import java.util.*;
 
 /**
@@ -83,9 +80,7 @@ public class ConfigManager {
     }
 
     public Set<String> getKeys() throws Exception {
-        if (!this.mConfigMap.isEmpty())
             return this.mConfigMap.keySet();
-        throw new Exception("No destination config files found");
     }
 
     public ConfigParser getValue(String key) {
@@ -113,5 +108,13 @@ public class ConfigManager {
         this.mOutputProperties.store(this.mFileOutput,null);
 
         mFileOutput.close();
+    }
+
+    public void parseUCR(File inputFile) throws Exception {
+        mUCRData.readDataFromFile(inputFile);
+        for (String s : mUCRData.getDataMap().keySet()) {
+            if (mConfigMap.containsKey(s))
+                mConfigMap.get(s).run(mUCRData.getDataMap().get(s));
+        }
     }
 }

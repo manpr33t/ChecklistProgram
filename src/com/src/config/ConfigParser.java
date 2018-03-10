@@ -19,6 +19,7 @@ package com.src.config;
 import com.src.checklist.Checklist;
 
 import java.io.*;
+import java.util.Collection;
 import java.util.Properties;
 
 /**
@@ -57,5 +58,9 @@ public class ConfigParser {
 
     public String getTitle() {
         return mDestinationTitle;
+    }
+
+    public void run(Collection<String> collection) throws Exception {
+        mDispatchCheckList.generateDifference(collection);
     }
 }

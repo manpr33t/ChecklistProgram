@@ -27,6 +27,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.io.File;
+
 
 /**
  * @author Manpreet Singh (2854787)
@@ -64,17 +66,15 @@ public class ConfigManagerGUI {
 
         mDestComboBox = new ComboBox<>();
 
-        try {
+        if (!mConfigManager.getKeys().isEmpty())
             mDestComboBox.getItems().addAll(mConfigManager.getKeys());
-        } catch (Exception e) {
-            throw e;
-        }
+
 
         mDataTable = new TableView();
         mConfigProperty = new TableColumn("Property");
         mConfigValue = new TableColumn("Value");
 
-//        mDataTable.getItems().addAll(mConfigProperty,mConfigValue);
+        mDataTable.getColumns().addAll(mConfigProperty,mConfigValue);
 
         mNewConfigButton = new Button("Add New Config");
         mLoadConfig = new Button("Load");
@@ -115,6 +115,10 @@ public class ConfigManagerGUI {
             // TODO Update the table view items
         });
 
+    }
+
+    public void parseUCR(File in) throws Exception {
+        this.mConfigManager.parseUCR(in);
     }
 
     public void run() throws Exception {

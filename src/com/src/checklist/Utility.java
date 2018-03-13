@@ -41,7 +41,7 @@ public class Utility {
      * @param inputFile Name or Path of the file you want to conver to CSV
      * @throws IOException File not found or File is open in another program
      */
-    public static void convertExcelToCsv(File inputFile) throws IOException {
+    public static void convertExcelToCsv(File inputFile, String outputName) throws IOException {
 
         try {
             cellGrid = new ArrayList<>();
@@ -62,18 +62,20 @@ public class Utility {
                 // Add it to the cellGrid buffer
                 cellGrid.add(cellRowList);
             }
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             throw new IOException("File Not Found or Unable to open file");
         }
 
         // Save file for future reference
-        File file = new File("UCR.csv");
+        File file = new File(outputName);
         PrintStream stream = new PrintStream(file);
         for (List<HSSFCell> cellRowList : cellGrid) {
             cellRowList.stream().map(HSSFCell::toString).map(stringCellValue -> stringCellValue + ",").forEach(stream::print);
             stream.println("");
         }
+        stream.close();
     }
 
     /**

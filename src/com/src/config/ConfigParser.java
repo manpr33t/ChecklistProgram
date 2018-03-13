@@ -17,6 +17,7 @@
 package com.src.config;
 
 import com.src.checklist.Checklist;
+import javafx.beans.property.SimpleStringProperty;
 
 import java.io.*;
 import java.util.Collection;
@@ -29,9 +30,9 @@ import java.util.Properties;
 public class ConfigParser {
     private Properties mConfigReader;
 
-    private String      mInputFileName;
-    private String      mOutputFileName;
-    private String      mDestinationTitle;
+    private SimpleStringProperty mInputFileName;
+    private SimpleStringProperty mOutputFileName;
+    private SimpleStringProperty mDestinationTitle;
 
     private Checklist   mDispatchCheckList;
 
@@ -41,23 +42,23 @@ public class ConfigParser {
 
         mConfigReader.load(new FileInputStream("dependencies/" + fileName));
 
-        this.mInputFileName = this.mConfigReader.getProperty("input_file");
-        this.mOutputFileName = this.mConfigReader.getProperty("output_file");
-        this.mDestinationTitle = this.mConfigReader.getProperty("destination_tag");
+        this.mInputFileName = new SimpleStringProperty(this.mConfigReader.getProperty("input_file"));
+        this.mOutputFileName = new SimpleStringProperty(this.mConfigReader.getProperty("output_file"));
+        this.mDestinationTitle = new SimpleStringProperty(this.mConfigReader.getProperty("destination_tag"));
 
-        this.mDispatchCheckList = new Checklist(this.mInputFileName, this.mOutputFileName, this.mDestinationTitle);
+        this.mDispatchCheckList = new Checklist(this.mInputFileName.get(), this.mOutputFileName.get(), this.mDestinationTitle.get());
     }
 
     public String getInputFileName() {
-        return mInputFileName;
+        return mInputFileName.get();
     }
 
     public String getOutputFileName() {
-        return mOutputFileName;
+        return mOutputFileName.get();
     }
 
     public String getTitle() {
-        return mDestinationTitle;
+        return mDestinationTitle.get();
     }
 
     public void run(Collection<String> collection) throws Exception {

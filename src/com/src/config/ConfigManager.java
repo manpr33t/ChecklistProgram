@@ -17,9 +17,15 @@
 package com.src.config;
 
 import com.src.checklist.Utility;
+import javafx.collections.MapChangeListener;
+import javafx.collections.ObservableMap;
+import javafx.collections.ObservableSet;
 
 import java.io.*;
 import java.util.*;
+
+import static javafx.collections.FXCollections.observableMap;
+import static javafx.collections.FXCollections.observableSet;
 
 /**
  * @author Manpreet Singh (2854787)
@@ -27,7 +33,8 @@ import java.util.*;
  */
 public class ConfigManager {
 
-    private Map<String, ConfigParser> mConfigMap;
+    private ObservableMap<String, ConfigParser> mConfigMap;
+    private ObservableSet<String> mConfigMapKeys;
     private UCRParser mUCRData;
     private Set<String> mConfigFileNames;
     private Properties mInputProperties;
@@ -41,7 +48,9 @@ public class ConfigManager {
 
         mUCRData = new UCRParser();
 
-        mConfigMap = new TreeMap<>();
+        mConfigMap = observableMap(new TreeMap<>());
+        mConfigMapKeys = observableSet(new TreeSet<>());
+        // TODO Add Listener for changes to the Config Map
         mConfigFileNames = new TreeSet<>();
 
         mInputProperties = new Properties();

@@ -20,6 +20,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 /**
@@ -144,7 +145,7 @@ public class Parser {
 
                 // Sort only the zipcodes from the lines based on their destination codes
                 int size = lineBuffer[8].length(); // This line is for debugging purposes.
-                if(size > 5) {
+                if(size > 5 && Character.isLetter(lineBuffer[8].charAt(0))) {
                     switch (Destination.valueOf(lineBuffer[8].substring(4))) {
                         default:
                             break;

@@ -39,6 +39,8 @@ public class ConfigSetupGUI {
     private final int   WINDOW_HEIGHT = 150;
     private final int   WINDOW_WIDTH = 250;
 
+    private String      mNewFileName;
+
     private Stage       mStage;
 
     private GridPane    mGridPane;
@@ -101,7 +103,7 @@ public class ConfigSetupGUI {
 
     public String getNewFileName() throws Exception{
         if (!this.mFileName.getText().isEmpty())
-            return this.mDestinationTag.getText() + ".properties";
+            return mNewFileName + ".properties";
         throw new Exception("No File name specified");
     }
 
@@ -121,11 +123,16 @@ public class ConfigSetupGUI {
                 throw new IllegalArgumentException("All Information not filled in");
             else {
                 try {
-                    mOutput = new FileOutputStream("dependencies/" + mDestinationTag.getText() + ".properties");
+                    mNewFileName = mDestinationTag.getText();
+                    if (mNewFileName.contains(","))
+                        mNewFileName = mNewFileName.replaceAll(",", "-");
+
+                    mOutput = new FileOutputStream("dependencies/" + mNewFileName + ".properties");
 
                     mProperties.setProperty("input_file", mFileName.getText());
                     mProperties.setProperty("output_file", mOutputName.getText() + ".csv");
-                    mProperties.setProperty("destination_tag", mDestinationTag.getText());
+
+                    mProperties.setProperty("destination_tag", mNewFileName);
 
                     mProperties.store(mOutput, null);
                 } catch (IOException e) {

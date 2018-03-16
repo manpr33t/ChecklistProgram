@@ -17,7 +17,6 @@
 package com.src.gui;
 
 import com.src.checklist.Utility;
-import com.src.checklist.Parser;
 import com.src.config.ConfigManager;
 
 import javafx.application.Application;
@@ -77,11 +76,8 @@ public class MainGUI extends Application{
     private Button      mGenerateFiles;
     private Button      mConfigButton;
 
-    private Image       mConfigIcon;
-
     private GridPane    mGridPane;
     private Desktop     mDesktop = Desktop.getDesktop();
-    private Parser      mParser;
 
     private Hyperlink   mName;
     private File        mDescription;
@@ -122,7 +118,7 @@ public class MainGUI extends Application{
         mConfigButton.setStyle("-fx-font:14 arial; -fx-base: #FF5100;");
 
         try {
-            mConfigIcon = new Image(new FileInputStream("dependencies/gear.png"));
+            Image mConfigIcon = new Image(new FileInputStream("dependencies/gear.png"));
             mConfigButton.setGraphic(new ImageView(mConfigIcon));
         } catch (Exception e) {
             mConfigButton.setText("Config");
@@ -154,8 +150,6 @@ public class MainGUI extends Application{
         mGridPane.add(mName, 1, 2);
         mGridPane.add(mLocation, 0, 2);
         mGridPane.add(mConfigButton, 2, 0);
-
-        mParser = new Parser("UCR.csv");
 
         // Custom GUI Classes
         try {
@@ -189,9 +183,7 @@ public class MainGUI extends Application{
                 mLog.appendText("Opening file: " + file.getName() + "\n");
                 try {
                     Utility.convertExcelToCsv(file, "UCR.csv");
-                    mParser.run();
-                    openChecklists();
-//                    mConfigManagerGUI.parseUCR(file);
+                    mConfigManagerGUI.parseUCR(file, this.mDesktop);
                 } catch (Exception e) {
                     mLog.appendText(e.getLocalizedMessage() + "\n");
                     e.printStackTrace();
@@ -202,10 +194,9 @@ public class MainGUI extends Application{
         mGenerateFiles.setOnAction(event -> {
             mLog.appendText("Generating checklists from saved UCR file\n");
             try {
-                mParser.run();
-                openChecklists();
-            } catch (IOException e) {
-                mLog.appendText(e.getMessage() + "\n");
+                mConfigManagerGUI.parseUCR(new File("UCR.csv"), this.mDesktop);
+            } catch (Exception e) {
+                mLog.appendText(e.getLocalizedMessage() + "\n");
                 e.printStackTrace();
             }
         });
@@ -240,19 +231,6 @@ public class MainGUI extends Application{
      */
     private void openFile(File file) throws IOException {
         mDesktop.open(file);
-    }
-
-    /**
-     * Open the generated checklists once they are generated
-     * @throws IOException Read/Write error or Files not found
-     */
-    private void openChecklists() throws IOException{
-        openFile(new File("SherwoodDispatchList.csv"));
-        openFile(new File("SpokaneDispatchList.csv"));
-        openFile(new File("SpringfieldDispatchCheckList.csv"));
-        openFile(new File("KennewickDispatchCheckList.csv"));
-        openFile(new File("LocalsDispatchCheckList.csv"));
-        openFile(new File("LVGDispatchChecklist.csv"));
     }
 
     /**

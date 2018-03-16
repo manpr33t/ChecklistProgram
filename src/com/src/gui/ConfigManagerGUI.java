@@ -27,6 +27,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.File;
 
 
@@ -117,8 +118,8 @@ public class ConfigManagerGUI {
 
     }
 
-    public void parseUCR(File in) throws Exception {
-        this.mConfigManager.parseUCR(in);
+    public void parseUCR(File in, Desktop desktop) throws Exception {
+        this.mConfigManager.parseUCR(in, desktop);
     }
 
     public void run() throws Exception {

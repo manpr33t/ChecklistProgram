@@ -28,13 +28,14 @@ import java.util.Properties;
  *         FedEx Smartport SEWA/5983
  */
 public class ConfigParser {
-    private Properties mConfigReader;
+    private Properties  mConfigReader;
+    private boolean     mMultipleRoutes;
+    private String[] mMultipleRouteCodes;
+    private Checklist   mDispatchCheckList;
 
     private SimpleStringProperty mInputFileName;
     private SimpleStringProperty mOutputFileName;
     private SimpleStringProperty mDestinationTitle;
-
-    private Checklist   mDispatchCheckList;
 
     public ConfigParser(String fileName) throws Exception{
 
@@ -46,7 +47,13 @@ public class ConfigParser {
         this.mOutputFileName = new SimpleStringProperty(this.mConfigReader.getProperty("output_file"));
         this.mDestinationTitle = new SimpleStringProperty(this.mConfigReader.getProperty("destination_tag"));
 
+        if (this.mDestinationTitle.get().split(",").length > 0) {
+            this.mMultipleRoutes = true;
+            this.mMultipleRouteCodes = this.mDestinationTitle.get().split("-");
+        }
+
         this.mDispatchCheckList = new Checklist(this.mInputFileName.get(), this.mOutputFileName.get(), this.mDestinationTitle.get());
+        this.mConfigReader.clear();
     }
 
     public String getInputFileName() {
@@ -59,6 +66,14 @@ public class ConfigParser {
 
     public String getTitle() {
         return mDestinationTitle.get();
+    }
+
+    public boolean isMultipleRoutes() {
+        return this.mMultipleRoutes;
+    }
+
+    public String[] getMultipleRoute() {
+        return this.mMultipleRouteCodes;
     }
 
     public void run(Collection<String> collection) throws Exception {

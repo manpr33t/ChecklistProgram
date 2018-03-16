@@ -21,6 +21,7 @@ import javafx.collections.MapChangeListener;
 import javafx.collections.ObservableMap;
 import javafx.collections.ObservableSet;
 
+import java.awt.*;
 import java.io.*;
 import java.util.*;
 
@@ -77,7 +78,7 @@ public class ConfigManager {
         for (String s : mConfigFileNames) {
             if (!s.isEmpty()) {
                 try {
-                    mConfigMap.put(s.split("\\.")[0], new ConfigParser(s));
+                    mConfigMap.put(s.split("\\.")[0].split("-")[0], new ConfigParser(s));
                 }
                 catch (Exception e) {
                     e.printStackTrace();
@@ -119,11 +120,25 @@ public class ConfigManager {
         mFileOutput.close();
     }
 
-    public void parseUCR(File inputFile) throws Exception {
+    public void parseUCR(File inputFile, Desktop desktop) throws Exception {
         mUCRData.readDataFromFile(inputFile);
         for (String s : mUCRData.getDataMap().keySet()) {
-            if (mConfigMap.containsKey(s))
+            if (mConfigMap.containsKey(s)) {
+                if (mConfigMap.get(s).isMultipleRoutes())
+                    for (int i = 1; i < mConfigMap.get(s).getMultipleRoute().length; i++)
+                        mUCRData.getDataMap().get(s).addAll(mUCRData.getDataMap().get(mConfigMap.get(s).getMultipleRoute()[i]));
                 mConfigMap.get(s).run(mUCRData.getDataMap().get(s));
+            }
+        }
+        openOutputFiles(desktop);
+        System.out.println("Bazinga");
+    }
+
+    private void openOutputFiles(Desktop desktop) throws IOException {
+        System.out.println("Trying to open files");
+        for (String s : mConfigMap.keySet()) {
+            System.out.println("opening: " + s );
+            desktop.open(new File(mConfigMap.get(s).getOutputFileName()));
         }
     }
 }

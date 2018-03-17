@@ -16,6 +16,7 @@
 
 package com.src.gui;
 
+import com.src.checklist.Parser;
 import com.src.checklist.Utility;
 import com.src.config.ConfigManager;
 
@@ -84,6 +85,7 @@ public class MainGUI extends Application{
 
     private ConfigManager mConfig;
     private ConfigManagerGUI mConfigManagerGUI;
+    private Parser mParser;
 
     /**
      * GUI Built using JavaFX
@@ -170,6 +172,8 @@ public class MainGUI extends Application{
             mLog.appendText(e.getLocalizedMessage()+"\n");
 
         }
+
+        mParser = new Parser("UCR.csv");
     }
 
     /**
@@ -194,7 +198,7 @@ public class MainGUI extends Application{
         mGenerateFiles.setOnAction(event -> {
             mLog.appendText("Generating checklists from saved UCR file\n");
             try {
-                mConfigManagerGUI.parseUCR(new File("UCR.csv"), this.mDesktop);
+                mParser.run();
             } catch (Exception e) {
                 mLog.appendText(e.getLocalizedMessage() + "\n");
                 e.printStackTrace();

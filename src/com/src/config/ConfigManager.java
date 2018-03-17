@@ -17,9 +17,7 @@
 package com.src.config;
 
 import com.src.checklist.Utility;
-import javafx.collections.MapChangeListener;
-import javafx.collections.ObservableMap;
-import javafx.collections.ObservableSet;
+import javafx.collections.*;
 
 import java.awt.*;
 import java.io.*;
@@ -122,23 +120,41 @@ public class ConfigManager {
 
     public void parseUCR(File inputFile, Desktop desktop) throws Exception {
         mUCRData.readDataFromFile(inputFile);
-        for (String s : mUCRData.getDataMap().keySet()) {
-            if (mConfigMap.containsKey(s)) {
-                if (mConfigMap.get(s).isMultipleRoutes())
-                    for (int i = 1; i < mConfigMap.get(s).getMultipleRoute().length; i++)
-                        mUCRData.getDataMap().get(s).addAll(mUCRData.getDataMap().get(mConfigMap.get(s).getMultipleRoute()[i]));
-                mConfigMap.get(s).run(mUCRData.getDataMap().get(s));
+        for (String s : mUCRData.getDataMap().keySet())
+            try {
+                if (mConfigMap.containsKey(s)) {
+                    if (mConfigMap.get(s).isMultipleRoutes())
+                        for (int i = 0; i < mConfigMap.get(s).getMultipleRoute().length; i++) {
+                            Set<String> temp = mUCRData.getDataMap().get(mConfigMap.get(s).getMultipleRoute()[i]);
+                            if (temp != null)
+                                mUCRData.getDataMap().get(s).addAll(temp);
+                        }
+                    mConfigMap.get(s).run(mUCRData.getDataMap().get(s));
+                }
+            } catch (Exception e) {
+                throw e;
             }
-        }
+
         openOutputFiles(desktop);
-        System.out.println("Bazinga");
     }
 
     private void openOutputFiles(Desktop desktop) throws IOException {
-        System.out.println("Trying to open files");
         for (String s : mConfigMap.keySet()) {
-            System.out.println("opening: " + s );
             desktop.open(new File(mConfigMap.get(s).getOutputFileName()));
         }
+    }
+
+    public ObservableList<Map> getObservableMap(String[] columnKeys) {
+        ObservableList<Map> mapData = FXCollections.observableArrayList();
+        if (columnKeys.length == 3) {
+            for (String s : mConfigMap.keySet()) {
+                Map<String, String> dataRow = new HashMap<>();
+                dataRow.put(columnKeys[0], mConfigMap.get(s).getTitle());
+                dataRow.put(columnKeys[1], mConfigMap.get(s).getInputFileName());
+                dataRow.put(columnKeys[2], mConfigMap.get(s).getOutputFileName());
+                mapData.add(dataRow);
+            }
+        }
+        return  mapData;
     }
 }

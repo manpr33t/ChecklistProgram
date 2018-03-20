@@ -42,8 +42,6 @@ public class Tables extends Application {
         TableColumn<Map, String> firstDataColumn = new TableColumn<>("Class A");
         TableColumn<Map, String> secondDataColumn = new TableColumn<>("Class B");
 
-
-
         firstDataColumn.setCellValueFactory(new MapValueFactory(Column1MapKey));
         firstDataColumn.setMinWidth(130);
         secondDataColumn.setCellValueFactory(new MapValueFactory(Column2MapKey));

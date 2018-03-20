@@ -17,18 +17,27 @@
 package com.src.gui;
 
 import com.src.config.ConfigManager;
+import com.src.config.ConfigParser;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.cell.MapValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Callback;
+import javafx.util.StringConverter;
 
 import java.awt.*;
 import java.io.File;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -40,22 +49,22 @@ public class ConfigManagerGUI {
     private final int WINDOW_HEIGHT = 215;
     private final int WINDOW_WIDTH = 325;
 
+    private final String COLUMN_A_KEY = "property";
+    private final String COLUMN_B_KEY = "value";
+
     private ComboBox<String>    mDestComboBox;
 
     private TableView   mDataTable;
+    private TableColumn<Map, String> mConfigProperty;
+    private TableColumn<Map, String> mConfigValue;
 
-    private TableColumn mConfigProperty;
-
-    private TableColumn mConfigValue;
+    ObservableList<Map> mAllData;
 
     private Button  mNewConfigButton;
+    private Button  mLoadConfig;
 
-    private Button mLoadConfig;
-
-    private Stage   mStage;
-
-    private Scene   mScene;
-
+    private Stage    mStage;
+    private Scene    mScene;
     private GridPane mGridPane;
 
     private ConfigManager mConfigManager;
@@ -70,12 +79,33 @@ public class ConfigManagerGUI {
         if (!mConfigManager.getKeys().isEmpty())
             mDestComboBox.getItems().addAll(mConfigManager.getKeys());
 
+        mConfigProperty = new TableColumn<>("Property");
+        mConfigValue = new TableColumn<>("Value");
 
-        mDataTable = new TableView();
-        mConfigProperty = new TableColumn("Property");
-        mConfigValue = new TableColumn("Value");
+        mConfigProperty.setCellValueFactory(new MapValueFactory<>(COLUMN_A_KEY));
+        mConfigProperty.setMinWidth(130);
+        mConfigValue.setCellValueFactory(new MapValueFactory<>(COLUMN_B_KEY));
+        mConfigValue.setMinWidth(130);
 
-        mDataTable.getColumns().addAll(mConfigProperty,mConfigValue);
+        mAllData = FXCollections.observableArrayList();
+        mDataTable = new TableView<>(mAllData);
+        mDataTable.setEditable(false);
+        mDataTable.getSelectionModel().setCellSelectionEnabled(true);
+        mDataTable.getColumns().setAll(mConfigProperty, mConfigValue);
+
+        Callback<TableColumn<Map, String>, TableCell<Map, String>>
+                cellFactoryForMap = p -> new TextFieldTableCell(new StringConverter() {
+            @Override
+            public String toString(Object t) {
+                return t.toString();
+            }
+            @Override
+            public Object fromString(String string) {
+                return string;
+            }
+        });
+        mConfigProperty.setCellFactory(cellFactoryForMap);
+        mConfigValue.setCellFactory(cellFactoryForMap);
 
         mNewConfigButton = new Button("Add New Config");
         mLoadConfig = new Button("Load");
@@ -89,6 +119,14 @@ public class ConfigManagerGUI {
         mGridPane.add(mDestComboBox, 0, 0);
         mGridPane.add(mNewConfigButton, 2,0);
         mGridPane.add(mLoadConfig, 1, 0);
+
+        final VBox vbox = new VBox();
+
+        vbox.setSpacing(5);
+        vbox.setPadding(new Insets(10, 0, 0, 10));
+        vbox.getChildren().addAll(mDataTable);
+
+        mGridPane.add(vbox, 0, 1,3,1);
 
         mScene = new Scene(mGridPane, WINDOW_WIDTH, WINDOW_HEIGHT);
 
@@ -112,10 +150,37 @@ public class ConfigManagerGUI {
         });
 
         // When user clicks on choice
-        mDestComboBox.setOnMouseReleased(event -> {
-            // TODO Update the table view items
+        mLoadConfig.setOnAction(event -> {
+            try {
+                if (mConfigManager.getKeys().contains(mDestComboBox.getValue()))
+                    updateTableView(mDestComboBox.getValue());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
 
+    }
+
+    private void updateTableView(String key) {
+        mAllData.removeAll(mAllData);
+        ConfigParser cp = mConfigManager.getValue(key);
+
+        Map<String, String> dataRowOne = new HashMap<>();
+        Map<String, String> dataRowTwo = new HashMap<>();
+        Map<String, String> dataRowThree = new HashMap<>();
+
+        dataRowOne.put(COLUMN_A_KEY, "InputFileName");
+        dataRowOne.put(COLUMN_B_KEY, cp.getInputFileName());
+
+        dataRowTwo.put(COLUMN_A_KEY, "OutputFileName");
+        dataRowTwo.put(COLUMN_B_KEY, cp.getOutputFileName());
+
+        dataRowThree.put(COLUMN_A_KEY, "Routes");
+        dataRowThree.put(COLUMN_B_KEY, cp.isMultipleRoutes() ? Arrays.toString(cp.getMultipleRoute()) : cp.getTitle());
+
+        mAllData.add(dataRowOne);
+        mAllData.add(dataRowTwo);
+        mAllData.add(dataRowThree);
     }
 
     public void parseUCR(File in, Desktop desktop) throws Exception {

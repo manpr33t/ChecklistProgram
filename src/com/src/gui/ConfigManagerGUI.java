@@ -20,6 +20,7 @@ import com.src.config.ConfigManager;
 import com.src.config.ConfigParser;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -29,6 +30,7 @@ import javafx.scene.control.cell.MapValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
@@ -46,22 +48,20 @@ import java.util.Map;
  */
 public class ConfigManagerGUI {
 
-    private final int WINDOW_HEIGHT = 215;
-    private final int WINDOW_WIDTH = 325;
+    private final int WINDOW_HEIGHT = 325;
+    private final int WINDOW_WIDTH = 465;
 
-    private final String COLUMN_A_KEY = "property";
-    private final String COLUMN_B_KEY = "value";
-
-    private ComboBox<String>    mDestComboBox;
+    private static final String[] COLUMN_KEYS = {"output", "title", "input" };
 
     private TableView   mDataTable;
-    private TableColumn<Map, String> mConfigProperty;
-    private TableColumn<Map, String> mConfigValue;
+    private TableColumn<Map, String> mOutputColumn;
+    private TableColumn<Map, String> mTitleColumn;
+    private TableColumn<Map, String> mInputColumn;
 
-    ObservableList<Map> mAllData;
+    private ObservableList<Map> mAllData;
 
     private Button  mNewConfigButton;
-    private Button  mLoadConfig;
+    private Button  mSaveChangesButton;
 
     private Stage    mStage;
     private Scene    mScene;
@@ -74,24 +74,25 @@ public class ConfigManagerGUI {
 
         mConfigManager = configManager;
 
-        mDestComboBox = new ComboBox<>();
+        mOutputColumn = new TableColumn<>("Output");
+        mTitleColumn = new TableColumn<>("Sort Groups");
+        mInputColumn = new TableColumn<>("Input");
 
-        if (!mConfigManager.getKeys().isEmpty())
-            mDestComboBox.getItems().addAll(mConfigManager.getKeys());
+        mOutputColumn.setCellValueFactory(new MapValueFactory<>(COLUMN_KEYS[0]));
+        mTitleColumn.setCellValueFactory(new MapValueFactory<>(COLUMN_KEYS[1]));
+        mInputColumn.setCellValueFactory(new MapValueFactory<>(COLUMN_KEYS[2]));
 
-        mConfigProperty = new TableColumn<>("Property");
-        mConfigValue = new TableColumn<>("Value");
+        mOutputColumn.setMinWidth(150);
+        mTitleColumn.setMinWidth(150);
+        mInputColumn.setMinWidth(150);
 
-        mConfigProperty.setCellValueFactory(new MapValueFactory<>(COLUMN_A_KEY));
-        mConfigProperty.setMinWidth(130);
-        mConfigValue.setCellValueFactory(new MapValueFactory<>(COLUMN_B_KEY));
-        mConfigValue.setMinWidth(130);
-
-        mAllData = FXCollections.observableArrayList();
+        mAllData = mConfigManager.getObservableMap(COLUMN_KEYS);
         mDataTable = new TableView<>(mAllData);
-        mDataTable.setEditable(false);
+        mDataTable.setEditable(true);
+        mDataTable.setMaxWidth(500);
+        mDataTable.setMaxHeight(280);
         mDataTable.getSelectionModel().setCellSelectionEnabled(true);
-        mDataTable.getColumns().setAll(mConfigProperty, mConfigValue);
+        mDataTable.getColumns().setAll(mOutputColumn, mTitleColumn, mInputColumn);
 
         Callback<TableColumn<Map, String>, TableCell<Map, String>>
                 cellFactoryForMap = p -> new TextFieldTableCell(new StringConverter() {
@@ -104,29 +105,24 @@ public class ConfigManagerGUI {
                 return string;
             }
         });
-        mConfigProperty.setCellFactory(cellFactoryForMap);
-        mConfigValue.setCellFactory(cellFactoryForMap);
+
+        mOutputColumn.setCellFactory(cellFactoryForMap);
+        mTitleColumn.setCellFactory(cellFactoryForMap);
+        mInputColumn.setCellFactory(cellFactoryForMap);
 
         mNewConfigButton = new Button("Add New Config");
-        mLoadConfig = new Button("Load");
+        mSaveChangesButton = new Button("Save Changes");
 
         mGridPane = new GridPane();
         mGridPane.setAlignment(Pos.TOP_LEFT);
         mGridPane.setHgap(10);
         mGridPane.setVgap(10);
-        mGridPane.setPadding(new Insets(5,5,5,5));
+        mGridPane.setPadding(new Insets(10,0,0,10));
 
-        mGridPane.add(mDestComboBox, 0, 0);
-        mGridPane.add(mNewConfigButton, 2,0);
-        mGridPane.add(mLoadConfig, 1, 0);
-
-        final VBox vbox = new VBox();
-
-        vbox.setSpacing(5);
-        vbox.setPadding(new Insets(10, 0, 0, 10));
-        vbox.getChildren().addAll(mDataTable);
-
-        mGridPane.add(vbox, 0, 1,3,1);
+        mGridPane.setGridLinesVisible(true);
+        mGridPane.add(mNewConfigButton, 1,1);
+        GridPane.setHalignment(mNewConfigButton, HPos.RIGHT);
+        mGridPane.add(mDataTable, 0, 0,2,1);
 
         mScene = new Scene(mGridPane, WINDOW_WIDTH, WINDOW_HEIGHT);
 
@@ -149,38 +145,33 @@ public class ConfigManagerGUI {
             }
         });
 
-        // When user clicks on choice
-        mLoadConfig.setOnAction(event -> {
-            try {
-                if (mConfigManager.getKeys().contains(mDestComboBox.getValue()))
-                    updateTableView(mDestComboBox.getValue());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        mOutputColumn.setOnEditStart(event -> {
+            // TODO When user starts edit on Output Column
         });
 
-    }
+        mOutputColumn.setOnEditCommit(event -> {
+            // TODO Update config manager accordingly to the changes
+        });
 
-    private void updateTableView(String key) {
-        mAllData.removeAll(mAllData);
-        ConfigParser cp = mConfigManager.getValue(key);
+        mTitleColumn.setOnEditStart(event -> {
+            // TODO When user starts edit on Title Column
+        });
 
-        Map<String, String> dataRowOne = new HashMap<>();
-        Map<String, String> dataRowTwo = new HashMap<>();
-        Map<String, String> dataRowThree = new HashMap<>();
+        mTitleColumn.setOnEditCommit(event -> {
+            // TODO Update config manager accordingly to the changes
+        });
 
-        dataRowOne.put(COLUMN_A_KEY, "InputFileName");
-        dataRowOne.put(COLUMN_B_KEY, cp.getInputFileName());
-
-        dataRowTwo.put(COLUMN_A_KEY, "OutputFileName");
-        dataRowTwo.put(COLUMN_B_KEY, cp.getOutputFileName());
-
-        dataRowThree.put(COLUMN_A_KEY, "Routes");
-        dataRowThree.put(COLUMN_B_KEY, cp.isMultipleRoutes() ? Arrays.toString(cp.getMultipleRoute()) : cp.getTitle());
-
-        mAllData.add(dataRowOne);
-        mAllData.add(dataRowTwo);
-        mAllData.add(dataRowThree);
+        mInputColumn.setOnEditStart(event -> {
+            // TODO Allow user to change input file
+            // TODO Open a file chooser to choose a file
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Choose new Input File...");
+            File file = fileChooser.showOpenDialog(mStage);
+            if (file != null)
+                event.getRowValue().put(COLUMN_KEYS[2], file.getAbsolutePath());
+            System.out.println(event.getRowValue());
+            System.out.println("Stuff happened here.");
+        });
     }
 
     public void parseUCR(File in, Desktop desktop) throws Exception {

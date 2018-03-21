@@ -33,12 +33,9 @@ import static javafx.collections.FXCollections.observableSet;
 public class ConfigManager {
 
     private ObservableMap<String, ConfigParser> mConfigMap;
-    private ObservableSet<String> mConfigMapKeys;
     private UCRParser mUCRData;
     private Set<String> mConfigFileNames;
-    private Properties mInputProperties;
     private Properties mOutputProperties;
-    private FileOutputStream mFileOutput;
 
     private String mInputFileName;
 
@@ -48,18 +45,16 @@ public class ConfigManager {
         mUCRData = new UCRParser();
 
         mConfigMap = observableMap(new TreeMap<>());
-        mConfigMapKeys = observableSet(new TreeSet<>());
-        // TODO Add Listener for changes to the Config Map
         mConfigFileNames = new TreeSet<>();
 
-        mInputProperties = new Properties();
+        Properties properties = new Properties();
         mOutputProperties = new Properties();
 
         InputStream fileInput;
 
         try {
             fileInput = new FileInputStream(inputFileName);
-            mInputProperties.load(fileInput);
+            properties.load(fileInput);
         } catch (FileNotFoundException e) {
             Utility.makeFile(inputFileName);
             saveCurrentConfig();
@@ -67,7 +62,7 @@ public class ConfigManager {
         }
 
         try {
-            mConfigFileNames.addAll(Arrays.asList(mInputProperties.getProperty("config_filenames").split(",")));
+            mConfigFileNames.addAll(Arrays.asList(properties.getProperty("config_filenames").split(",")));
         } catch (NullPointerException e) {
             saveCurrentConfig();
             throw new NullPointerException("Config File Empty");
@@ -100,7 +95,7 @@ public class ConfigManager {
     }
 
     public void saveCurrentConfig() throws Exception {
-        mFileOutput = new FileOutputStream(this.mInputFileName);
+        FileOutputStream fileOutputStream = new FileOutputStream(this.mInputFileName);
 
         System.out.println("Saving current Config");
 
@@ -113,9 +108,9 @@ public class ConfigManager {
 
         this.mOutputProperties.setProperty("config_filenames",
                 sb.toString().length() < 2 ? "" : sb.toString());
-        this.mOutputProperties.store(this.mFileOutput,null);
+        this.mOutputProperties.store(fileOutputStream,null);
 
-        mFileOutput.close();
+        fileOutputStream.close();
     }
 
     public void parseUCR(File inputFile, Desktop desktop) throws Exception {
@@ -149,9 +144,19 @@ public class ConfigManager {
         if (columnKeys.length == 3) {
             for (String s : mConfigMap.keySet()) {
                 Map<String, String> dataRow = new HashMap<>();
-                dataRow.put(columnKeys[0], mConfigMap.get(s).getTitle());
-                dataRow.put(columnKeys[1], mConfigMap.get(s).getInputFileName());
-                dataRow.put(columnKeys[2], mConfigMap.get(s).getOutputFileName());
+                String temp = "";
+                if (mConfigMap.get(s).isMultipleRoutes()) {
+                    for (String k : mConfigMap.get(s).getMultipleRoute()) {
+                        temp += k;
+                        temp += ",";
+                    }
+                    temp = temp.substring(0, temp.length()-1);
+                } else {
+                    temp = mConfigMap.get(s).getTitle();
+                }
+                dataRow.put(columnKeys[0], mConfigMap.get(s).getOutputFileName());
+                dataRow.put(columnKeys[1], temp);
+                dataRow.put(columnKeys[2], mConfigMap.get(s).getInputFileName());
                 mapData.add(dataRow);
             }
         }

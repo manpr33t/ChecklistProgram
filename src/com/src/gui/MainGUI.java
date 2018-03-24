@@ -19,13 +19,12 @@ package com.src.gui;
 import com.src.checklist.Parser;
 import com.src.checklist.Utility;
 import com.src.config.ConfigManager;
-
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.*;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
@@ -216,7 +215,7 @@ public class MainGUI extends Application{
 
         mConfigButton.setOnAction(event -> {
             try {
-                mConfigManagerGUI.run();
+                mConfigManagerGUI.run(stage);
             } catch (Exception e) {
                 mLog.appendText(e.getLocalizedMessage() + "\n");
             }

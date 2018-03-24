@@ -17,28 +17,26 @@
 package com.src.gui;
 
 import com.src.config.ConfigManager;
-import com.src.config.ConfigParser;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.MapValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
 
 import java.awt.*;
 import java.io.File;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
 
 
@@ -61,7 +59,6 @@ public class ConfigManagerGUI {
     private ObservableList<Map> mAllData;
 
     private Button  mNewConfigButton;
-    private Button  mSaveChangesButton;
 
     private Stage    mStage;
     private Scene    mScene;
@@ -111,7 +108,6 @@ public class ConfigManagerGUI {
         mInputColumn.setCellFactory(cellFactoryForMap);
 
         mNewConfigButton = new Button("Add New Config");
-        mSaveChangesButton = new Button("Save Changes");
 
         mGridPane = new GridPane();
         mGridPane.setAlignment(Pos.TOP_LEFT);
@@ -161,6 +157,10 @@ public class ConfigManagerGUI {
             // TODO Update config manager accordingly to the changes
         });
 
+        mStage.setOnCloseRequest(event -> {
+            // TODO Save everything
+        });
+
         mInputColumn.setOnEditStart(event -> {
             // TODO Allow user to change input file
             // TODO Open a file chooser to choose a file
@@ -178,8 +178,12 @@ public class ConfigManagerGUI {
         this.mConfigManager.parseUCR(in, desktop);
     }
 
-    public void run() throws Exception {
+    public void run(Stage parentStage) throws Exception {
         eventHandler();
+        if (mStage.getModality() != Modality.WINDOW_MODAL)
+            mStage.initModality(Modality.WINDOW_MODAL);
+        if (mStage.getOwner() != parentStage)
+            mStage.initOwner(parentStage);
         mStage.show();
     }
 }

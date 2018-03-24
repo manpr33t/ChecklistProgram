@@ -17,14 +17,15 @@
 package com.src.config;
 
 import com.src.checklist.Utility;
-import javafx.collections.*;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.ObservableMap;
 
 import java.awt.*;
 import java.io.*;
 import java.util.*;
 
 import static javafx.collections.FXCollections.observableMap;
-import static javafx.collections.FXCollections.observableSet;
 
 /**
  * @author Manpreet Singh (2854787)
@@ -88,6 +89,10 @@ public class ConfigManager {
 
     public ConfigParser getValue(String key) {
         return this.mConfigMap.get(key);
+    }
+
+    public void updateKey(String prevKey, String newKey) {
+        // TODO remove old key and files, then update accordingly
     }
 
     public void addNewConfig(String configFileName) {

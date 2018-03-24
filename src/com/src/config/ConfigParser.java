@@ -19,7 +19,7 @@ package com.src.config;
 import com.src.checklist.Checklist;
 import javafx.beans.property.SimpleStringProperty;
 
-import java.io.*;
+import java.io.FileInputStream;
 import java.util.Collection;
 import java.util.Properties;
 
@@ -30,7 +30,7 @@ import java.util.Properties;
 public class ConfigParser {
     private Properties  mConfigReader;
     private boolean     mMultipleRoutes;
-    private String[] mMultipleRouteCodes;
+    private String[]    mMultipleRouteCodes;
     private Checklist   mDispatchCheckList;
 
     private SimpleStringProperty mInputFileName;

@@ -1,1 +1,1 @@
-C:\Users\%USERNAME%\Documents\JDK\bin\java.exe -jar CSVReader.jar
+jre\bin\java.exe -jar CSVReader.jar

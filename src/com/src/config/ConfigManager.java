@@ -48,26 +48,7 @@ public class ConfigManager {
         mConfigMap = observableMap(new TreeMap<>());
         mConfigFileNames = new TreeSet<>();
 
-        Properties properties = new Properties();
-        mOutputProperties = new Properties();
-
-        InputStream fileInput;
-
-        try {
-            fileInput = new FileInputStream(inputFileName);
-            properties.load(fileInput);
-        } catch (FileNotFoundException e) {
-            Utility.makeFile(inputFileName);
-            saveCurrentConfig();
-            throw new FileNotFoundException(e.getLocalizedMessage());
-        }
-
-        try {
-            mConfigFileNames.addAll(Arrays.asList(properties.getProperty("config_filenames").split(",")));
-        } catch (NullPointerException e) {
-            saveCurrentConfig();
-            throw new NullPointerException("Config File Empty");
-        }
+        loadConfigFiles();
 
         for (String s : mConfigFileNames) {
             if (!s.isEmpty()) {
@@ -80,7 +61,6 @@ public class ConfigManager {
                 }
             }
         }
-        fileInput.close();
     }
 
     public Set<String> getKeys() throws Exception {
@@ -92,7 +72,8 @@ public class ConfigManager {
     }
 
     public void updateKey(String prevKey, String newKey) {
-        // TODO remove old key and files, then update accordingly
+        this.mConfigMap.put(newKey, this.mConfigMap.get(prevKey));
+        this.mConfigMap.remove(prevKey);
     }
 
     public void addNewConfig(String configFileName) {
@@ -138,12 +119,6 @@ public class ConfigManager {
         openOutputFiles(desktop);
     }
 
-    private void openOutputFiles(Desktop desktop) throws IOException {
-        for (String s : mConfigMap.keySet()) {
-            desktop.open(new File(mConfigMap.get(s).getOutputFileName()));
-        }
-    }
-
     public ObservableList<Map> getObservableMap(String[] columnKeys) {
         ObservableList<Map> mapData = FXCollections.observableArrayList();
         if (columnKeys.length == 3) {
@@ -166,5 +141,36 @@ public class ConfigManager {
             }
         }
         return  mapData;
+    }
+
+    private void openOutputFiles(Desktop desktop) throws IOException {
+        for (String s : mConfigMap.keySet()) {
+            desktop.open(new File(mConfigMap.get(s).getOutputFileName()));
+        }
+    }
+
+    private void loadConfigFiles() throws Exception {
+        Properties properties = new Properties();
+        mOutputProperties = new Properties();
+
+        InputStream fileInput;
+
+        try {
+            fileInput = new FileInputStream(mInputFileName);
+            properties.load(fileInput);
+        } catch (FileNotFoundException e) {
+            Utility.makeFile(mInputFileName);
+            saveCurrentConfig();
+            throw new FileNotFoundException(e.getLocalizedMessage());
+        }
+
+        try {
+            mConfigFileNames.addAll(Arrays.asList(properties.getProperty("config_filenames").split(",")));
+        } catch (NullPointerException e) {
+            saveCurrentConfig();
+            throw new NullPointerException("Config File Empty");
+        }
+
+        fileInput.close();
     }
 }

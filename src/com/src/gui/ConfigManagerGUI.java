@@ -68,6 +68,7 @@ public class ConfigManagerGUI {
 
     public ConfigManagerGUI(ConfigManager configManager) throws Exception {
         mStage = new Stage();
+        mStage.initModality(Modality.WINDOW_MODAL);
 
         mConfigManager = configManager;
 
@@ -141,29 +142,25 @@ public class ConfigManagerGUI {
             }
         });
 
-        mOutputColumn.setOnEditStart(event -> {
-            // TODO When user starts edit on Output Column
-        });
-
         mOutputColumn.setOnEditCommit(event -> {
             // TODO Update config manager accordingly to the changes
-        });
-
-        mTitleColumn.setOnEditStart(event -> {
-            // TODO When user starts edit on Title Column
+            event.getRowValue().put(COLUMN_KEYS[0], event.getNewValue());
         });
 
         mTitleColumn.setOnEditCommit(event -> {
-            // TODO Update config manager accordingly to the changes
+            // Update Row Data.
+            event.getRowValue().put(COLUMN_KEYS[1], event.getNewValue());
+            // Update the ConfigManager map and have it delete the old Config File.
+            mConfigManager.updateKey(event.getOldValue().replaceAll(",", "-"),
+                    event.getNewValue().replaceAll(",", "-"));
         });
 
         mStage.setOnCloseRequest(event -> {
-            // TODO Save everything
+            for (Map m : mAllData)
+                System.out.println(m);
         });
 
         mInputColumn.setOnEditStart(event -> {
-            // TODO Allow user to change input file
-            // TODO Open a file chooser to choose a file
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Choose new Input File...");
             File file = fileChooser.showOpenDialog(mStage);
@@ -180,9 +177,7 @@ public class ConfigManagerGUI {
 
     public void run(Stage parentStage) throws Exception {
         eventHandler();
-        if (mStage.getModality() != Modality.WINDOW_MODAL)
-            mStage.initModality(Modality.WINDOW_MODAL);
-        if (mStage.getOwner() != parentStage)
+        if (mStage.getOwner() == null)
             mStage.initOwner(parentStage);
         mStage.show();
     }

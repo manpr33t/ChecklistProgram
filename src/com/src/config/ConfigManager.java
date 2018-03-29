@@ -74,6 +74,8 @@ public class ConfigManager {
     public void updateKey(String prevKey, String newKey) {
         this.mConfigMap.put(newKey, this.mConfigMap.get(prevKey));
         this.mConfigMap.remove(prevKey);
+        File oldFile = new File(String.format("dependencies/%s.properties", prevKey));
+        oldFile.delete();
     }
 
     public void addNewConfig(String configFileName) {
@@ -141,6 +143,10 @@ public class ConfigManager {
             }
         }
         return  mapData;
+    }
+
+    public void updateData() {
+        // TODO update data stored in the Map
     }
 
     private void openOutputFiles(Desktop desktop) throws IOException {

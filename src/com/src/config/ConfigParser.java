@@ -33,9 +33,9 @@ public class ConfigParser {
     private String[]    mMultipleRouteCodes;
     private Checklist   mDispatchCheckList;
 
-    private SimpleStringProperty mInputFileName;
-    private SimpleStringProperty mOutputFileName;
-    private SimpleStringProperty mDestinationTitle;
+    private String mInputFileName;
+    private String mOutputFileName;
+    private String mDestinationTitle;
 
     public ConfigParser(String fileName) throws Exception{
 
@@ -43,29 +43,41 @@ public class ConfigParser {
 
         mConfigReader.load(new FileInputStream("dependencies/" + fileName));
 
-        this.mInputFileName = new SimpleStringProperty(this.mConfigReader.getProperty("input_file"));
-        this.mOutputFileName = new SimpleStringProperty(this.mConfigReader.getProperty("output_file"));
-        this.mDestinationTitle = new SimpleStringProperty(this.mConfigReader.getProperty("destination_tag"));
+        this.mInputFileName = this.mConfigReader.getProperty("input_file");
+        this.mOutputFileName = this.mConfigReader.getProperty("output_file");
+        this.mDestinationTitle = this.mConfigReader.getProperty("destination_tag");
 
-        if (this.mDestinationTitle.get().split(",").length > 0) {
+        if (this.mDestinationTitle.split(",").length > 0) {
             this.mMultipleRoutes = true;
-            this.mMultipleRouteCodes = this.mDestinationTitle.get().split("-");
+            this.mMultipleRouteCodes = this.mDestinationTitle.split("-");
         }
 
-        this.mDispatchCheckList = new Checklist(this.mInputFileName.get(), this.mOutputFileName.get(), this.mDestinationTitle.get());
+        this.mDispatchCheckList = new Checklist(this.mInputFileName, this.mOutputFileName, this.mDestinationTitle);
         this.mConfigReader.clear();
     }
 
     public String getInputFileName() {
-        return mInputFileName.get();
+        return mInputFileName;
     }
 
     public String getOutputFileName() {
-        return mOutputFileName.get();
+        return mOutputFileName;
     }
 
     public String getTitle() {
-        return mDestinationTitle.get();
+        return mDestinationTitle;
+    }
+
+    public void setInputFileName(String s) {
+        this.mInputFileName = s;
+    }
+
+    public void setOutputFileName(String s) {
+        this.mOutputFileName = s;
+    }
+
+    public void setTitle(String s) {
+        this.mDestinationTitle = s;
     }
 
     public boolean isMultipleRoutes() {
@@ -78,5 +90,9 @@ public class ConfigParser {
 
     public void run(Collection<String> collection) throws Exception {
         mDispatchCheckList.generateDifference(collection);
+    }
+
+    public void save() {
+        // TODO Write to a new Properties File
     }
 }

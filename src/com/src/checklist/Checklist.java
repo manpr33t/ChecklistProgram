@@ -31,7 +31,7 @@ public class Checklist {
     private ArrayList<String> mCheckList = new ArrayList<>();
     private Collection<String> mSimilar;
     private ArrayList<String[]> outputBuffer = new ArrayList<>();
-    private Collection<String> mFinalOutput = new TreeSet<>();
+    private ArrayList<String> mFinalOutput = new ArrayList<>();
     private Collection<String> mDifferent = new HashSet<>();
     private String mDestinationTag;
 
@@ -127,6 +127,11 @@ public class Checklist {
                 }
             }
         }
+        mFinalOutput.sort(this::compare);
+    }
+
+    private int compare(String a, String b) {
+        return a.split(",")[2].compareTo(b.split(",")[2]);
     }
 
     /**
@@ -143,6 +148,9 @@ public class Checklist {
         pw.write("Number of Containers:," + mFinalOutput.size() + "\n");
         pw.write("Generated at:," + mGenerationFormat.format(new Date()));
         pw.close();
+
+        OutputChecklistKt.outputList(mFinalOutput, "DDU,Zipcode,Location," + mDateFormat.format(new Date()) + "," + mDestinationTag + "\n", this.mOutputFileName+".xls");
+
         prepForNextRun();
     }
 

@@ -35,6 +35,9 @@ class UCRParser {
      */
     fun readDataFromFile(inputFile: File) {
 
+        if (!inputFile.name.split('.')[1].equals("xls"))
+            throw IllegalArgumentException("Unsupported File type")
+
         // Re-establish objects every time this method is run
         spreadSheetRows = ArrayList()
         dataMap = HashMap()

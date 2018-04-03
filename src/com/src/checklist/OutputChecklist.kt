@@ -1,3 +1,19 @@
+/*
+   Copyright 2018 Manpreet Singh
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ */
+
 package com.src.checklist
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook
@@ -13,6 +29,7 @@ fun outputList(data: MutableCollection<String>, header: String, fileName: String
     val workBook = HSSFWorkbook()
     val sheet = workBook.createSheet(fileName)
 
+    // Set the cell styles
     val style = workBook.createCellStyle()
     val font = workBook.createFont()
     font.fontHeightInPoints = 11
@@ -21,7 +38,7 @@ fun outputList(data: MutableCollection<String>, header: String, fileName: String
 
     var rowNum = 0
 
-    // Output file Header
+    // Output file header
     val headerRow = sheet.createRow(rowNum++)
     headerRow.setRowStyle(style)
     var headerCellNum = 0
@@ -41,14 +58,16 @@ fun outputList(data: MutableCollection<String>, header: String, fileName: String
         }
     }
 
+    // Output file footer
     val footerRow = sheet.createRow(++rowNum)
     footerRow.setRowStyle(style)
     footerRow.createCell(0).setCellValue("Number of Containers:")
     footerRow.createCell(1).setCellValue(data.size.toString())
 
-
+    // Resize column 0
     sheet.autoSizeColumn(0)
 
+    // Save the file
     val outputStream = FileOutputStream(fileName)
     workBook.write(outputStream)
     workBook.close()

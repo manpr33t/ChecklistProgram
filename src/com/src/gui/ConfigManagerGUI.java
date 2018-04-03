@@ -47,26 +47,29 @@ import java.util.Map;
 public class ConfigManagerGUI {
 
     private final int WINDOW_HEIGHT = 325;
-    private final int WINDOW_WIDTH = 465;
+    private final int WINDOW_WIDTH  = 465;
 
     private static final String[] COLUMN_KEYS = {"output", "title", "input" };
 
-    private TableView   mDataTable;
+    private TableView                mDataTable;
     private TableColumn<Map, String> mOutputColumn;
     private TableColumn<Map, String> mTitleColumn;
     private TableColumn<Map, String> mInputColumn;
 
-    private ObservableList<Map> mAllData;
+    private ObservableList<Map>      mAllData;
 
-    private Button  mNewConfigButton;
+    private Button   mNewConfigButton;
 
     private Stage    mStage;
-    private Scene    mScene;
     private GridPane mGridPane;
 
     private ConfigManager mConfigManager;
 
-    public ConfigManagerGUI(ConfigManager configManager) throws Exception {
+    /**
+     * Configuration Manager GUI to edit and push data to the ConfigManager Object
+     * @param configManager ConfigManager Object to push data to
+     */
+    public ConfigManagerGUI(ConfigManager configManager) {
         mStage = new Stage();
         mStage.initModality(Modality.WINDOW_MODAL);
 
@@ -92,14 +95,14 @@ public class ConfigManagerGUI {
         mDataTable.getSelectionModel().setCellSelectionEnabled(true);
         mDataTable.getColumns().setAll(mOutputColumn, mTitleColumn, mInputColumn);
 
-        Callback<TableColumn<Map, String>, TableCell<Map, String>>
-                cellFactoryForMap = p -> new TextFieldTableCell(new StringConverter() {
+        Callback<TableColumn<Map, String>, TableCell<Map, String>> cellFactoryForMap = TextFieldTableCell.forTableColumn(new StringConverter<String>() {
             @Override
-            public String toString(Object t) {
-                return t.toString();
+            public String toString(String object) {
+                return object;
             }
+
             @Override
-            public Object fromString(String string) {
+            public String fromString(String string) {
                 return string;
             }
         });
@@ -121,14 +124,21 @@ public class ConfigManagerGUI {
         GridPane.setHalignment(mNewConfigButton, HPos.RIGHT);
         mGridPane.add(mDataTable, 0, 0,2,1);
 
-        mScene = new Scene(mGridPane, WINDOW_WIDTH, WINDOW_HEIGHT);
+        Scene scene = new Scene(mGridPane, WINDOW_WIDTH, WINDOW_HEIGHT);
 
-        mStage.setScene(mScene);
+        mStage.setScene(scene);
         mStage.setResizable(false);
         mStage.setTitle("Config Manager");
     }
 
+    /**
+     * Assign Actions to buttons
+     * @throws Exception
+     */
     private void eventHandler() throws Exception {
+        /*
+        Create a new config at the click of a button
+         */
         mNewConfigButton.setOnAction(event -> {
             ConfigSetupGUI newConfig = new ConfigSetupGUI();
             try {
@@ -142,11 +152,17 @@ public class ConfigManagerGUI {
             }
         });
 
+        /*
+        When user edits and commits a change to the Output Column
+         */
         mOutputColumn.setOnEditCommit(event -> {
             // TODO Update config manager accordingly to the changes
             event.getRowValue().put(COLUMN_KEYS[0], event.getNewValue());
         });
 
+        /*
+        When user edits and commits a change to the Title Column
+         */
         mTitleColumn.setOnEditCommit(event -> {
             // Update Row Data.
             event.getRowValue().put(COLUMN_KEYS[1], event.getNewValue());
@@ -155,11 +171,17 @@ public class ConfigManagerGUI {
                     event.getNewValue().replaceAll(",", "-"));
         });
 
+        /*
+        When the user closes this window
+         */
         mStage.setOnCloseRequest(event -> {
             for (Map m : mAllData)
                 System.out.println(m);
         });
 
+        /*
+        When user wants to change the file Input
+         */
         mInputColumn.setOnEditStart(event -> {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Choose new Input File...");
@@ -171,10 +193,21 @@ public class ConfigManagerGUI {
         });
     }
 
+    /**
+     * Parse the UCR Excel File
+     * @param in Excel file to be parsed
+     * @param desktop The Desktop to open the file on
+     * @throws Exception File was null or File was incorrect format
+     */
     public void parseUCR(File in, Desktop desktop) throws Exception {
         this.mConfigManager.parseUCR(in, desktop);
     }
 
+    /**
+     * Run this Stage of the program
+     * @param parentStage Assign this stage a parent stage
+     * @throws Exception Either Config files are missing or there was some mishap with data edits
+     */
     public void run(Stage parentStage) throws Exception {
         eventHandler();
         if (mStage.getOwner() == null)

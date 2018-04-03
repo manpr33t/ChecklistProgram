@@ -141,10 +141,12 @@ public class MainGUI extends Application{
         mGridPane = new GridPane();
         mGridPane.setAlignment(Pos.TOP_LEFT);
 
+        // Edit how objects will be placed on the grid pane
         mGridPane.setHgap(15);
         mGridPane.setVgap(25);
         mGridPane.setPadding(new Insets(10,10,10,10));
 
+        // Place objects onto the gridpane
         mGridPane.add(mOpenFile, 0, 0);
         mGridPane.add(mGenerateFiles, 1,0);
         mGridPane.add(mLogScrollPane, 0, 1,3,1);
@@ -152,7 +154,7 @@ public class MainGUI extends Application{
         mGridPane.add(mLocation, 0, 2);
         mGridPane.add(mConfigButton, 2, 0);
 
-        // Custom GUI Classes
+        // Initialize the Config Manager class
         try {
             mConfig = new ConfigManager("dependencies/main_config.properties");
         } catch (Exception e) {
@@ -165,6 +167,7 @@ public class MainGUI extends Application{
             }
         }
 
+        // Initialize the Config Manager GUI class
         try {
             mConfigManagerGUI = new ConfigManagerGUI(mConfig);
         } catch (Exception e) {
@@ -180,6 +183,11 @@ public class MainGUI extends Application{
      * @param stage Stage object to aquire information from
      */
     private void eventHandler(Stage stage) {
+
+        /*
+        Assign action to the Open File button, show a file choose dialog and input that file
+        And of course it runs the actual program
+         */
         mOpenFile.setOnAction(event -> {
             File file = mFileChooser.showOpenDialog(stage);
             if (file != null) {
@@ -194,6 +202,9 @@ public class MainGUI extends Application{
             }
         });
 
+        /*
+        Currently a debug button, was previously used to recreate checklists from a saved UCR file
+         */
         mGenerateFiles.setOnAction(event -> {
             mLog.appendText("Generating checklists from saved UCR file\n");
             try {
@@ -204,6 +215,9 @@ public class MainGUI extends Application{
             }
         });
 
+        /*
+        Assign action to when someone clicks on my name, currently shows the full licence
+         */
         mName.setOnAction(event -> {
             mLog.appendText("Opening Licence\n");
             try {
@@ -213,6 +227,9 @@ public class MainGUI extends Application{
             }
         });
 
+        /*
+        Config button, Allows user to edit runtime configuration of the main program without having to recompile
+         */
         mConfigButton.setOnAction(event -> {
             try {
                 mConfigManagerGUI.run(stage);
@@ -221,6 +238,9 @@ public class MainGUI extends Application{
             }
         });
 
+        /*
+        Adding Escape key handler, currently Escape key closes the window
+         */
         stage.addEventHandler(KeyEvent.KEY_RELEASED, (KeyEvent event) -> {
             if (KeyCode.ESCAPE == event.getCode())
                 stage.close();
@@ -250,6 +270,9 @@ public class MainGUI extends Application{
         primaryStage.show();
     }
 
+    /**
+     * When the program exits
+     */
     @Override
     public void stop() {
         System.out.println("The show is over kids...");

@@ -17,7 +17,6 @@
 package com.src.config;
 
 import com.src.checklist.Checklist;
-import javafx.beans.property.SimpleStringProperty;
 
 import java.io.FileInputStream;
 import java.util.Collection;
@@ -37,6 +36,11 @@ public class ConfigParser {
     private String mOutputFileName;
     private String mDestinationTitle;
 
+    /**
+     * Properties file parser Object to pull data from a correctly formatted Properties file
+     * @param fileName Properties File to pull data from
+     * @throws Exception Properties File doesn't contain the information
+     */
     public ConfigParser(String fileName) throws Exception{
 
         mConfigReader = new Properties();
@@ -56,42 +60,82 @@ public class ConfigParser {
         this.mConfigReader.clear();
     }
 
+    /**
+     * Get the Input file name
+     * @return Input file name
+     */
     public String getInputFileName() {
         return mInputFileName;
     }
 
+    /**
+     * Get the Output file name of this config
+     * @return Output file name
+     */
     public String getOutputFileName() {
         return mOutputFileName;
     }
 
+    /**
+     * Get the Destination title of this Config
+     * @return Destination title
+     */
     public String getTitle() {
         return mDestinationTitle;
     }
 
+    /**
+     * Change the Input file name
+     * @param s Input file name
+     */
     public void setInputFileName(String s) {
         this.mInputFileName = s;
     }
 
+    /**
+     * Set the Output file name
+     * @param s Output file name
+     */
     public void setOutputFileName(String s) {
         this.mOutputFileName = s;
     }
 
+    /**
+     * Set the Destination Title
+     * @param s Title to change the Destination Title to
+     */
     public void setTitle(String s) {
         this.mDestinationTitle = s;
     }
 
+    /**
+     * Check if this Config has multiple route codes in its title or not
+     * @return True if it does, false otherwise
+     */
     public boolean isMultipleRoutes() {
         return this.mMultipleRoutes;
     }
 
+    /**
+     * Get the multiple routes if this title if they exist
+     * @return String Array with different Route codes
+     */
     public String[] getMultipleRoute() {
         return this.mMultipleRouteCodes;
     }
 
+    /**
+     * Run the checklist with the given input Collection
+     * @param collection Collection of Strings containing Sort Destination Codes
+     * @throws Exception
+     */
     public void run(Collection<String> collection) throws Exception {
         mDispatchCheckList.generateDifference(collection);
     }
 
+    /**
+     * Save the Properties file
+     */
     public void save() {
         // TODO Write to a new Properties File
     }

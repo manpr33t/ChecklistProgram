@@ -26,6 +26,7 @@ import java.util.Collection;
  * The Class to setup/generate and run the Checklist Classes for all the different Destinations.
  * @author Manpreet Singh (2854787)
  *         FedEx Smartport SEWA/5983
+ * @deprecated Use UCRParser insteads
  */
 public class Parser {
 

@@ -40,7 +40,7 @@ import java.util.Properties;
 public class ConfigSetupGUI {
 
     private final int   WINDOW_HEIGHT = 150;
-    private final int   WINDOW_WIDTH = 250;
+    private final int   WINDOW_WIDTH  = 250;
 
     private String      mNewFileName;
 
@@ -61,6 +61,10 @@ public class ConfigSetupGUI {
 
     private OutputStream mOutput;
 
+    /**
+     * Configuration Setup GUI
+     * This Window allows the user to add a now configuration to the existing configuration
+     */
     public ConfigSetupGUI() {
         mStage = new Stage();
 
@@ -104,13 +108,27 @@ public class ConfigSetupGUI {
         mProperties = new Properties();
     }
 
+    /**
+     * Get the name of the new Properties file
+     * @return String containing the name of the file including the file extention
+     * @throws Exception There was no file name specified
+     */
     public String getNewFileName() throws Exception{
         if (!this.mFileName.getText().isEmpty())
             return mNewFileName + ".properties";
         throw new Exception("No File name specified");
     }
 
+    /**
+     * Assign action to different GUI elements
+     * @param manager Configuration Manager being used to track and store changes
+     * @throws Exception
+     */
     private void eventHandler(ConfigManager manager) throws Exception {
+
+        /*
+        Allow the user to choose an input file via a File Chooser
+         */
         mChooseInputFile.setOnAction(event -> {
             File file = mFileChooser.showOpenDialog(this.mStage);
             if (file != null) {
@@ -120,11 +138,15 @@ public class ConfigSetupGUI {
             }
         });
 
+        /*
+        Allow the user to submit the entered properties to a properties file if all of the data is filled out
+         */
         mSubmitButton.setOnAction(event -> {
-            // Save all the information to a config file
+            // Save all the information to a config file if it isn't empty
             if (mOutputName.getText().isEmpty() || mDestinationTag.getText().isEmpty())
                 throw new IllegalArgumentException("All Information not filled in");
             else {
+                // Try to parse and save data
                 try {
                     mNewFileName = mDestinationTag.getText();
                     if (mNewFileName.contains(","))
@@ -140,20 +162,22 @@ public class ConfigSetupGUI {
                     mProperties.store(mOutput, null);
                 } catch (IOException e) {
                     try {
+                        // We Catch it and We throw it ... let someone else deal with it
                         e.printStackTrace();
                         throw e;
                     } catch (IOException e1) {
                         e1.printStackTrace();
                     }
                 }
-                finally {
+                finally { // if we haven't crashed, do all of this
                     if (mOutput != null) {
                         try {
                             mOutput.close();
-
+                            // if everything checks out commit this new config into the Configuration Manager
                             manager.addNewConfig(this.getNewFileName());
                             manager.saveCurrentConfig();
 
+                            // Clear everything once it's been saved
                             mDestinationTag.clear();
                             mFileName.clear();
                             mOutputName.clear();
@@ -164,7 +188,7 @@ public class ConfigSetupGUI {
                                 e1.printStackTrace();
                             }
                         }
-                        mStage.close();
+                        mStage.close(); // Close it up
                     }
                 }
 
@@ -172,6 +196,11 @@ public class ConfigSetupGUI {
         });
     }
 
+    /**
+     * Run this Stage
+     * @param manager Config Manager to be used during execution
+     * @throws Exception New config Data was not entered properly
+     */
     public void run(ConfigManager manager) throws Exception {
         eventHandler(manager);
         mStage.show();

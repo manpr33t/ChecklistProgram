@@ -34,12 +34,18 @@ import static javafx.collections.FXCollections.observableMap;
 public class ConfigManager {
 
     private ObservableMap<String, ConfigParser> mConfigMap;
-    private UCRParser mUCRData;
+
+    private UCRParser   mUCRData;
     private Set<String> mConfigFileNames;
-    private Properties mOutputProperties;
+    private Properties  mOutputProperties;
+    private String      mInputFileName;
 
-    private String mInputFileName;
-
+    /**
+     * Configuration Manager
+     * This Class manages multiple config files and keeps track of them with a master config file
+     * @param inputFileName Master config file to run this ConfigManager with
+     * @throws Exception Unable to use the specified config file
+     */
     public ConfigManager(String inputFileName) throws Exception {
         mInputFileName = inputFileName;
 
@@ -63,14 +69,28 @@ public class ConfigManager {
         }
     }
 
-    public Set<String> getKeys() throws Exception {
+    /**
+     * Get the ket set of this data map
+     * @return Set of Keys for the data map
+     */
+    public Set<String> getKeys() {
             return this.mConfigMap.keySet();
     }
 
+    /**
+     * Get ConfigParse Object associated with a key
+     * @param key The key to get the value
+     * @return Key not in data map key set
+     */
     public ConfigParser getValue(String key) {
         return this.mConfigMap.get(key);
     }
 
+    /**
+     * Replace a key in the data map
+     * @param prevKey The key to replace
+     * @param newKey The new key
+     */
     public void updateKey(String prevKey, String newKey) {
         this.mConfigMap.put(newKey, this.mConfigMap.get(prevKey));
         this.mConfigMap.remove(prevKey);
@@ -78,10 +98,18 @@ public class ConfigManager {
         oldFile.delete();
     }
 
+    /**
+     * Add a new config file to the list of config files
+     * @param configFileName
+     */
     public void addNewConfig(String configFileName) {
         mConfigFileNames.add(configFileName);
     }
 
+    /**
+     * Save the current master config file
+     * @throws Exception Unable to save file
+     */
     public void saveCurrentConfig() throws Exception {
         FileOutputStream fileOutputStream = new FileOutputStream(this.mInputFileName);
 
@@ -101,6 +129,12 @@ public class ConfigManager {
         fileOutputStream.close();
     }
 
+    /**
+     * Parse the UCR and pull all mapped data that is going to be used
+     * @param inputFile Input UCR Excel file
+     * @param desktop Desktop to open the files once this operation is done
+     * @throws Exception Error with Input File or Desktop
+     */
     public void parseUCR(File inputFile, Desktop desktop) throws Exception {
         mUCRData.readDataFromFile(inputFile);
         for (String s : mUCRData.getDataMap().keySet())
@@ -121,6 +155,11 @@ public class ConfigManager {
         openOutputFiles(desktop);
     }
 
+    /**
+     * Get an Observable List of the data map to the GUI
+     * @param columnKeys Column keys to map the data to
+     * @return Observable List containing mapped data
+     */
     public ObservableList<Map> getObservableMap(String[] columnKeys) {
         ObservableList<Map> mapData = FXCollections.observableArrayList();
         if (columnKeys.length == 3) {
@@ -149,12 +188,21 @@ public class ConfigManager {
         // TODO update data stored in the Map
     }
 
+    /**
+     * Open the output files
+     * @param desktop Desktop to open the files on
+     * @throws IOException Unable to open file
+     */
     private void openOutputFiles(Desktop desktop) throws IOException {
         for (String s : mConfigMap.keySet()) {
             desktop.open(new File(mConfigMap.get(s).getOutputFileName()));
         }
     }
 
+    /**
+     * Load Config files from the list of Config files
+     * @throws Exception
+     */
     private void loadConfigFiles() throws Exception {
         Properties properties = new Properties();
         mOutputProperties = new Properties();

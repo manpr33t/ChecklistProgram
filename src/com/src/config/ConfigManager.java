@@ -137,21 +137,17 @@ public class ConfigManager {
      */
     public void parseUCR(File inputFile, Desktop desktop) throws Exception {
         mUCRData.readDataFromFile(inputFile);
-        for (String s : mUCRData.getDataMap().keySet())
-            try {
-                if (mConfigMap.containsKey(s)) {
-                    if (mConfigMap.get(s).isMultipleRoutes())
-                        for (int i = 0; i < mConfigMap.get(s).getMultipleRoute().length; i++) {
-                            Set<String> temp = mUCRData.getDataMap().get(mConfigMap.get(s).getMultipleRoute()[i]);
-                            if (temp != null)
-                                mUCRData.getDataMap().get(s).addAll(temp);
-                        }
-                    mConfigMap.get(s).run(mUCRData.getDataMap().get(s));
-                }
-            } catch (Exception e) {
-                throw e;
+        for (String s : mUCRData.getDataMap().keySet()) {
+            if (mConfigMap.containsKey(s)) {
+                if (mConfigMap.get(s).isMultipleRoutes())
+                    for (int i = 0; i < mConfigMap.get(s).getMultipleRoute().length; i++) {
+                        Set<String> temp = mUCRData.getDataMap().get(mConfigMap.get(s).getMultipleRoute()[i]);
+                        if (temp != null)
+                            mUCRData.getDataMap().get(s).addAll(temp);
+                    }
+                mConfigMap.get(s).run(mUCRData.getDataMap().get(s));
             }
-
+        }
         openOutputFiles(desktop);
     }
 

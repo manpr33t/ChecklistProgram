@@ -16,7 +16,6 @@
 
 package com.src.gui;
 
-import com.src.checklist.Parser;
 import com.src.checklist.Utility;
 import com.src.config.ConfigManager;
 import javafx.application.Application;
@@ -42,6 +41,8 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 /**
  * Graphical User Interface for the Checklist Generator Program
@@ -84,7 +85,6 @@ public class MainGUI extends Application{
 
     private ConfigManager mConfig;
     private ConfigManagerGUI mConfigManagerGUI;
-    private Parser mParser;
 
     /**
      * GUI Built using JavaFX
@@ -174,8 +174,6 @@ public class MainGUI extends Application{
             mLog.appendText(e.getLocalizedMessage()+"\n");
 
         }
-
-        mParser = new Parser("UCR.csv");
     }
 
     /**
@@ -194,6 +192,7 @@ public class MainGUI extends Application{
                 mLog.appendText("Opening file: " + file.getName() + "\n");
                 try {
                     Utility.convertExcelToCsv(file, "UCR.csv");
+                    Files.copy(file.toPath(), Utility.makeFile("UCR.xls").toPath(), StandardCopyOption.REPLACE_EXISTING);
                     mConfigManagerGUI.parseUCR(file, this.mDesktop);
                 } catch (Exception e) {
                     mLog.appendText(e.getLocalizedMessage() + "\n");
@@ -208,7 +207,9 @@ public class MainGUI extends Application{
         mGenerateFiles.setOnAction(event -> {
             mLog.appendText("Generating checklists from saved UCR file\n");
             try {
-                mParser.run();
+//                mParser.run();
+                File file = new File("UCR.xls");
+                mConfigManagerGUI.parseUCR(file, this.mDesktop);
             } catch (Exception e) {
                 mLog.appendText(e.getLocalizedMessage() + "\n");
                 e.printStackTrace();

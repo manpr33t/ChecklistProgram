@@ -149,7 +149,10 @@ public class Checklist {
         pw.write("Generated at:," + mGenerationFormat.format(new Date()));
         pw.close();
 
-//        OutputChecklistKt.outputList(mFinalOutput, "DDU,Zipcode,Location," + mDateFormat.format(new Date()) + "," + mDestinationTag + "\n", this.mOutputFileName+".xls");
+        String header = "DDU,Zipcode,Location," + mDateFormat.format(new Date()) + "," + mDestinationTag + "\n";
+
+        OutputChecklistKt.outputList(mFinalOutput, this.mOutputFileName + ".xls", header);
+
 
         prepForNextRun();
     }

@@ -1,6 +1,7 @@
 dependencies/poi-3.17
 out/
 lib/
+jre/
 *.xlsx
 *.xls
 *.csv

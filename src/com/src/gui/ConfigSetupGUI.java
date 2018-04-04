@@ -24,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -67,6 +68,7 @@ public class ConfigSetupGUI {
      */
     public ConfigSetupGUI() {
         mStage = new Stage();
+        mStage.initModality(Modality.WINDOW_MODAL);
 
         mFileChooser = new FileChooser();
         mFileChooser.setTitle("Input file ...");
@@ -201,8 +203,10 @@ public class ConfigSetupGUI {
      * @param manager Config Manager to be used during execution
      * @throws Exception New config Data was not entered properly
      */
-    public void run(ConfigManager manager) throws Exception {
+    public void run(ConfigManager manager, Stage parentStage) throws Exception {
         eventHandler(manager);
+        if (mStage.getOwner() == null)
+            mStage.initOwner(parentStage);
         mStage.show();
     }
 }

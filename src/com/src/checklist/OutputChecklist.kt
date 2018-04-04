@@ -18,6 +18,8 @@ package com.src.checklist
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook
 import java.io.FileOutputStream
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 /**
  * Static Function to output a Checklist ArrayList to an excel file
@@ -25,7 +27,7 @@ import java.io.FileOutputStream
  * @param header String header to print above all other data
  * @param fileName Output File Name
  */
-fun outputList(data: MutableCollection<String>, header: String, fileName: String) {
+fun outputList(data: MutableCollection<String>, fileName: String, header: String) {
     val workBook = HSSFWorkbook()
     val sheet = workBook.createSheet(fileName)
 
@@ -40,11 +42,11 @@ fun outputList(data: MutableCollection<String>, header: String, fileName: String
 
     // Output file header
     val headerRow = sheet.createRow(rowNum++)
-    headerRow.setRowStyle(style)
     var headerCellNum = 0
     header.split(",").forEach { i ->
         val cell = headerRow.createCell(headerCellNum++)
         cell.setCellValue(i)
+        cell.setCellStyle(style)
     }
 
     // Loop through the given data
@@ -59,10 +61,23 @@ fun outputList(data: MutableCollection<String>, header: String, fileName: String
     }
 
     // Output file footer
-    val footerRow = sheet.createRow(++rowNum)
-    footerRow.setRowStyle(style)
-    footerRow.createCell(0).setCellValue("Number of Containers:")
-    footerRow.createCell(1).setCellValue(data.size.toString())
+    val time = LocalDateTime.now()
+    val template = DateTimeFormatter.ofPattern("HH:mm:ss")
+
+    for (i in 0..1) {
+        if (i == 0) {
+            val footerRow = sheet.createRow(++rowNum)
+            footerRow.createCell(0).setCellValue("Number of Containers:")
+            footerRow.createCell(1).setCellValue(data.size.toString())
+            footerRow.forEach { it.cellStyle = style }
+        } else {
+            val footerRow = sheet.createRow(++rowNum)
+            footerRow.setRowStyle(style)
+            footerRow.createCell(0).setCellValue("Generated at:")
+            footerRow.createCell(1).setCellValue(time.format(template))
+            footerRow.forEach { it.cellStyle = style }
+        }
+    }
 
     // Resize column 0
     sheet.autoSizeColumn(0)

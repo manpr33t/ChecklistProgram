@@ -76,8 +76,8 @@ public class ConfigManagerGUI {
         mConfigManager = configManager;
 
         mOutputColumn = new TableColumn<>("Output");
-        mTitleColumn = new TableColumn<>("Sort Groups");
-        mInputColumn = new TableColumn<>("Input");
+        mTitleColumn  = new TableColumn<>("Sort Groups");
+        mInputColumn  = new TableColumn<>("Input");
 
         mOutputColumn.setCellValueFactory(new MapValueFactory<>(COLUMN_KEYS[0]));
         mTitleColumn.setCellValueFactory(new MapValueFactory<>(COLUMN_KEYS[1]));
@@ -119,7 +119,7 @@ public class ConfigManagerGUI {
         mGridPane.setVgap(10);
         mGridPane.setPadding(new Insets(10,0,0,10));
 
-        mGridPane.setGridLinesVisible(true);
+//        mGridPane.setGridLinesVisible(true);
         mGridPane.add(mNewConfigButton, 1,1);
         GridPane.setHalignment(mNewConfigButton, HPos.RIGHT);
         mGridPane.add(mDataTable, 0, 0,2,1);
@@ -142,7 +142,7 @@ public class ConfigManagerGUI {
         mNewConfigButton.setOnAction(event -> {
             ConfigSetupGUI newConfig = new ConfigSetupGUI();
             try {
-                newConfig.run(mConfigManager);
+                newConfig.run(mConfigManager, mStage);
             } catch (Exception e) {
                 try {
                     throw e;

@@ -164,19 +164,34 @@ public class ConfigManagerGUI {
         When user edits and commits a change to the Title Column
          */
         mTitleColumn.setOnEditCommit(event -> {
+            String old = event.getRowValue().get(COLUMN_KEYS[1]).toString();
             // Update Row Data.
-            event.getRowValue().put(COLUMN_KEYS[1], event.getNewValue());
+            if (event.getNewValue().contains("-"))
+                event.getRowValue().put(COLUMN_KEYS[1], event.getNewValue().replaceAll("-",","));
+            else
+                event.getRowValue().put(COLUMN_KEYS[1], event.getNewValue());
             // Update the ConfigManager map and have it delete the old Config File.
-            mConfigManager.updateKey(event.getOldValue().replaceAll(",", "-"),
-                    event.getNewValue().replaceAll(",", "-"));
+            event.getTableView().getColumns().get(0).setVisible(false);
+            event.getTableView().getColumns().get(0).setVisible(true);
+            try {
+                mConfigManager.updateKey(old.replaceAll(",", "-"),
+                        event.getNewValue().replaceAll(",", "-"));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
 
         /*
         When the user closes this window
          */
         mStage.setOnCloseRequest(event -> {
-            for (Map m : mAllData)
-                System.out.println(m);
+//            for (Map m : mAllData)
+//                System.out.println(m);
+            try {
+                mConfigManager.updateData(mAllData, COLUMN_KEYS);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         });
 
         /*

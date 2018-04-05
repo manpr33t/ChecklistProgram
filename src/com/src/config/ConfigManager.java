@@ -59,7 +59,7 @@ public class ConfigManager {
         for (String s : mConfigFileNames) {
             if (!s.isEmpty()) {
                 try {
-                    mConfigMap.put(s.split("\\.")[0].split("-")[0], new ConfigParser(s));
+                    mConfigMap.put(s.split("\\.")[0], new ConfigParser(s));
                 }
                 catch (Exception e) {
                     e.printStackTrace();
@@ -91,11 +91,14 @@ public class ConfigManager {
      * @param prevKey The key to replace
      * @param newKey The new key
      */
-    public void updateKey(String prevKey, String newKey) {
-        this.mConfigMap.put(newKey, this.mConfigMap.get(prevKey));
-        this.mConfigMap.remove(prevKey);
-        File oldFile = new File(String.format("dependencies/%s.properties", prevKey));
-        oldFile.delete();
+    public void updateKey(String prevKey, String newKey) throws Exception {
+        if (prevKey != newKey ) {
+            this.mConfigMap.put(newKey, this.mConfigMap.get(prevKey));
+            this.mConfigMap.get(prevKey).deleteConfigFile(prevKey);
+            this.mConfigMap.remove(prevKey);
+
+            this.mConfigMap.get(newKey).setTitle(newKey);
+        } else System.err.println("ERROR");
     }
 
     /**
@@ -180,8 +183,26 @@ public class ConfigManager {
         return  mapData;
     }
 
-    public void updateData() {
-        // TODO update data stored in the Map
+    public void updateData(ObservableList<Map> map, String[] columnKeys) throws Exception {
+        // TODO update data stored in the ObservableMap
+        for (Map m : map) {
+            if (m.get(columnKeys[1]).toString().contains(",")) {
+                mConfigMap.get(m.get(columnKeys[1]).toString().replaceAll(",", "-")).setOutputFileName(m.get(columnKeys[0]).toString());
+                mConfigMap.get(m.get(columnKeys[1]).toString().replaceAll(",", "-")).setInputFileName(m.get(columnKeys[2]).toString());
+//                System.out.println(mConfigMap.get(m.get(columnKeys[1]).toString().replaceAll(",", "-")).getOutputFileName());
+//                System.out.println(mConfigMap.get(m.get(columnKeys[1]).toString().replaceAll(",", "-")).getInputFileName());
+            }
+            else {
+                mConfigMap.get(m.get(columnKeys[1])).setOutputFileName(m.get(columnKeys[0]).toString());
+                mConfigMap.get(m.get(columnKeys[1])).setInputFileName(m.get(columnKeys[2]).toString());
+//                System.out.println(mConfigMap.get(m.get(columnKeys[1])).getOutputFileName());
+//                System.out.println(mConfigMap.get(m.get(columnKeys[1])).getInputFileName());
+            }
+        }
+        System.out.println("\n" + mConfigMap);
+        for (String s : mConfigMap.keySet()) {
+            mConfigMap.get(s).save();
+        }
     }
 
     /**

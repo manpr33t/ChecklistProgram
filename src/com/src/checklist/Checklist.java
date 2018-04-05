@@ -151,7 +151,7 @@ public class Checklist {
 
         String header = "DDU,Zipcode,Location," + mDateFormat.format(new Date()) + "," + mDestinationTag + "\n";
 
-        OutputChecklistKt.outputList(mFinalOutput, this.mOutputFileName + ".xls", header);
+//        OutputChecklistKt.outputList(mFinalOutput, this.mOutputFileName + ".xls", header);
 
 
         prepForNextRun();

@@ -18,7 +18,9 @@ package com.src.config;
 
 import com.src.checklist.Checklist;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.util.Collection;
 import java.util.Properties;
 
@@ -133,10 +135,32 @@ public class ConfigParser {
         mDispatchCheckList.generateDifference(collection);
     }
 
+    public void deleteConfigFile(String key) throws Exception{
+        File f = new File("dependencies/" + key + ".properties");
+        if (!f.delete())
+            throw new Exception("Unable to update");
+    }
+
     /**
      * Save the Properties file
      */
-    public void save() {
-        // TODO Write to a new Properties File
+    public void save() throws Exception{
+        FileOutputStream fileOutput;
+        try {
+            fileOutput = new FileOutputStream("dependencies/" + this.mDestinationTitle + ".properties");
+        } catch (Exception e) {
+            new File("dependencies/" + this.mDestinationTitle + ".properties").delete();
+        } finally {
+            fileOutput = new FileOutputStream("dependencies/" + this.mDestinationTitle + ".properties");
+        }
+
+        Properties p = new Properties();
+
+        p.setProperty("input_file", this.mInputFileName);
+        p.setProperty("output_file", this.mOutputFileName);
+        p.setProperty("destination_tag", this.mDestinationTitle);
+
+        p.store(fileOutput,null);
+        fileOutput.close();
     }
 }

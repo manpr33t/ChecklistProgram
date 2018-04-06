@@ -53,7 +53,7 @@ public class ConfigParser {
         this.mOutputFileName = this.mConfigReader.getProperty("output_file");
         this.mDestinationTitle = this.mConfigReader.getProperty("destination_tag");
 
-        if (this.mDestinationTitle.split(",").length > 0) {
+        if (this.mDestinationTitle.split("-").length > 1) {
             this.mMultipleRoutes = true;
             this.mMultipleRouteCodes = this.mDestinationTitle.split("-");
         }

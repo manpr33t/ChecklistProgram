@@ -140,14 +140,15 @@ public class ConfigManager {
      */
     public void parseUCR(File inputFile, Desktop desktop) throws Exception {
         mUCRData.readDataFromFile(inputFile);
-        for (String s : mUCRData.getDataMap().keySet()) {
-            if (mConfigMap.containsKey(s)) {
-                if (mConfigMap.get(s).isMultipleRoutes())
-                    for (int i = 0; i < mConfigMap.get(s).getMultipleRoute().length; i++) {
-                        Set<String> temp = mUCRData.getDataMap().get(mConfigMap.get(s).getMultipleRoute()[i]);
-                        if (temp != null)
-                            mUCRData.getDataMap().get(s).addAll(temp);
-                    }
+        for (String s : mConfigMap.keySet()) {
+            if (mConfigMap.get(s).isMultipleRoutes()) {
+                Set<String> temp = new HashSet<>();
+                for (String i : mConfigMap.get(s).getMultipleRoute()) {
+                    if (mUCRData.getDataMap().containsKey(i))
+                        temp.addAll(mUCRData.getDataMap().get(i));
+                }
+                mConfigMap.get(s).run(temp);
+            } else {
                 mConfigMap.get(s).run(mUCRData.getDataMap().get(s));
             }
         }
@@ -189,14 +190,10 @@ public class ConfigManager {
             if (m.get(columnKeys[1]).toString().contains(",")) {
                 mConfigMap.get(m.get(columnKeys[1]).toString().replaceAll(",", "-")).setOutputFileName(m.get(columnKeys[0]).toString());
                 mConfigMap.get(m.get(columnKeys[1]).toString().replaceAll(",", "-")).setInputFileName(m.get(columnKeys[2]).toString());
-//                System.out.println(mConfigMap.get(m.get(columnKeys[1]).toString().replaceAll(",", "-")).getOutputFileName());
-//                System.out.println(mConfigMap.get(m.get(columnKeys[1]).toString().replaceAll(",", "-")).getInputFileName());
             }
             else {
                 mConfigMap.get(m.get(columnKeys[1])).setOutputFileName(m.get(columnKeys[0]).toString());
                 mConfigMap.get(m.get(columnKeys[1])).setInputFileName(m.get(columnKeys[2]).toString());
-//                System.out.println(mConfigMap.get(m.get(columnKeys[1])).getOutputFileName());
-//                System.out.println(mConfigMap.get(m.get(columnKeys[1])).getInputFileName());
             }
         }
         System.out.println("\n" + mConfigMap);

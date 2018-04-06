@@ -96,15 +96,16 @@ public class Checklist {
 
         // If the size of the list passed to this function has anything in it,
         // also add it to the Difference buffer.
-        if(list.size() > 0)
+        if(list != null && !list.isEmpty()) {
             mDifferent.addAll(list);
 
-        // Retain only the similar items between the Checklist and the list
-        // that is passed into this function.
-        mSimilar.retainAll(list);
+            // Retain only the similar items between the Checklist and the list
+            // that is passed into this function.
+            mSimilar.retainAll(list);
 
-        // Remove all duplicates.
-        mDifferent.removeAll(mSimilar);
+            // Remove all duplicates.
+            mDifferent.removeAll(mSimilar);
+        }
 
         generateFinalCutlist();
         outputChecklistToFile();
@@ -151,7 +152,7 @@ public class Checklist {
 
         String header = "DDU,Zipcode,Location," + mDateFormat.format(new Date()) + "," + mDestinationTag + "\n";
 
-//        OutputChecklistKt.outputList(mFinalOutput, this.mOutputFileName + ".xls", header);
+        OutputChecklistKt.outputList(mFinalOutput, this.mOutputFileName + ".xls", header);
 
 
         prepForNextRun();

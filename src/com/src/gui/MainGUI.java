@@ -124,6 +124,7 @@ public class MainGUI extends Application{
         } catch (Exception e) {
             mConfigButton.setText("Config");
             e.printStackTrace();
+            ErrorMessagesKt.exception(e);
         }
 
         mName = new Hyperlink("Manpreet Singh 2017-2018");
@@ -163,7 +164,7 @@ public class MainGUI extends Application{
             try {
                 mConfig = new ConfigManager("dependencies/main_config.properties");
             } catch (Exception e1) {
-                e1.printStackTrace();
+                ErrorMessagesKt.exception(e1);
             }
         }
 
@@ -172,13 +173,13 @@ public class MainGUI extends Application{
             mConfigManagerGUI = new ConfigManagerGUI(mConfig);
         } catch (Exception e) {
             mLog.appendText(e.getLocalizedMessage()+"\n");
-
+            ErrorMessagesKt.exception(e);
         }
     }
 
     /**
      * Event handler to handel Buttons events
-     * @param stage Stage object to aquire information from
+     * @param stage Stage object to acquire information from
      */
     private void eventHandler(Stage stage) {
 
@@ -191,12 +192,11 @@ public class MainGUI extends Application{
             if (file != null) {
                 mLog.appendText("Opening file: " + file.getName() + "\n");
                 try {
-                    Utility.convertExcelToCsv(file, "UCR.csv");
                     Files.copy(file.toPath(), Utility.makeFile("UCR.xls").toPath(), StandardCopyOption.REPLACE_EXISTING);
                     mConfigManagerGUI.parseUCR(file, this.mDesktop);
                 } catch (Exception e) {
                     mLog.appendText(e.getLocalizedMessage() + "\n");
-                    e.printStackTrace();
+                    ErrorMessagesKt.exception(e);
                 }
             }
         });
@@ -212,7 +212,7 @@ public class MainGUI extends Application{
                 mConfigManagerGUI.parseUCR(file, this.mDesktop);
             } catch (Exception e) {
                 mLog.appendText(e.getLocalizedMessage() + "\n");
-                e.printStackTrace();
+                ErrorMessagesKt.exception(e);
             }
         });
 
@@ -225,6 +225,7 @@ public class MainGUI extends Application{
                 openFile(mDescription);
             } catch (IOException e) {
                 mLog.appendText(e.getMessage() + "\n\n");
+                ErrorMessagesKt.exception(e);
             }
         });
 
@@ -236,6 +237,7 @@ public class MainGUI extends Application{
                 mConfigManagerGUI.run(stage);
             } catch (Exception e) {
                 mLog.appendText(e.getLocalizedMessage() + "\n");
+                ErrorMessagesKt.exception(e);
             }
         });
 
@@ -280,7 +282,7 @@ public class MainGUI extends Application{
         try {
             mConfig.saveCurrentConfig();
         } catch (Exception e) {
-            e.printStackTrace();
+            ErrorMessagesKt.exception(e);
         }
     }
 }

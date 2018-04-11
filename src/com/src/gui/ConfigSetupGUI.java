@@ -169,6 +169,7 @@ public class ConfigSetupGUI {
                         throw e;
                     } catch (IOException e1) {
                         e1.printStackTrace();
+                        ErrorMessagesKt.exception(e1); // If things REALLY go wrong, gotta let someone know
                     }
                 }
                 finally { // if we haven't crashed, do all of this
@@ -188,6 +189,7 @@ public class ConfigSetupGUI {
                                 throw new Exception(e.getMessage());
                             } catch (Exception e1) {
                                 e1.printStackTrace();
+                                ErrorMessagesKt.exception(e1);
                             }
                         }
                         mStage.close(); // Close it up

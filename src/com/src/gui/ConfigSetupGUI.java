@@ -115,7 +115,7 @@ public class ConfigSetupGUI {
      * @return String containing the name of the file including the file extention
      * @throws Exception There was no file name specified
      */
-    public String getNewFileName() throws Exception{
+    private String getNewFileName() throws Exception{
         if (!this.mFileName.getText().isEmpty())
             return mNewFileName + ".properties";
         throw new Exception("No File name specified");
@@ -124,7 +124,7 @@ public class ConfigSetupGUI {
     /**
      * Assign action to different GUI elements
      * @param manager Configuration Manager being used to track and store changes
-     * @throws Exception
+     * @throws Exception Trouble Assigning actions to buttons
      */
     private void eventHandler(ConfigManager manager) throws Exception {
 

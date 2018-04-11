@@ -35,7 +35,7 @@ public class Checklist {
     private Collection<String> mDifferent = new HashSet<>();
     private String mDestinationTag;
 
-    private DateFormat mDateFormat = new SimpleDateFormat("MM/dd");
+    private DateFormat mDateFormat = new SimpleDateFormat("dd-MMM");
     private DateFormat mGenerationFormat = new SimpleDateFormat("HH:mm:ss");
 
     private String mOutputFileName;
@@ -140,15 +140,15 @@ public class Checklist {
      * @throws FileNotFoundException Unable to open the Output File to write data to.
      */
     private void outputChecklistToFile() throws FileNotFoundException {
-        PrintWriter pw = new PrintWriter(new File(this.mOutputFileName));
-        pw.write("DDU,Zipcode,Location," + mDateFormat.format(new Date()) + "," + mDestinationTag + "\n");
-        for (String output : mFinalOutput) {
-            pw.write(output);
-        }
-        pw.write("\n");
-        pw.write("Number of Containers:," + mFinalOutput.size() + "\n");
-        pw.write("Generated at:," + mGenerationFormat.format(new Date()));
-        pw.close();
+//        PrintWriter pw = new PrintWriter(new File(this.mOutputFileName));
+//        pw.write("DDU,Zipcode,Location," + mDateFormat.format(new Date()) + "," + mDestinationTag + "\n");
+//        for (String output : mFinalOutput) {
+//            pw.write(output);
+//        }
+//        pw.write("\n");
+//        pw.write("Number of Containers:," + mFinalOutput.size() + "\n");
+//        pw.write("Generated at:," + mGenerationFormat.format(new Date()));
+//        pw.close();
 
         String header = "DDU,Zipcode,Location," + mDateFormat.format(new Date()) + "," + mDestinationTag + "\n";
 

@@ -133,7 +133,7 @@ public class ConfigManagerGUI {
 
     /**
      * Assign Actions to buttons
-     * @throws Exception
+     * @throws Exception Trouble Assigning actions to buttons
      */
     private void eventHandler() throws Exception {
         /*
@@ -156,7 +156,6 @@ public class ConfigManagerGUI {
         When user edits and commits a change to the Output Column
          */
         mOutputColumn.setOnEditCommit(event -> {
-            // TODO Update config manager accordingly to the changes
             event.getRowValue().put(COLUMN_KEYS[0], event.getNewValue());
         });
 

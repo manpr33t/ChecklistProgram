@@ -92,18 +92,21 @@ public class ConfigManager {
      * @param newKey The new key
      */
     public void updateKey(String prevKey, String newKey) throws Exception {
-        if (prevKey != newKey ) {
+        if (!prevKey.equals(newKey)) {
             this.mConfigMap.put(newKey, this.mConfigMap.get(prevKey));
             this.mConfigMap.get(prevKey).deleteConfigFile(prevKey);
             this.mConfigMap.remove(prevKey);
 
             this.mConfigMap.get(newKey).setTitle(newKey);
-        } else System.err.println("ERROR");
+        } else  {
+            System.err.println("ERROR");
+            throw new IllegalStateException("The Previous Key is the same and the New Key");
+        }
     }
 
     /**
      * Add a new config file to the list of config files
-     * @param configFileName
+     * @param configFileName Name of the new Config File
      */
     public void addNewConfig(String configFileName) {
         mConfigFileNames.add(configFileName);
@@ -209,13 +212,13 @@ public class ConfigManager {
      */
     private void openOutputFiles(Desktop desktop) throws IOException {
         for (String s : mConfigMap.keySet()) {
-            desktop.open(new File(mConfigMap.get(s).getOutputFileName()));
+            desktop.open(new File(mConfigMap.get(s).getOutputFileName()+".xls"));
         }
     }
 
     /**
      * Load Config files from the list of Config files
-     * @throws Exception
+     * @throws Exception Unable to load Config Files
      */
     private void loadConfigFiles() throws Exception {
         Properties properties = new Properties();

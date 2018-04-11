@@ -16,7 +16,9 @@
 
 package com.src.checklist
 
+import org.apache.poi.hssf.usermodel.HSSFCellStyle
 import org.apache.poi.hssf.usermodel.HSSFWorkbook
+import org.apache.poi.ss.usermodel.BorderStyle
 import java.io.FileOutputStream
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -32,11 +34,18 @@ fun outputList(data: MutableCollection<String>, fileName: String, header: String
     val sheet = workBook.createSheet(fileName)
 
     // Set the cell styles
-    val style = workBook.createCellStyle()
+    val mainStyle = workBook.createCellStyle()
     val font = workBook.createFont()
     font.fontHeightInPoints = 11
     font.fontName = "Calibri"
-    style.setFont(font)
+    mainStyle.setFont(font)
+    mainStyle.setBorderBottom(BorderStyle.THIN)
+    mainStyle.setBorderTop(BorderStyle.THIN)
+    mainStyle.setBorderLeft(BorderStyle.MEDIUM)
+    mainStyle.setBorderRight(BorderStyle.MEDIUM)
+
+    val footerStyle = workBook.createCellStyle()
+    footerStyle.setFont(font)
 
     var rowNum = 0
 
@@ -46,7 +55,7 @@ fun outputList(data: MutableCollection<String>, fileName: String, header: String
     header.split(",").forEach { i ->
         val cell = headerRow.createCell(headerCellNum++)
         cell.setCellValue(i)
-        cell.setCellStyle(style)
+        cell.setCellStyle(mainStyle)
     }
 
     // Loop through the given data
@@ -56,7 +65,7 @@ fun outputList(data: MutableCollection<String>, fileName: String, header: String
         i.split(",").forEach { t ->
             val cell = row.createCell(colNum++)
             cell.setCellValue(t)
-            cell.setCellStyle(style)
+            cell.setCellStyle(mainStyle)
         }
     }
 
@@ -69,18 +78,18 @@ fun outputList(data: MutableCollection<String>, fileName: String, header: String
             val footerRow = sheet.createRow(++rowNum)
             footerRow.createCell(0).setCellValue("Number of Containers:")
             footerRow.createCell(1).setCellValue(data.size.toString())
-            footerRow.forEach { it.cellStyle = style }
+            footerRow.forEach { it.cellStyle = footerStyle }
         } else {
             val footerRow = sheet.createRow(++rowNum)
-            footerRow.setRowStyle(style)
             footerRow.createCell(0).setCellValue("Generated at:")
             footerRow.createCell(1).setCellValue(time.format(template))
-            footerRow.forEach { it.cellStyle = style }
+            footerRow.forEach { it.cellStyle = footerStyle }
         }
     }
 
     // Resize column 0
     sheet.autoSizeColumn(0)
+    sheet.autoSizeColumn(1)
 
     // Save the file
     val outputStream = FileOutputStream(fileName)

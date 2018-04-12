@@ -136,25 +136,12 @@ public class Checklist {
     }
 
     /**
-     * Output the Final Cutlist Buffer into a the file name specified in the constructor.
+     * Output the final list buffer into an Excel file
      * @throws FileNotFoundException Unable to open the Output File to write data to.
      */
     private void outputChecklistToFile() throws FileNotFoundException {
-//        PrintWriter pw = new PrintWriter(new File(this.mOutputFileName));
-//        pw.write("DDU,Zipcode,Location," + mDateFormat.format(new Date()) + "," + mDestinationTag + "\n");
-//        for (String output : mFinalOutput) {
-//            pw.write(output);
-//        }
-//        pw.write("\n");
-//        pw.write("Number of Containers:," + mFinalOutput.size() + "\n");
-//        pw.write("Generated at:," + mGenerationFormat.format(new Date()));
-//        pw.close();
-
         String header = "DDU,Zipcode,Location," + mDateFormat.format(new Date()) + "," + mDestinationTag + "\n";
-
         OutputChecklistKt.outputList(mFinalOutput, this.mOutputFileName + ".xls", header);
-
-
         prepForNextRun();
     }
 

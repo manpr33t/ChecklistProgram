@@ -21,25 +21,36 @@ import javafx.scene.control.Label
 import javafx.scene.control.TextArea
 import javafx.scene.layout.GridPane
 import javafx.scene.layout.Priority
-import javafx.stage.StageStyle
+import javafx.stage.Screen
 import java.io.PrintWriter
 import java.io.StringWriter
 
+/**
+ * Display an Error popup window with the specified string as the content
+ * @param s Content of the Error popup window
+ */
 fun error(s: String) {
     val window = Alert(Alert.AlertType.ERROR)
     window.contentText = s
     window.showAndWait()
 }
 
+/**
+ * Display a Warning popup window with the specified string as the content
+ * @param s Content of the Warning popup window
+ */
 fun warning(s: String) {
     val window = Alert(Alert.AlertType.WARNING)
     window.contentText = s
     window.showAndWait()
 }
 
+/**
+ * Display the stacktrace and localized message of an exception in an Error window
+ * @param e Exception to display data from
+ */
 fun exception(e: Exception) {
     val window = Alert(Alert.AlertType.ERROR)
-    window.initStyle(StageStyle.UTILITY)
     window.title = e.message
     window.headerText = e.localizedMessage
     window.contentText = e.toString()
@@ -53,8 +64,8 @@ fun exception(e: Exception) {
     textArea.isEditable = false
     textArea.isWrapText = true
 
-    textArea.maxWidth = Double.MAX_VALUE
-    textArea.maxHeight = Double.MAX_VALUE
+    textArea.maxWidth = Screen.getPrimary().visualBounds.width
+    textArea.maxHeight = Screen.getPrimary().visualBounds.height
     GridPane.setVgrow(textArea, Priority.ALWAYS)
     GridPane.setHgrow(textArea, Priority.ALWAYS)
 

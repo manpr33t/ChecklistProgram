@@ -129,12 +129,17 @@ public class ConfigParser {
     /**
      * Run the checklist with the given input Collection
      * @param collection Collection of Strings containing Sort Destination Codes
-     * @throws Exception
+     * @throws Exception Unable to output files to the disk
      */
     public void run(Collection<String> collection) throws Exception {
         mDispatchCheckList.generateDifference(collection);
     }
 
+    /**
+     * Delete a config file from the local disk
+     * @param key Key of the file to be deleted
+     * @throws Exception Unable to delete file
+     */
     public void deleteConfigFile(String key) throws Exception{
         File f = new File("dependencies/" + key + ".properties");
         if (!f.delete())
@@ -143,14 +148,15 @@ public class ConfigParser {
 
     /**
      * Save the Properties file
+     * @throws Exception Unable to open Output Stream to output file
      */
     public void save() throws Exception{
         FileOutputStream fileOutput;
         try {
             fileOutput = new FileOutputStream("dependencies/" + this.mDestinationTitle + ".properties");
         } catch (Exception e) {
-            new File("dependencies/" + this.mDestinationTitle + ".properties").delete();
-        } finally {
+            if (! new File("dependencies/" + this.mDestinationTitle + ".properties").delete())
+                throw new IllegalStateException("Unable to output config to save file");
             fileOutput = new FileOutputStream("dependencies/" + this.mDestinationTitle + ".properties");
         }
 

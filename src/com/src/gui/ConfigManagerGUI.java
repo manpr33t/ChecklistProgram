@@ -150,6 +150,8 @@ public class ConfigManagerGUI {
                     e1.printStackTrace();
                 }
             }
+            mDataTable.setVisible(false);
+            mDataTable.setVisible(true);
         });
 
         /*
@@ -191,6 +193,9 @@ public class ConfigManagerGUI {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+            try {
+                mConfigManager.reloadConfig();
+            } catch (Exception e) { ErrorMessagesKt.exception(e); }
         });
 
         /*

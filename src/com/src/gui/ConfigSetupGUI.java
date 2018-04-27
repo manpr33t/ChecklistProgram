@@ -157,7 +157,7 @@ public class ConfigSetupGUI {
                     mOutput = new FileOutputStream("dependencies/" + mNewFileName + ".properties");
 
                     mProperties.setProperty("input_file", mFileName.getText());
-                    mProperties.setProperty("output_file", mOutputName.getText() + ".csv");
+                    mProperties.setProperty("output_file", mOutputName.getText());
 
                     mProperties.setProperty("destination_tag", mNewFileName);
 

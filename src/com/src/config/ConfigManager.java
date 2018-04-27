@@ -56,17 +56,7 @@ public class ConfigManager {
 
         loadConfigFiles();
 
-        for (String s : mConfigFileNames) {
-            if (!s.isEmpty()) {
-                try {
-                    mConfigMap.put(s.split("\\.")[0], new ConfigParser(s));
-                }
-                catch (Exception e) {
-                    e.printStackTrace();
-                    throw new Exception("Unable to open config file: " + s);
-                }
-            }
-        }
+
     }
 
     /**
@@ -96,6 +86,9 @@ public class ConfigManager {
             this.mConfigMap.put(newKey, this.mConfigMap.get(prevKey));
             this.mConfigMap.get(prevKey).deleteConfigFile(prevKey);
             this.mConfigMap.remove(prevKey);
+
+            this.mConfigFileNames.remove(prevKey);
+            this.mConfigFileNames.add(newKey);
 
             this.mConfigMap.get(newKey).setTitle(newKey);
         } else  {
@@ -220,7 +213,7 @@ public class ConfigManager {
      * Load Config files from the list of Config files
      * @throws Exception Unable to load Config Files
      */
-    private void loadConfigFiles() throws Exception {
+    public void loadConfigFiles() throws Exception {
         Properties properties = new Properties();
         mOutputProperties = new Properties();
 
@@ -243,5 +236,22 @@ public class ConfigManager {
         }
 
         fileInput.close();
+
+        for (String s : mConfigFileNames) {
+            if (!s.isEmpty()) {
+                try {
+                    mConfigMap.put(s.split("\\.")[0], new ConfigParser(s));
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                    throw new Exception("Unable to open config file: " + s);
+                }
+            }
+        }
+    }
+
+    public void reloadConfig() throws Exception{
+        saveCurrentConfig();
+        loadConfigFiles();
     }
 }

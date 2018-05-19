@@ -35,6 +35,10 @@ fun error(s: String) {
     window.showAndWait()
 }
 
+fun message(s: String) {
+    val window = Alert(Alert.AlertType.INFORMATION)
+}
+
 /**
  * Display a Warning popup window with the specified string as the content
  * @param s Content of the Warning popup window

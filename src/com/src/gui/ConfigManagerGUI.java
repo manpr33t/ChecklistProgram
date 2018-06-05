@@ -28,6 +28,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.MapValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
@@ -231,6 +232,7 @@ public class ConfigManagerGUI {
         eventHandler();
         if (mStage.getOwner() == null)
             mStage.initOwner(parentStage);
+        mStage.getIcons().add(new Image("file:dependencies/img.png"));
         mStage.show();
     }
 }

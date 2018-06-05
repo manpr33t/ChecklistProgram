@@ -22,6 +22,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
@@ -209,6 +210,7 @@ public class ConfigSetupGUI {
         eventHandler(manager);
         if (mStage.getOwner() == null)
             mStage.initOwner(parentStage);
+        mStage.getIcons().add(new Image("file:dependencies/img.png"));
         mStage.show();
     }
 }

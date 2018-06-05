@@ -19,6 +19,7 @@ package com.src.gui;
 import com.src.checklist.Utility;
 import com.src.config.ConfigManager;
 import javafx.application.Application;
+import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -76,6 +77,7 @@ public class MainGUI extends Application{
     private Button      mOpenFile;
     private Button      mGenerateFiles;
     private Button      mConfigButton;
+    private Button      mHelpButton;
 
     private GridPane    mGridPane;
     private Desktop     mDesktop = Desktop.getDesktop();
@@ -103,20 +105,20 @@ public class MainGUI extends Application{
         mLog.setWrapText(true);
 
         ScrollPane mLogScrollPane = new ScrollPane(mLog);
-        mLogScrollPane.setStyle("-fx-background-color:transparent;");
+//        mLogScrollPane.setStyle("-fx-background-color:transparent;");
 
         // Set up buttons
         mFileChooser = new FileChooser();
         mFileChooser.setTitle("Open UCR File ...");
 
         mOpenFile = new Button("Open Excel File");
-        mOpenFile.setStyle("-fx-font: 14 arial; -fx-base: #AfffB9;");
+//        mOpenFile.setStyle("-fx-font: 14 arial; -fx-base: #AfffB9;");
 
         mGenerateFiles = new Button("Generate From File");
-        mGenerateFiles.setStyle("-fx-font:14 arial; -fx-base: #C3FAFF;");
+//        mGenerateFiles.setStyle("-fx-font:14 arial; -fx-base: #C3FAFF;");
 
         mConfigButton = new Button();
-        mConfigButton.setStyle("-fx-font:14 arial; -fx-base: #FF5100;");
+//        mConfigButton.setStyle("-fx-font:14 arial; -fx-base: #FF5100;");
 
         try {
             Image mConfigIcon = new Image(new FileInputStream("dependencies/gear.png"));
@@ -133,6 +135,9 @@ public class MainGUI extends Application{
 
         Text mLocation = new Text("SEWA/5983");
         mLocation.setFill(Paint.valueOf("#A9A9A9"));
+
+        mHelpButton = new Button("Help");
+//        mHelpButton.setStyle("-fx-font: 10 arial; -fx-base: #FF8200;");
 
         mDescription = new File("dependencies/description.html");
 
@@ -154,13 +159,20 @@ public class MainGUI extends Application{
         mGridPane.add(mName, 1, 2);
         mGridPane.add(mLocation, 0, 2);
         mGridPane.add(mConfigButton, 2, 0);
+        mGridPane.add(mHelpButton, 2, 2);
+
+        GridPane.setHalignment(mConfigButton, HPos.RIGHT);
+        GridPane.setHalignment(mHelpButton, HPos.RIGHT);
+
+        // For debug purposes
+        mGridPane.setGridLinesVisible(true);
 
         // Initialize the Config Manager class
         try {
             mConfig = new ConfigManager("dependencies/main_config.properties");
         } catch (Exception e) {
-            mLog.appendText(e.getLocalizedMessage() + "\n");
-            mLog.appendText("Generating empty config file\n");
+            mLog.appendText("First time start up, Generating empty config file\n");
+            mLog.appendText("Please be sure to review the configuration guide before using this program.");
             try {
                 mConfig = new ConfigManager("dependencies/main_config.properties");
             } catch (Exception e1) {
@@ -268,6 +280,7 @@ public class MainGUI extends Application{
         primaryStage.getIcons().add(new Image("file:dependencies/img.png"));
         primaryStage.setResizable(false);
         Scene scene = new Scene(mGridPane, WINDOW_WIDTH, WINDOW_HEIGHT);
+        scene.getStylesheets().add("com/src/gui/ButtonStyles.css");
         eventHandler(primaryStage);
         primaryStage.setScene(scene);
         primaryStage.show();

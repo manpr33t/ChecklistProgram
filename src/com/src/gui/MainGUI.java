@@ -105,20 +105,20 @@ public class MainGUI extends Application{
         mLog.setWrapText(true);
 
         ScrollPane mLogScrollPane = new ScrollPane(mLog);
-//        mLogScrollPane.setStyle("-fx-background-color:transparent;");
+        mLogScrollPane.setStyle("-fx-background-color:transparent;");
 
         // Set up buttons
         mFileChooser = new FileChooser();
         mFileChooser.setTitle("Open UCR File ...");
 
         mOpenFile = new Button("Open Excel File");
-//        mOpenFile.setStyle("-fx-font: 14 arial; -fx-base: #AfffB9;");
+        mOpenFile.setStyle("-fx-font: 14 arial; -fx-base: #AfffB9;");
 
         mGenerateFiles = new Button("Generate From File");
-//        mGenerateFiles.setStyle("-fx-font:14 arial; -fx-base: #C3FAFF;");
+        mGenerateFiles.setStyle("-fx-font:14 arial; -fx-base: #C3FAFF;");
 
         mConfigButton = new Button();
-//        mConfigButton.setStyle("-fx-font:14 arial; -fx-base: #FF5100;");
+        mConfigButton.setStyle("-fx-font:14 arial; -fx-base: #FF5100;");
 
         try {
             Image mConfigIcon = new Image(new FileInputStream("dependencies/gear.png"));
@@ -137,7 +137,7 @@ public class MainGUI extends Application{
         mLocation.setFill(Paint.valueOf("#A9A9A9"));
 
         mHelpButton = new Button("Help");
-//        mHelpButton.setStyle("-fx-font: 10 arial; -fx-base: #FF8200;");
+        mHelpButton.setStyle("-fx-font: 10 arial; -fx-base: #FF8200;");
 
         mDescription = new File("dependencies/description.html");
 
@@ -280,7 +280,6 @@ public class MainGUI extends Application{
         primaryStage.getIcons().add(new Image("file:dependencies/img.png"));
         primaryStage.setResizable(false);
         Scene scene = new Scene(mGridPane, WINDOW_WIDTH, WINDOW_HEIGHT);
-        scene.getStylesheets().add("com/src/gui/ButtonStyles.css");
         eventHandler(primaryStage);
         primaryStage.setScene(scene);
         primaryStage.show();

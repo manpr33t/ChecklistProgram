@@ -120,6 +120,9 @@ public class MainGUI extends Application{
         mConfigButton = new Button();
         mConfigButton.setStyle("-fx-font:14 arial; -fx-base: #FF5100;");
 
+        mHelpButton = new Button("Help");
+        mHelpButton.setStyle("-fx-font: 10 arial; -fx-base: #FF8200;");
+
         try {
             Image mConfigIcon = new Image(new FileInputStream("dependencies/gear.png"));
             mConfigButton.setGraphic(new ImageView(mConfigIcon));
@@ -135,9 +138,6 @@ public class MainGUI extends Application{
 
         Text mLocation = new Text("SEWA/5983");
         mLocation.setFill(Paint.valueOf("#A9A9A9"));
-
-        mHelpButton = new Button("Help");
-        mHelpButton.setStyle("-fx-font: 10 arial; -fx-base: #FF8200;");
 
         mDescription = new File("dependencies/description.html");
 
@@ -204,22 +204,23 @@ public class MainGUI extends Application{
             if (file != null) {
                 mLog.appendText("Opening file: " + file.getName() + "\n");
                 try {
-                    Files.copy(file.toPath(), Utility.makeFile("UCR.xls").toPath(), StandardCopyOption.REPLACE_EXISTING);
+                    if (Utility.deleteFile("UCR.xls")) // Delete the previous saved file
+                        Files.copy(file.toPath(), Utility.makeFile("UCR.xls").toPath()); // Copy the current input file for debugging etc.
                     mConfigManagerGUI.parseUCR(file, this.mDesktop);
                 } catch (Exception e) {
                     mLog.appendText(e.getLocalizedMessage() + "\n");
+                    e.printStackTrace();
                     ErrorMessagesKt.exception(e);
                 }
             }
         });
 
         /*
-        Currently a debug button, was previously used to recreate checklists from a saved UCR file
+         Currently a debug button, was previously used to recreate checklists from a saved UCR file
          */
         mGenerateFiles.setOnAction(event -> {
             mLog.appendText("Generating checklists from saved UCR file\n");
             try {
-//                mParser.run();
                 File file = new File("UCR.xls");
                 mConfigManagerGUI.parseUCR(file, this.mDesktop);
             } catch (Exception e) {

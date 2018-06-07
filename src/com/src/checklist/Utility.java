@@ -94,7 +94,14 @@ public class Utility {
 
     public static File makeFile(String fileName) throws IOException{
         File f = new File(fileName);
+        if (f.exists())
+            return f;
         f.createNewFile();
         return f;
+    }
+
+    public static boolean deleteFile(String fileName) throws IOException {
+        File f = new File(fileName);
+        return f.delete();
     }
 }

@@ -102,6 +102,6 @@ public class Utility {
 
     public static boolean deleteFile(String fileName) throws IOException {
         File f = new File(fileName);
-        return f.delete();
+        return !f.exists() || f.delete();
     }
 }

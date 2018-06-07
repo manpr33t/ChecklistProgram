@@ -42,6 +42,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
@@ -165,7 +166,7 @@ public class MainGUI extends Application{
         GridPane.setHalignment(mHelpButton, HPos.RIGHT);
 
         // For debug purposes
-        mGridPane.setGridLinesVisible(true);
+//        mGridPane.setGridLinesVisible(true);
 
         // Initialize the Config Manager class
         try {
@@ -205,7 +206,7 @@ public class MainGUI extends Application{
                 mLog.appendText("Opening file: " + file.getName() + "\n");
                 try {
                     if (Utility.deleteFile("UCR.xls")) // Delete the previous saved file
-                        Files.copy(file.toPath(), Utility.makeFile("UCR.xls").toPath()); // Copy the current input file for debugging etc.
+                        Files.copy(file.toPath(), Utility.makeFile("UCR.xls").toPath(), StandardCopyOption.REPLACE_EXISTING); // Copy the current input file for debugging etc.
                     mConfigManagerGUI.parseUCR(file, this.mDesktop);
                 } catch (Exception e) {
                     mLog.appendText(e.getLocalizedMessage() + "\n");

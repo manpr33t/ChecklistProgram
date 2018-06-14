@@ -14,9 +14,9 @@
    limitations under the License.
  */
 
-package com.src.gui;
+package net.manpreet.singh.gui;
 
-import com.src.config.ConfigManager;
+import net.manpreet.singh.config.ConfigManager;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -125,9 +125,8 @@ public class ConfigSetupGUI {
     /**
      * Assign action to different GUI elements
      * @param manager Configuration Manager being used to track and store changes
-     * @throws Exception Trouble Assigning actions to buttons
      */
-    private void eventHandler(ConfigManager manager) throws Exception {
+    private void eventHandler(ConfigManager manager) {
 
         /*
         Allow the user to choose an input file via a File Chooser
@@ -204,9 +203,8 @@ public class ConfigSetupGUI {
     /**
      * Run this Stage
      * @param manager Config Manager to be used during execution
-     * @throws Exception New config Data was not entered properly
      */
-    public void run(ConfigManager manager, Stage parentStage) throws Exception {
+    public void run(ConfigManager manager, Stage parentStage) {
         eventHandler(manager);
         if (mStage.getOwner() == null)
             mStage.initOwner(parentStage);

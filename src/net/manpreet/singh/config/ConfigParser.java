@@ -14,9 +14,9 @@
    limitations under the License.
  */
 
-package com.src.config;
+package net.manpreet.singh.config;
 
-import com.src.checklist.Checklist;
+import net.manpreet.singh.checklist.Checklist;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -32,7 +32,7 @@ public class ConfigParser {
     private Properties  mConfigReader;
     private boolean     mMultipleRoutes;
     private String[]    mMultipleRouteCodes;
-    private Checklist   mDispatchCheckList;
+    private Checklist mDispatchCheckList;
 
     private String mInputFileName;
     private String mOutputFileName;

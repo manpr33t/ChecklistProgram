@@ -14,9 +14,9 @@
    limitations under the License.
  */
 
-package com.src.config
+package net.manpreet.singh.config
 
-import com.src.checklist.Utility
+import net.manpreet.singh.checklist.Utility
 import org.apache.poi.hssf.usermodel.HSSFRow
 import org.apache.poi.hssf.usermodel.HSSFSheet
 import org.apache.poi.hssf.usermodel.HSSFWorkbook
@@ -35,7 +35,7 @@ class UCRParser {
      */
     fun readDataFromFile(inputFile: File) {
 
-        if (!inputFile.name.split('.')[1].equals("xls"))
+        if (inputFile.name.split('.')[1] != "xls")
             throw IllegalArgumentException("Unsupported File type")
 
         // Re-establish objects every time this method is run
@@ -50,12 +50,12 @@ class UCRParser {
 
         while (rowIterator.hasNext()) spreadSheetRows?.add(rowIterator.next() as HSSFRow)
 
-        spreadSheetRows!!.forEach({ it ->
+        spreadSheetRows!!.forEach { it ->
             if (checkForData(it)) {
                 try {
                     if (it.getCell(8) != null) {
                         if (!dataMap!!.containsKey(it.getCell(8).toString()))
-                            dataMap!!.put(it.getCell(8).toString(), HashSet())
+                            dataMap!![it.getCell(8).toString()] = HashSet()
 
                         dataMap!![it.getCell(8).toString()]!!.add(
                                 Utility.removeZipcodePrefix(it.getCell(it.firstCellNum.toInt()).toString())
@@ -66,7 +66,7 @@ class UCRParser {
                     println("Row:${it.rowNum + 1}")
                 }
             }
-        })
+        }
     }
 
     /**
@@ -89,7 +89,7 @@ class UCRParser {
      * Output the map into a CSV file for debugging purposes
      */
     fun outputMap() {
-        val file: File = File("DataMap.csv")
+        val file = File("DataMap.csv")
         val pw = PrintWriter(file)
 
         getDataMap()!!.keys.forEach {

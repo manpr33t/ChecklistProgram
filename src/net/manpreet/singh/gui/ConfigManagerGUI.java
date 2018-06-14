@@ -14,9 +14,9 @@
    limitations under the License.
  */
 
-package com.src.gui;
+package net.manpreet.singh.gui;
 
-import com.src.config.ConfigManager;
+import net.manpreet.singh.config.ConfigManager;
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -134,9 +134,8 @@ public class ConfigManagerGUI {
 
     /**
      * Assign Actions to buttons
-     * @throws Exception Trouble Assigning actions to buttons
      */
-    private void eventHandler() throws Exception {
+    private void eventHandler() {
         /*
         Create a new config at the click of a button
          */

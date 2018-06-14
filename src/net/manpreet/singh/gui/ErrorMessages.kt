@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package com.src.gui
+package net.manpreet.singh.gui
 
 import javafx.scene.control.Alert
 import javafx.scene.control.Label

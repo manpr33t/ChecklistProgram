@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package com.src.checklist;
+package net.manpreet.singh.checklist;
 
 import java.io.*;
 import java.text.DateFormat;

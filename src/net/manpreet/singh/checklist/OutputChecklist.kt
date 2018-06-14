@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package com.src.checklist
+package net.manpreet.singh.checklist
 
 import org.apache.poi.hssf.usermodel.HSSFCellStyle
 import org.apache.poi.hssf.usermodel.HSSFWorkbook

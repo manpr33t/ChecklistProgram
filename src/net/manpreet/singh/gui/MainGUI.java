@@ -14,10 +14,10 @@
    limitations under the License.
  */
 
-package com.src.gui;
+package net.manpreet.singh.gui;
 
-import com.src.checklist.Utility;
-import com.src.config.ConfigManager;
+import net.manpreet.singh.checklist.Utility;
+import net.manpreet.singh.config.ConfigManager;
 import javafx.application.Application;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -42,7 +42,6 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
@@ -57,7 +56,7 @@ public class MainGUI extends Application{
     private final int WINDOW_HEIGHT = 300;
     private final int WINDOW_WIDTH = 350;
 
-    private final String mLicence = "Copyright 2018 Manpreet Singh\n\n" +
+    private final String LICENSE = "Copyright 2018 Manpreet Singh\n\n" +
             "Licensed under the Apache License, Version 2.0 (the \"License\");\n" +
             "you may not use this file except in compliance with the License.\n" +
             "You may obtain a copy of the License at\n\n" +
@@ -86,7 +85,7 @@ public class MainGUI extends Application{
     private Hyperlink   mName;
     private File        mDescription;
 
-    private ConfigManager mConfig;
+    private ConfigManager    mConfig;
     private ConfigManagerGUI mConfigManagerGUI;
 
     /**
@@ -135,7 +134,7 @@ public class MainGUI extends Application{
 
         mName = new Hyperlink("Manpreet Singh 2017-2018");
         mName.setBorder(Border.EMPTY);
-        Tooltip.install(mName, new Tooltip(mLicence));
+        Tooltip.install(mName, new Tooltip(LICENSE));
 
         Text mLocation = new Text("SEWA/5983");
         mLocation.setFill(Paint.valueOf("#A9A9A9"));
@@ -255,6 +254,8 @@ public class MainGUI extends Application{
             }
         });
 
+        mHelpButton.setOnAction(event -> getHostServices().showDocument("https://manpreet-singh.github.io/pages/ChecklistProgram.html"));
+
         /*
         Adding Escape key handler, currently Escape key closes the window
          */
@@ -277,7 +278,7 @@ public class MainGUI extends Application{
      * Main loop of the program
      */
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         primaryStage.setTitle("Checklist Generator");
         primaryStage.getIcons().add(new Image("file:dependencies/img.png"));
         primaryStage.setResizable(false);

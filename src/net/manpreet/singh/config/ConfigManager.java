@@ -14,9 +14,9 @@
    limitations under the License.
  */
 
-package com.src.config;
+package net.manpreet.singh.config;
 
-import com.src.checklist.Utility;
+import net.manpreet.singh.checklist.Utility;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;

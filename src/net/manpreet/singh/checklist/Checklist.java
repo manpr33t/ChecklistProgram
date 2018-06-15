@@ -48,7 +48,7 @@ public class Checklist {
      * @param outputFile The Name of the Output file to output to.
      * @param destinationTag The Destination Tag to print into the Output file.
      */
-    public Checklist(String fileName, String outputFile, String destinationTag) {
+    public Checklist(String fileName, String outputFile, String destinationTag) throws Exception {
         // Initialize Variables
         this.mOutputFileName = outputFile;
         this.mDestinationTag = destinationTag;
@@ -65,22 +65,18 @@ public class Checklist {
      * Parse the Master Checklist this object will be using as the filter.
      * @param fileName Path to the file to be used as the filter.
      */
-    private void parseChecklist(String fileName) {
+    private void parseChecklist(String fileName) throws Exception {
         // Go through the file line by line and copy the current line into the variable line
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
-            // Split up the line by commas and put into array
-            for (String line; (line = br.readLine()) != null;) {
-                String[] lineBuffer = line.split(",");
+        BufferedReader br = new BufferedReader(new FileReader(fileName));
+        // Split up the line by commas and put into array
+        for (String line; (line = br.readLine()) != null;) {
+            String[] lineBuffer = line.split(",");
 
-                // Only add zipcode to the checklist if it has anything in the zip code cell and it's a number
-                if (lineBuffer.length > 1 && lineBuffer[1] != null && lineBuffer[1].matches(".*\\d+.*")) {
-                    mCheckList.add(Utility.removeZipcodePrefix(lineBuffer[1]));
-                    outputBuffer.add(lineBuffer);
-                }
+            // Only add zipcode to the checklist if it has anything in the zip code cell and it's a number
+            if (lineBuffer.length > 1 && lineBuffer[1] != null && lineBuffer[1].matches(".*\\d+.*")) {
+                mCheckList.add(Utility.removeZipcodePrefix(lineBuffer[1]));
+                outputBuffer.add(lineBuffer);
             }
-        } catch (Exception e) {
-            System.out.println("Error Initializing the Buffered Reader");
-            e.printStackTrace();
         }
     }
 

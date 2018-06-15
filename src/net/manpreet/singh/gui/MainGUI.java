@@ -16,8 +16,6 @@
 
 package net.manpreet.singh.gui;
 
-import net.manpreet.singh.checklist.Utility;
-import net.manpreet.singh.config.ConfigManager;
 import javafx.application.Application;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -37,6 +35,8 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import net.manpreet.singh.checklist.Utility;
+import net.manpreet.singh.config.ConfigManager;
 
 import java.awt.*;
 import java.io.File;

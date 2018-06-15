@@ -16,10 +16,10 @@
 
 package net.manpreet.singh.config;
 
-import net.manpreet.singh.checklist.Utility;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
+import net.manpreet.singh.checklist.Utility;
 
 import java.awt.*;
 import java.io.*;

@@ -16,7 +16,6 @@
 
 package net.manpreet.singh.gui;
 
-import net.manpreet.singh.config.ConfigManager;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -27,6 +26,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import net.manpreet.singh.config.ConfigManager;
 
 import java.io.File;
 import java.io.FileOutputStream;

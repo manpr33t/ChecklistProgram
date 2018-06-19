@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package net.manpreet.singh.checklist;
+package net.singh.manpreet.checklist;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

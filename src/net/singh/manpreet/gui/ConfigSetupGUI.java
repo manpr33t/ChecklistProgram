@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package net.manpreet.singh.gui;
+package net.singh.manpreet.gui;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -26,7 +26,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import net.manpreet.singh.config.ConfigManager;
+import net.singh.manpreet.config.ConfigManager;
 
 import java.io.File;
 import java.io.FileOutputStream;

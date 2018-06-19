@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ChecklistProgram.iml" filepath="$PROJECT_DIR$/ChecklistProgram.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ChecklistUpdater/ChecklistUpdater.iml" filepath="$PROJECT_DIR$/ChecklistUpdater/ChecklistUpdater.iml" />
     </modules>
   </component>
 </project>

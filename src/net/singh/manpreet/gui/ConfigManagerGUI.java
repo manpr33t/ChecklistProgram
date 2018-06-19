@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package net.manpreet.singh.gui;
+package net.singh.manpreet.gui;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
@@ -34,7 +34,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
-import net.manpreet.singh.config.ConfigManager;
+import net.singh.manpreet.config.ConfigManager;
 
 import java.awt.*;
 import java.io.File;

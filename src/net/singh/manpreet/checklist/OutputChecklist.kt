@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package net.manpreet.singh.checklist
+package net.singh.manpreet.checklist
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook
 import org.apache.poi.ss.usermodel.BorderStyle

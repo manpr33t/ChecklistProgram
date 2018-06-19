@@ -14,9 +14,9 @@
    limitations under the License.
  */
 
-package net.manpreet.singh.config
+package net.singh.manpreet.config
 
-import net.manpreet.singh.checklist.Utility
+import net.singh.manpreet.checklist.Utility
 import org.apache.poi.hssf.usermodel.HSSFRow
 import org.apache.poi.hssf.usermodel.HSSFSheet
 import org.apache.poi.hssf.usermodel.HSSFWorkbook

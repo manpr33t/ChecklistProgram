@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package net.manpreet.singh.gui;
+package net.singh.manpreet.gui;
 
 import javafx.application.Application;
 import javafx.geometry.HPos;
@@ -35,8 +35,8 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import net.manpreet.singh.checklist.Utility;
-import net.manpreet.singh.config.ConfigManager;
+import net.singh.manpreet.checklist.Utility;
+import net.singh.manpreet.config.ConfigManager;
 
 import java.awt.*;
 import java.io.File;
@@ -85,7 +85,7 @@ public class MainGUI extends Application{
     private Hyperlink   mName;
     private File        mDescription;
 
-    private ConfigManager    mConfig;
+    private ConfigManager mConfig;
     private ConfigManagerGUI mConfigManagerGUI;
 
     /**

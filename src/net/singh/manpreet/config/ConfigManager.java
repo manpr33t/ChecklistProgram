@@ -14,12 +14,12 @@
    limitations under the License.
  */
 
-package net.manpreet.singh.config;
+package net.singh.manpreet.config;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
-import net.manpreet.singh.checklist.Utility;
+import net.singh.manpreet.checklist.Utility;
 
 import java.awt.*;
 import java.io.*;

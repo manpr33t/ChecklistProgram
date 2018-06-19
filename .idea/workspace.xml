@@ -2,16 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ChecklistProgram_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/poi_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChecklistUpdater/ChecklistUpdater.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/CSVReader.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/2854787.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChecklistProgram.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ChecklistProgram.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/checklist/Checklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/checklist/Checklist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/checklist/OutputChecklist.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/checklist/OutputChecklist.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/checklist/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/checklist/Utility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/config/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/config/ConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/config/ConfigParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/config/ConfigParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/config/UCRParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/config/UCRParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/gui/ConfigManagerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/gui/ConfigManagerGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/gui/ConfigSetupGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/gui/ConfigSetupGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/gui/ErrorMessages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/gui/ErrorMessages.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/gui/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/gui/MainGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/test/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +38,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/manpreet/singh/test/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/net/singh/manpreet/test/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
@@ -32,14 +46,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OutputChecklist.kt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/net/manpreet/singh/checklist/OutputChecklist.kt">
+      <file leaf-file-name="OutputChecklist.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/singh/manpreet/checklist/OutputChecklist.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-              <folding>
-                <element signature="e#629#830#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MANIFEST.MF" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -48,6 +68,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1325" />
@@ -72,41 +99,18 @@
             <path>
               <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="ChecklistUpdater" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="singh" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="singh" type="462c0819:PsiDirectoryNode" />
-              <item name="checklist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="singh" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="singh" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="singh" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -114,6 +118,12 @@
       </pane>
       <pane id="Scope" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/dependencies/poi-3.17" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15234375" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -191,7 +201,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -201,12 +210,12 @@
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3293011" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
@@ -228,29 +237,107 @@
     <entry file="file://$PROJECT_DIR$/ChecklistProgram.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet/singh/test/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/net/singh/manpreet/test/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet/singh/checklist/OutputChecklist.kt">
+    <entry file="file://$PROJECT_DIR$/src/net/singh/manpreet/checklist/OutputChecklist.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="28" column="35" lean-forward="true" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
-          <folding>
-            <element signature="e#629#830#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>ChecklistProgram:jar</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>ChecklistUpdater</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>poi-3</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

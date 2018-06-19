@@ -1,1 +1,1 @@
-jre\bin\java.exe -jar CSVReader.jar
+jre\bin\java.exe -jar ChecklistProgram.jar

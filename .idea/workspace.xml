@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="ChecklistProgram:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/ChecklistProgram_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/poi_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ChecklistUpdater/ChecklistUpdater.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/CSVReader.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/2854787.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChecklistUpdater/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ChecklistUpdater/src/net/singh/manpreet/updater/Updater.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChecklistProgram.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ChecklistProgram.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CheckListsLaunch.bat" beforeDir="false" afterPath="$PROJECT_DIR$/CheckListsLaunch.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChecklistUpdater/ChecklistUpdater.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ChecklistUpdater/ChecklistUpdater.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/checklist/Checklist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/checklist/Checklist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/checklist/OutputChecklist.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/checklist/OutputChecklist.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/checklist/Utility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/checklist/Utility.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/config/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/config/ConfigManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/config/ConfigParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/config/ConfigParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/config/UCRParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/config/UCRParser.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/gui/ConfigManagerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/gui/ConfigManagerGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/gui/ConfigSetupGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/gui/ConfigSetupGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/gui/ErrorMessages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/gui/ErrorMessages.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/gui/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/gui/MainGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/manpreet/singh/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/test/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/singh/manpreet/test/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/singh/manpreet/main/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +26,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/singh/manpreet/test/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/net/singh/manpreet/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
@@ -55,16 +43,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MANIFEST.MF" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+      <file leaf-file-name="Updater.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/singh/manpreet/updater/Updater.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="153">
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,6 +70,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+        <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/singh/manpreet/updater/Updater.kt" />
       </list>
     </option>
   </component>
@@ -104,6 +102,12 @@
             <path>
               <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="ChecklistUpdater" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -111,6 +115,40 @@
               <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="manpreet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="manpreet" type="462c0819:PsiDirectoryNode" />
+              <item name="checklist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="manpreet" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="manpreet" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="manpreet" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -120,8 +158,11 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/dependencies/poi-3.17" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -139,7 +180,7 @@
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="net.manpreet.singh.test.Main" />
+      <option name="MAIN_CLASS_NAME" value="net.singh.manpreet.main.Main" />
       <module name="ChecklistProgram" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
@@ -197,25 +238,34 @@
       <option name="presentableId" value="Default" />
       <updated>1529381679399</updated>
     </task>
+    <task id="LOCAL-00001" summary="Some refactoring and added another module">
+      <created>1529383398262</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1529383398262</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" weight="0.3293011" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.3293011" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3293011" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3293011" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
@@ -233,14 +283,32 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Some refactoring and added another module" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some refactoring and added another module" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ChecklistProgram.iml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/singh/manpreet/test/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/net/singh/manpreet/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/singh/manpreet/updater/Updater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" lean-forward="true" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -251,10 +319,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
+    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/singh/manpreet/updater/Updater.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="153">
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -264,7 +332,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited>ChecklistProgram:jar</last-edited>
+          <last-edited>ChecklistUpdater:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -337,7 +405,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>poi-3</last-edited>
+          <last-edited>com.googlecode.json-simple:json-simple:1.1.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

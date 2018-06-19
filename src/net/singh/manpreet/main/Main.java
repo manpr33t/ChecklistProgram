@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package net.singh.manpreet.test;
+package net.singh.manpreet.main;
 
 import javafx.application.Application;
 import net.singh.manpreet.gui.MainGUI;

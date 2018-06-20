@@ -6,7 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="" />
+    <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/singh/manpreet/updater/Updater.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -271,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529457292927</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Adding project page files etc.">
+      <created>1529457714311</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1529457714311</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -313,7 +322,8 @@
     <MESSAGE value="Some refactoring and added another module" />
     <MESSAGE value="Adding jar artifact settings" />
     <MESSAGE value="Adding project page files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding project page files" />
+    <MESSAGE value="Adding project page files etc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding project page files etc." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/net/singh/manpreet/main/Main.java">
@@ -372,7 +382,7 @@
     <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/singh/manpreet/updater/Updater.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
         </state>
       </provider>
     </entry>

@@ -1,9 +1,92 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title> Checklist Program Project Page</title>
-	</head>
-	<body>
-		<p>This is a project page.</p>
-	</body>
+    <head>
+        <title>Checklist Program Resources</title>
+        <link rel="stylesheet" type="text/css" href="css/ChecklistProgram.css">
+    </head>
+    <style type="text/css">
+        body {
+            background-color: rgba(170,170,170,0.5);
+            text-rendering: optimizeLegibility;
+        } 
+    </style>
+    <div class='wrapper'>
+        <img src="resources/under_construction.png">
+        <div class='content'>
+            <header>
+                <strong>Checklist Program Guide</strong>
+            </header>
+            <div class='toc'>
+                <body><p>
+                    <strong>Table of Contents</strong>
+                </p></body>
+                <ul class='list'>
+                    <li><a href="#download_link">Downloading the program</a></li>
+                    <li><a href="#section_one">Creating the configuration spreadsheets</a></li>
+                    <li><a href="#section_two">Adjusting program settings</a></li>
+                    <li><a href="#section_three">Running the Checklist Program</a></li>
+                    <li><a href="#contact">Contact Information</a></li>
+                </ul>
+            </div>
+            
+            <div class='download_link'>
+                <h1>Downloading the program</h1>
+                <form method="get" action="resources/zip/ChecklistProgram.zip">
+                    <button class="download_buton">Download</button>
+                </form>
+                <ul>
+                    <li>Download the program using the button above</li>
+                    <li>Extract the zip file into any folder, the contents of the folder should look like the image below</li>
+                </ul>
+                <p>
+                    <img src="resources/folder_contents.PNG">
+                </p>
+            </div>
+
+            <div class='section_one'>
+                <h1>Creating the configuration spreadsheets.</h1>
+                <p>
+                    Before we can begin using the Checklist program, we need to supply the program  a list of zipcodes to sort by.<br>
+                    The list of all location and their zipcodes can usually be obtained from your Hub Industrial Engineer.<br><br>
+                    At SEWA, we have 6 different spreadsheets that contain zipcodes and pallet location for 6 different destinations. For example, let say we have trailers going to locations four different destions A, B, C, and D. We would then complile lists of the pallets that need to get loaded into each trailer(s). List A would only contain all the pallets that need to get activated and loaded onto the trailer(s) going to destination A. This would get repeated for destinations B, C, and D respectively.<br><br>
+                    Each of these lists, should be in the format shown below.<br>
+                    <img src="resources/routes_checklist_example.PNG">
+                </p>
+                <ul>
+                    <li>The first column should have the pallet's destination name, this is the same name that is printed on the sticker when the pallet is activated.</li>
+                    <li>The second column should have the Zipcode of the pallet</li>
+                    <li>The third column should have the physical pallet location</li>
+                </ul>
+                <p>
+                    After creating the spreadsheet of all pallet locations. It's now time to save this spreadsheet. When saving this spreadsheet, you will need to adjust the save options. On the save file dialog window, change the "Save as type:" option to CSV (Comma delimited) (*.csv) as shown below.
+                    <img src="resources/checklist_save_option_example.PNG">
+                </p>
+            </div>
+
+            <div class="section_two">
+                <h1>Adjusting program settings</h1>
+                <p>
+                    To adjust the program settings, click the red gear icon in the top left.<br>
+                    <img src="resources/program_settings.png"><br>
+
+                    This will bring up the settings window, from which you will select the add new config button.<br>
+                    <img src="resources/program_settings_window.PNG"><br>
+
+                    You should now see the Add New Config window.
+                </p>
+            </div>
+
+            <div class="section_three">
+            </div>
+
+            <div class="contact">
+            
+            </div>
+            Website is still under construction :) <br>
+            -Manpreet
+        </div>
+    </div>
+    <footer>
+        &copy; 2018 Manpreet Singh
+    </footer>
 </html>

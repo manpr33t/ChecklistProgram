@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'SourceSansPro-Regular';
+    src: url(../resources/fonts/SourceSansPro-Regular.otf) format("opentype");
+}
+
+@font-face {
+    font-family: 'SourceSansPro-Semibold';
+    src: url(../resources/fonts/SourceSansPro-Semibold.otf) format("opentype");
+}
+
+header {
+    text-shadow: 0px 0px 10px rgb(200,200,200);
+}
+
+p {
+    padding-left: 30px;
+    line-height: 25px;
+    font-family: 'SourceSansPro-Regular';
+}
+
+img {
+    width: 25%;
+    height: auto;
+}
+
+footer {
+    font-family: 'SourceSansPro-Semibold';
+    font-size: 15pt;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.wrapper {
+    font-family: 'SourceSansPro-Regular', 'Helvetica', 'Arial';
+    margin: auto;
+    width: 75%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.75);
+    background-blend-mode: lighten;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+    clear: left;
+}
+
+.wrapper header {
+    font-family: 'SourceSansPro-Regular';
+    text-align: center;
+    font-size: 80px;
+    color: rgba(122,89,228,0.75);
+}
+
+.wrapper h1 {
+    font-family: 'Arial';
+    text-align: left;
+    font-size: 30px;
+}
+
+.wrapper img {
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.25);
+    border-radius: 5px;
+    float: right;
+}
+
+.wrapper .content img{
+    float: none;
+    margin-top: 10px;
+    width: auto;
+    height: auto;
+}
+
+.wrapper .content .toc {
+    position: relative;
+    left: 2%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.25);
+    width: 30%;
+    display: table;
+}
+
+.wrapper .content .toc p {
+    font-family: 'Helvetica';
+    padding-left: 25px;
+}
+
+.wrapper .content .toc ul {
+    padding-left: 50px;
+}
+
+.wrapper .content .download_link {
+   clear: left;
+}
+
+.wrapper .content .download_link p{
+    margin-right: 190px;
+}
+
+.wrapper .content .download_link .download_buton{
+    display: flex;
+    background-color: #93bcff;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 8px 30px;
+    padding-left: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'SourceSansPro-Semibold';
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+    position: relative;
+    left: 30px;
+}
+.wrapper .content .download_link .download_buton:hover{
+    background-color: #3280ff;
+}
+
+.wrapper .content .section_one {
+    margin-right: auto;
+}
+
+.wrapper .content .section_one p {
+    margin-right: 190px;
+}

@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package net.singh.manpreet.gui;
+package net.manpreet_singh.gui;
 
 import javafx.application.Application;
 import javafx.geometry.HPos;
@@ -28,6 +28,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.GridPane;
@@ -35,8 +37,8 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import net.singh.manpreet.checklist.Utility;
-import net.singh.manpreet.config.ConfigManager;
+import net.manpreet_singh.checklist.Utility;
+import net.manpreet_singh.config.ConfigManager;
 
 import java.awt.*;
 import java.io.File;
@@ -87,6 +89,8 @@ public class MainGUI extends Application{
 
     private ConfigManager mConfig;
     private ConfigManagerGUI mConfigManagerGUI;
+
+    final private KeyCombination INFO_KEY = new KeyCodeCombination(KeyCode.I, KeyCombination.CONTROL_DOWN);
 
     /**
      * GUI Built using JavaFX
@@ -262,6 +266,15 @@ public class MainGUI extends Application{
         stage.addEventHandler(KeyEvent.KEY_RELEASED, (KeyEvent event) -> {
             if (KeyCode.ESCAPE == event.getCode())
                 stage.close();
+        });
+
+        stage.addEventHandler(KeyEvent.KEY_RELEASED, (KeyEvent event) -> {
+            String s = "";
+            s += System.getProperty("java.vendor");
+            s += "\nJava Version: ";
+            s += System.getProperty("java.version");
+            if (INFO_KEY.match(event))
+                ErrorMessagesKt.message(s);
         });
     }
 

@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: net.singh.manpreet.updater.Updater
+Main-Class: net.manpreet_singh.updater.Updater
 

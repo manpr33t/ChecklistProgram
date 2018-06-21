@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package net.singh.manpreet.gui;
+package net.manpreet_singh.gui;
 
 import javafx.collections.ObservableList;
 import javafx.geometry.HPos;
@@ -34,7 +34,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import javafx.util.StringConverter;
-import net.singh.manpreet.config.ConfigManager;
+import net.manpreet_singh.config.ConfigManager;
 
 import java.awt.*;
 import java.io.File;
@@ -60,6 +60,7 @@ public class ConfigManagerGUI {
     private ObservableList<Map>      mAllData;
 
     private Button   mNewConfigButton;
+    private Button   mDeleteSelected;
 
     private Stage    mStage;
     private GridPane mGridPane;
@@ -113,6 +114,7 @@ public class ConfigManagerGUI {
         mInputColumn.setCellFactory(cellFactoryForMap);
 
         mNewConfigButton = new Button("Add New Config");
+        mDeleteSelected = new Button("Delete Seclected");
 
         mGridPane = new GridPane();
         mGridPane.setAlignment(Pos.TOP_LEFT);
@@ -122,6 +124,7 @@ public class ConfigManagerGUI {
 
 //        mGridPane.setGridLinesVisible(true);
         mGridPane.add(mNewConfigButton, 1,1);
+        mGridPane.add(mDeleteSelected, 0, 1);
         GridPane.setHalignment(mNewConfigButton, HPos.RIGHT);
         mGridPane.add(mDataTable, 0, 0,2,1);
 
@@ -135,7 +138,7 @@ public class ConfigManagerGUI {
     /**
      * Assign Actions to buttons
      */
-    private void eventHandler() {
+    private void eventHandler() throws Exception{
         /*
         Create a new config at the click of a button
          */
@@ -152,6 +155,20 @@ public class ConfigManagerGUI {
             }
             mDataTable.setVisible(false);
             mDataTable.setVisible(true);
+            System.out.println(mDataTable.toString());
+        });
+
+        mDeleteSelected.setOnAction(event -> {
+            System.out.println(mDataTable.getSelectionModel().getSelectedItem().toString());
+            try {
+                mConfigManager.reloadConfig();
+            } catch (Exception e) {
+                ErrorMessagesKt.exception(e);
+            }
+            mDataTable.setVisible(false);
+            mDataTable.setVisible(true);
+            mDataTable.refresh();
+            System.out.println("refresh");
         });
 
         /*
@@ -178,7 +195,7 @@ public class ConfigManagerGUI {
                 mConfigManager.updateKey(old.replaceAll(",", "-"),
                         event.getNewValue().replaceAll(",", "-"));
             } catch (Exception e) {
-                e.printStackTrace();
+                ErrorMessagesKt.exception(e);
             }
         });
 
@@ -191,7 +208,7 @@ public class ConfigManagerGUI {
             try {
                 mConfigManager.updateData(mAllData, COLUMN_KEYS);
             } catch (Exception e) {
-                e.printStackTrace();
+                ErrorMessagesKt.exception(e);
             }
             try {
                 mConfigManager.reloadConfig();

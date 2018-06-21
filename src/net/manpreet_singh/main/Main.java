@@ -14,10 +14,10 @@
    limitations under the License.
  */
 
-package net.singh.manpreet.main;
+package net.manpreet_singh.main;
 
 import javafx.application.Application;
-import net.singh.manpreet.gui.MainGUI;
+import net.manpreet_singh.gui.MainGUI;
 
 /**
  * @author Manpreet Singh (2854787)

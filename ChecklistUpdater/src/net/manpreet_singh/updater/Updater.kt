@@ -1,4 +1,4 @@
-package net.singh.manpreet.updater
+package net.manpreet_singh.updater
 
 class Updater {
     companion object {

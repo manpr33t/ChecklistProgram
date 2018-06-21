@@ -14,9 +14,9 @@
    limitations under the License.
  */
 
-package net.singh.manpreet.config;
+package net.manpreet_singh.config;
 
-import net.singh.manpreet.checklist.Checklist;
+import net.manpreet_singh.checklist.Checklist;
 
 import java.io.File;
 import java.io.FileInputStream;

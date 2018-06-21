@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package net.singh.manpreet.gui
+package net.manpreet_singh.gui
 
 import javafx.scene.control.Alert
 import javafx.scene.control.Label
@@ -37,6 +37,8 @@ fun error(s: String) {
 
 fun message(s: String) {
     val window = Alert(Alert.AlertType.INFORMATION)
+    window.contentText = s
+    window.showAndWait()
 }
 
 /**

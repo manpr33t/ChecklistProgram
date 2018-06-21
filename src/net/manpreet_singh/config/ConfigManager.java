@@ -14,12 +14,12 @@
    limitations under the License.
  */
 
-package net.singh.manpreet.config;
+package net.manpreet_singh.config;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
-import net.singh.manpreet.checklist.Utility;
+import net.manpreet_singh.checklist.Utility;
 
 import java.awt.*;
 import java.io.*;
@@ -104,6 +104,12 @@ public class ConfigManager {
     public void addNewConfig(String configFileName) {
         mConfigFileNames.add(configFileName);
     }
+
+    /**
+     * Remove a config file from the list of available configs
+     * @param configFileName Name of the Config File to remove
+     */
+    public void removeConfig(String configFileName) { mConfigFileNames.remove(configFileName); }
 
     /**
      * Save the current master config file

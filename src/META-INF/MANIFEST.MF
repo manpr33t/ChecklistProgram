@@ -1,2 +1,2 @@
 Manifest-Version: 1.0
-Main-Class: net.singh.manpreet.main.Main
+Main-Class: net.manpreet_singh.main.Main

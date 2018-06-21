@@ -14,7 +14,7 @@
    limitations under the License.
  */
 
-package net.singh.manpreet.checklist;
+package net.manpreet_singh.checklist;
 
 import org.apache.poi.hssf.usermodel.HSSFCell;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -100,7 +100,7 @@ public class Utility {
         return f;
     }
 
-    public static boolean deleteFile(String fileName) throws IOException {
+    public static boolean deleteFile(String fileName) {
         File f = new File(fileName);
         return !f.exists() || f.delete();
     }

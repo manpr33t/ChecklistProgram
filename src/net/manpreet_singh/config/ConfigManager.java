@@ -255,6 +255,7 @@ public class ConfigManager {
                 }
             }
         }
+        System.out.println("Finished loading Config Files");
     }
 
     public void reloadConfig() throws Exception{

@@ -209,6 +209,6 @@ public class ConfigSetupGUI {
         if (mStage.getOwner() == null)
             mStage.initOwner(parentStage);
         mStage.getIcons().add(new Image("file:dependencies/img.png"));
-        mStage.show();
+        mStage.showAndWait();
     }
 }

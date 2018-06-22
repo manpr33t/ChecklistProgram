@@ -138,7 +138,7 @@ public class ConfigManagerGUI {
     /**
      * Assign Actions to buttons
      */
-    private void eventHandler() throws Exception{
+    private void eventHandler() {
         /*
         Create a new config at the click of a button
          */
@@ -153,9 +153,7 @@ public class ConfigManagerGUI {
                     e1.printStackTrace();
                 }
             }
-            mDataTable.setVisible(false);
-            mDataTable.setVisible(true);
-            System.out.println(mDataTable.toString());
+            redisplayData();
         });
 
         mDeleteSelected.setOnAction(event -> {
@@ -189,8 +187,7 @@ public class ConfigManagerGUI {
             else
                 event.getRowValue().put(COLUMN_KEYS[1], event.getNewValue());
             // Update the ConfigManager map and have it delete the old Config File.
-            event.getTableView().getColumns().get(0).setVisible(false);
-            event.getTableView().getColumns().get(0).setVisible(true);
+            event.getTableView().refresh();
             try {
                 mConfigManager.updateKey(old.replaceAll(",", "-"),
                         event.getNewValue().replaceAll(",", "-"));
@@ -230,6 +227,20 @@ public class ConfigManagerGUI {
     }
 
     /**
+     * Redisplay data in the table view
+     */
+     private void redisplayData() {
+        try {
+            mConfigManager.reloadConfig();
+        } catch (Exception e) {
+            ErrorMessagesKt.exception(e);
+        }
+        mAllData.clear();
+        mAllData.addAll(mConfigManager.getObservableMap(COLUMN_KEYS));
+        mDataTable.refresh();
+    }
+
+    /**
      * Parse the UCR Excel File
      * @param in Excel file to be parsed
      * @param desktop The Desktop to open the file on
@@ -246,6 +257,7 @@ public class ConfigManagerGUI {
      */
     public void run(Stage parentStage) throws Exception {
         eventHandler();
+        mConfigManager.reloadConfig();
         if (mStage.getOwner() == null)
             mStage.initOwner(parentStage);
         mStage.getIcons().add(new Image("file:dependencies/img.png"));

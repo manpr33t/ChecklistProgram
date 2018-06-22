@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="ChecklistProgram:jar" />
+      <artifact name="ChecklistUpdater:jar" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/dependencies/simple.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dependencies/version.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ChecklistProgram_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/ChecklistProgram_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ChecklistUpdater_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/ChecklistUpdater_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChecklistProgram.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cl.ChecklistProgram.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChecklistUpdater/ChecklistUpdater.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ChecklistUpdater/cl.ChecklistUpdater.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/CNAME" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigSetupGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigSetupGUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +33,17 @@
       <file leaf-file-name="ConfigManagerGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
-              <caret line="238" column="70" selection-start-line="238" selection-start-column="70" selection-end-line="238" selection-end-column="70" />
+            <state relative-caret-position="150">
+              <caret line="234" selection-start-line="234" selection-end-line="234" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_config.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dependencies/main_config.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -34,8 +51,8 @@
       <file leaf-file-name="ConfigManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="186" selection-start-line="186" selection-end-line="186" />
+            <state relative-caret-position="976">
+              <caret line="192" selection-start-line="192" selection-end-line="192" />
               <folding>
                 <element signature="e#3185#3186#0" expanded="true" />
                 <element signature="e#3237#3238#0" expanded="true" />
@@ -44,11 +61,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_config.properties" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dependencies/main_config.properties">
+      <file leaf-file-name="Updater.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="238">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <folding>
+                <element signature="e#36#144#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="version.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dependencies/version.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="simple.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dependencies/simple.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConfigSetupGUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigSetupGUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-412">
+              <caret line="118" column="19" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -57,16 +104,19 @@
         <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="217">
-              <caret line="253" column="36" lean-forward="true" selection-start-line="253" selection-start-column="36" selection-end-line="253" selection-end-column="36" />
+              <caret line="253" column="36" selection-start-line="253" selection-start-column="36" selection-end-line="253" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConfigSetupGUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigSetupGUI.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="179" column="44" selection-start-line="179" selection-start-column="44" selection-end-line="179" selection-end-column="44" />
+            <state relative-caret-position="136">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,9 +153,12 @@
         <option value="$PROJECT_DIR$/src/net/singh/manpreet/gui/ErrorMessages.kt" />
         <option value="$PROJECT_DIR$/src/net/singh/manpreet/gui/MainGUI.java" />
         <option value="$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigSetupGUI.java" />
-        <option value="$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java" />
-        <option value="$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java" />
         <option value="$PROJECT_DIR$/dependencies/main_config.properties" />
+        <option value="$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java" />
+        <option value="$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java" />
+        <option value="$PROJECT_DIR$/dependencies/simple.json" />
+        <option value="$PROJECT_DIR$/dependencies/version.json" />
+        <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt" />
       </list>
     </option>
   </component>
@@ -147,6 +200,13 @@
               <item name="ChecklistUpdater" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="ChecklistUpdater" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="updater" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
@@ -214,8 +274,8 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SearchEverywhereHistoryKey" value="color&#9;ACTION&#9;ShowColorPicker" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/dependencies/poi-3.17" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ChecklistProgram.jar!/" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
@@ -232,10 +292,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Kotlin.net.manpreet_singh.updater.Updater">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.manpreet_singh.main.Main" />
-      <module name="ChecklistProgram" />
+      <module name="cl.ChecklistProgram" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -257,6 +317,57 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="cl.ChecklistProgram" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+    </configuration>
+    <configuration name="net.manpreet_singh.updater.Updater" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="cl.ChecklistUpdater" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="net.manpreet_singh.updater.Updater" />
+      <option name="WORKING_DIRECTORY" />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="cl.ChecklistProgram" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
     </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -280,6 +391,15 @@
       <properties />
       <listeners />
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Kotlin.net.manpreet_singh.updater.Updater" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.net.manpreet_singh.updater.Updater" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -341,7 +461,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529558525101</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Finally got the table view to update properly">
+      <created>1529637760548</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1529637760548</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -350,28 +477,30 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3293011" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.3293011" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3293011" />
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3293011" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2692802" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49863014" visible="true" weight="0.26863754" />
+      <window_info anchor="bottom" id="Inspection Results" weight="0.3293011" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3293011" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Structure" order="1" sideWeight="0.50136983" side_tool="true" weight="0.26863754" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.5094086" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.28360215" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" x="0" y="0" width="354" height="676" id="Documentation" side_tool="true" weight="0.32969153" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
@@ -387,25 +516,32 @@
     <MESSAGE value="adding CNAME file" />
     <MESSAGE value="Trying to work around LFS limitations" />
     <MESSAGE value="Trying some new things, and switch to using legal package names" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying some new things, and switch to using legal package names" />
+    <MESSAGE value="Finally got the table view to update properly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finally got the table view to update properly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java</url>
-          <line>186</line>
+          <url>file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java</url>
+          <line>165</line>
           <properties />
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java</url>
+          <line>116</line>
+          <properties />
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java</url>
-          <line>239</line>
+          <line>234</line>
           <properties />
-          <option name="timeStamp" value="10" />
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="12" />
+      <option name="time" value="26" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -612,15 +748,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChecklistProgram.iml">
+    <entry file="file://$PROJECT_DIR$/cl.ChecklistProgram.iml">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
@@ -661,13 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -686,20 +808,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
           <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="253" column="36" lean-forward="true" selection-start-line="253" selection-start-column="36" selection-end-line="253" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigSetupGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="179" column="44" selection-start-line="179" selection-start-column="44" selection-end-line="179" selection-end-column="44" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#623#881#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -710,10 +822,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/Documents/JavaDK/javafx-src.zip!/com/sun/javafx/event/CompositeEventHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigSetupGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-412">
+          <caret line="118" column="19" selection-start-line="118" selection-start-column="19" selection-end-line="118" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dependencies/main_config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="234" selection-start-line="234" selection-end-line="234" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="186" selection-start-line="186" selection-end-line="186" />
+        <state relative-caret-position="976">
+          <caret line="192" selection-start-line="192" selection-end-line="192" />
           <folding>
             <element signature="e#3185#3186#0" expanded="true" />
             <element signature="e#3237#3238#0" expanded="true" />
@@ -721,17 +861,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java">
+    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
-          <caret line="238" column="70" selection-start-line="238" selection-start-column="70" selection-end-line="238" selection-end-column="70" />
+        <state relative-caret-position="136">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dependencies/main_config.properties">
+    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="217">
+          <caret line="253" column="36" selection-start-line="253" selection-start-column="36" selection-end-line="253" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dependencies/simple.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dependencies/version.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <element signature="e#36#144#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -789,12 +956,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>ChecklistUpdater</last-edited>
+          <last-edited>ChecklistUpdater|cl</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

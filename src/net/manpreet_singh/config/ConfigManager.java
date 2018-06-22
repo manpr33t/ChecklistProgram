@@ -107,9 +107,15 @@ public class ConfigManager {
 
     /**
      * Remove a config file from the list of available configs
-     * @param configFileName Name of the Config File to remove
+     * @param configName Name of the Config File to remove
      */
-    public void removeConfig(String configFileName) { mConfigFileNames.remove(configFileName); }
+    public void removeConfig(String configName) {
+        String filePath = String.format("dependencies/%s.properties", configName);
+        mConfigFileNames.remove(configName+".properties");
+        Utility.deleteFile(filePath);
+        mConfigMap.remove(configName);
+        System.out.println("removed " + configName);
+    }
 
     /**
      * Save the current master config file

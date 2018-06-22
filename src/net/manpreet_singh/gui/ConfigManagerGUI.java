@@ -158,15 +158,14 @@ public class ConfigManagerGUI {
 
         mDeleteSelected.setOnAction(event -> {
             System.out.println(mDataTable.getSelectionModel().getSelectedItem().toString());
-            try {
-                mConfigManager.reloadConfig();
-            } catch (Exception e) {
-                ErrorMessagesKt.exception(e);
+//            mAllData.remove(mDataTable.getSelectionModel().getSelectedItem());
+            if (mDataTable.getSelectionModel().getSelectedItem() instanceof Map) {
+                System.out.println(((Map) mDataTable.getSelectionModel().getSelectedItem()).get(COLUMN_KEYS[1]));
+                String filename = ((Map) mDataTable.getSelectionModel().getSelectedItem()).get(COLUMN_KEYS[1]).toString();
+                filename.replaceAll(",", "-");
+                mConfigManager.removeConfig(filename);
             }
-            mDataTable.setVisible(false);
-            mDataTable.setVisible(true);
-            mDataTable.refresh();
-            System.out.println("refresh");
+            redisplayData();
         });
 
         /*
@@ -197,22 +196,6 @@ public class ConfigManagerGUI {
         });
 
         /*
-        When the user closes this window
-         */
-        mStage.setOnCloseRequest(event -> {
-//            for (Map m : mAllData)
-//                System.out.println(m);
-            try {
-                mConfigManager.updateData(mAllData, COLUMN_KEYS);
-            } catch (Exception e) {
-                ErrorMessagesKt.exception(e);
-            }
-            try {
-                mConfigManager.reloadConfig();
-            } catch (Exception e) { ErrorMessagesKt.exception(e); }
-        });
-
-        /*
         When user wants to change the file Input
          */
         mInputColumn.setOnEditStart(event -> {
@@ -221,8 +204,21 @@ public class ConfigManagerGUI {
             File file = fileChooser.showOpenDialog(mStage);
             if (file != null)
                 event.getRowValue().put(COLUMN_KEYS[2], file.getAbsolutePath());
-            System.out.println(event.getRowValue());
-            System.out.println("Stuff happened here.");
+
+        });
+
+        /*
+        When the user closes this window
+         */
+        mStage.setOnCloseRequest(event -> {
+            try {
+                mConfigManager.updateData(mAllData, COLUMN_KEYS);
+            } catch (Exception e) {
+                ErrorMessagesKt.exception(e);
+            }
+            try {
+                mConfigManager.reloadConfig();
+            } catch (Exception e) { ErrorMessagesKt.exception(e); }
         });
     }
 
@@ -237,7 +233,6 @@ public class ConfigManagerGUI {
         }
         mAllData.clear();
         mAllData.addAll(mConfigManager.getObservableMap(COLUMN_KEYS));
-        mDataTable.refresh();
     }
 
     /**

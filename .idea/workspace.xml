@@ -10,6 +10,7 @@
     <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/resources/program_settings_window.PNG" beforeDir="false" afterPath="$PROJECT_DIR$/docs/resources/program_settings_window.PNG" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,13 +22,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ConfigManagerGUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConfigManagerGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="232" column="9" selection-start-line="232" selection-start-column="9" selection-end-line="232" selection-end-column="9" />
+            <state relative-caret-position="475">
+              <caret line="254" column="38" lean-forward="true" selection-start-line="254" selection-start-column="38" selection-end-line="254" selection-end-column="38" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="program_settings_window.PNG" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/resources/program_settings_window.PNG">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file leaf-file-name="new_config_window.PNG" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/docs/resources/new_config_window.PNG">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file leaf-file-name="ConfigManager.java" pinned="false" current-in-tab="false">
@@ -70,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+            <state relative-caret-position="459">
+              <caret line="92" column="73" selection-start-line="92" selection-start-column="73" selection-end-line="92" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -93,18 +104,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="217">
               <caret line="253" column="36" selection-start-line="253" selection-start-column="36" selection-end-line="253" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/main/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -134,7 +133,6 @@
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
         <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/singh/manpreet/updater/Updater.kt" />
         <option value="$PROJECT_DIR$/docs/css/ChecklistProgram.css" />
-        <option value="$PROJECT_DIR$/docs/index.html" />
         <option value="$PROJECT_DIR$/src/net/singh/manpreet/config/ConfigManager.java" />
         <option value="$PROJECT_DIR$/src/net/singh/manpreet/checklist/Utility.java" />
         <option value="$PROJECT_DIR$/src/net/singh/manpreet/gui/ConfigManagerGUI.java" />
@@ -147,6 +145,7 @@
         <option value="$PROJECT_DIR$/dependencies/simple.json" />
         <option value="$PROJECT_DIR$/dependencies/version.json" />
         <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt" />
+        <option value="$PROJECT_DIR$/docs/index.html" />
       </list>
     </option>
   </component>
@@ -434,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1529645758978</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updating things">
+      <created>1530160997654</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1530160997654</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -484,7 +490,8 @@
     <MESSAGE value="Trying some new things, and switch to using legal package names" />
     <MESSAGE value="Finally got the table view to update properly" />
     <MESSAGE value="Adding the structures for implementing an updater" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding the structures for implementing an updater" />
+    <MESSAGE value="Updating things" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating things" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -506,20 +513,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dependencies/main_config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="212" selection-start-line="1" selection-start-column="212" selection-end-line="1" selection-end-column="212" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3383">
-          <caret line="228" column="13" selection-start-line="228" selection-start-column="13" selection-end-line="228" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -771,9 +764,6 @@
     <entry file="file://$PROJECT_DIR$/docs/resources/routes_checklist_example.PNG">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/resources/program_settings_window.PNG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -798,13 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dependencies/simple.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -812,19 +795,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dependencies/version.json">
+    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        <state relative-caret-position="475">
+          <caret line="254" column="38" lean-forward="true" selection-start-line="254" selection-start-column="38" selection-end-line="254" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/docs/resources/program_settings.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/resources/new_config_window.PNG">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -837,10 +819,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java">
+    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="232" column="9" selection-start-line="232" selection-start-column="9" selection-end-line="232" selection-end-column="9" />
+        <state relative-caret-position="221">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dependencies/version.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/resources/program_settings_window.PNG">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="92" column="73" selection-start-line="92" selection-start-column="73" selection-end-line="92" selection-end-column="73" />
         </state>
       </provider>
     </entry>

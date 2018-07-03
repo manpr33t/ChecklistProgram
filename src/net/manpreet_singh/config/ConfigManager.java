@@ -87,8 +87,8 @@ public class ConfigManager {
             this.mConfigMap.get(prevKey).deleteConfigFile(prevKey);
             this.mConfigMap.remove(prevKey);
 
-            this.mConfigFileNames.remove(prevKey);
-            this.mConfigFileNames.add(newKey);
+            this.mConfigFileNames.remove(prevKey + ".properties");
+            this.mConfigFileNames.add(newKey + ".properties");
 
             this.mConfigMap.get(newKey).setTitle(newKey);
         } else  {

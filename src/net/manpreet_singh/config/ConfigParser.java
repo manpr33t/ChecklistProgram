@@ -17,6 +17,7 @@
 package net.manpreet_singh.config;
 
 import net.manpreet_singh.checklist.Checklist;
+import net.manpreet_singh.gui.ErrorMessagesKt;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -142,8 +143,7 @@ public class ConfigParser {
      */
     public void deleteConfigFile(String key) throws Exception{
         File f = new File("dependencies/" + key + ".properties");
-        if (!f.delete())
-            throw new Exception("Unable to update");
+        f.delete();
     }
 
     /**

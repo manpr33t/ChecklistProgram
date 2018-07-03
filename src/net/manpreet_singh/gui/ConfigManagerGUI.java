@@ -158,7 +158,6 @@ public class ConfigManagerGUI {
 
         mDeleteSelected.setOnAction(event -> {
             System.out.println(mDataTable.getSelectionModel().getSelectedItem().toString());
-//            mAllData.remove(mDataTable.getSelectionModel().getSelectedItem());
             if (mDataTable.getSelectionModel().getSelectedItem() instanceof Map) {
                 System.out.println(((Map) mDataTable.getSelectionModel().getSelectedItem()).get(COLUMN_KEYS[1]));
                 String filename = ((Map) mDataTable.getSelectionModel().getSelectedItem()).get(COLUMN_KEYS[1]).toString();
@@ -202,6 +201,7 @@ public class ConfigManagerGUI {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Choose new Input File...");
             File file = fileChooser.showOpenDialog(mStage);
+            event.getRowValue().clear();
             if (file != null)
                 event.getRowValue().put(COLUMN_KEYS[2], file.getAbsolutePath());
 

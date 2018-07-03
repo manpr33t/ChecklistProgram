@@ -46,18 +46,19 @@
             <div class='section_one' id='section_one'>
                 <h1>Creating the configuration spreadsheets.</h1>
                 <p>
-                    Before we can begin using the Checklist program, we need to supply the program  a list of zipcodes to sort by.<br>
-                    The list of all location and their zipcodes can usually be obtained from your Hub Industrial Engineer.<br><br>
-                    At SEWA, we have 6 different spreadsheets that contain zipcodes and pallet location for 6 different destinations. For example, let say we have trailers going to locations four different destions A, B, C, and D. We would then complile lists of the pallets that need to get loaded into each trailer(s). List A would only contain all the pallets that need to get activated and loaded onto the trailer(s) going to destination A. This would get repeated for destinations B, C, and D respectively.<br><br>
+                    Before we can begin using the Checklist program, we need to supply the program  a spreadsheet of zip codes to sort by.<br>
+                    The list of all location and their zip codes can usually be obtained from your Hub Industrial Engineer.<br><br>
+                    At SEWA, we have 6 different spreadsheets that contain zip codes and pallet location for 6 different destinations. For example, let say we have trailers going to locations four different destions A, B, C, and D. We would then complile lists of the pallets that need to get loaded into each trailer(s). List A would only contain all the pallets that need to get activated and loaded onto the trailer(s) going to destination A. This would get repeated for destinations B, C, and D respectively.<br><br>
                     Each of these lists, should be in the format shown below.<br>
                     <img src="resources/routes_checklist_example.PNG">
                 </p>
                 <ul>
                     <li>The first column should have the pallet's destination name, this is the same name that is printed on the sticker when the pallet is activated.</li>
-                    <li>The second column should have the Zipcode of the pallet</li>
+                    <li>The second column should have the zip code of the pallet. If the pallet has no zip code, then the 4 digit destination code is sufficient</li>
                     <li>The third column should have the physical pallet location</li>
                 </ul>
                 <p>
+                    In short, the zip codes on the spreadsheet should match the zip codes found on SSP and the UCR (Unshipped Container Report).<br>
                     After creating the spreadsheet of all pallet locations. It's now time to save this spreadsheet. When saving this spreadsheet, you will need to adjust the save options. On the save file dialog window, change the "Save as type:" option to CSV (Comma delimited) (*.csv) as shown below.
                     <img src="resources/checklist_save_option_example.PNG">
                 </p>
@@ -85,15 +86,15 @@
             <div class="section_three" id='section_three'>
                 <h1>Running the Checklist Program</h1>
                 <p>
-                    Running the program is pretty strait forward. The First thing you will want to do is download the Unshipped Container Report in the XLS format.<br>
-                    Head over to P2 and Hover over the Reports buttons and Click Hub. Then you will get a list of availables reports. You want to select the Unshipped Containers report from that list.<br>
+                    Running the program is pretty strait forward. The first thing you will want to do is download the Unshipped Container Report in the XLS format.<br>
+                    Head over to P2 and hover over the peports buttons and click Hub. Then you will get a list of available reports. You want to select the Unshipped Containers report from that list.<br>
                     From there you will see a page that looks like this: <br>
                     <img src="resources/UCR_download.png"><br>
-                    The Location box should show you current facility. Change the Format Type to XLS if not already and hit the Run Report Button.<br>
+                    The location box should show you current facility. Change the Format Type to XLS if not already and hit the Run Report Button.<br>
                     This will open/download a Excel spreadsheet of the Report. You want to keep track of where this file is saved or you can open and save the file to a different location at your convenience.<br><br>
 
                     You will now want to open the Checklist Program and select the green Open Excel File button. The program will prompt you for a file. You want to select the Unshipped Container Report you saved previously.<br>
-                    If everything went well, The pallet checklists you set up should open up automatically.
+                    If everything went well, The pallet checklists should open up automatically.
                 </p>
             </div>
 

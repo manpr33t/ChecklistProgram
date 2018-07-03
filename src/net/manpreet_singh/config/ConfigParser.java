@@ -17,7 +17,6 @@
 package net.manpreet_singh.config;
 
 import net.manpreet_singh.checklist.Checklist;
-import net.manpreet_singh.gui.ErrorMessagesKt;
 
 import java.io.File;
 import java.io.FileInputStream;

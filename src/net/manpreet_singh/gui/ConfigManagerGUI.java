@@ -201,7 +201,6 @@ public class ConfigManagerGUI {
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Choose new Input File...");
             File file = fileChooser.showOpenDialog(mStage);
-            event.getRowValue().clear();
             if (file != null)
                 event.getRowValue().put(COLUMN_KEYS[2], file.getAbsolutePath());
 

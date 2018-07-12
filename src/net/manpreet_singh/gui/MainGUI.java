@@ -258,7 +258,7 @@ public class MainGUI extends Application{
             }
         });
 
-        mHelpButton.setOnAction(event -> getHostServices().showDocument("https://manpreet-singh.github.io/pages/ChecklistProgram.html"));
+        mHelpButton.setOnAction(event -> getHostServices().showDocument("https://www.manpreet-singh.net/ChecklistProgram/"));
 
         /*
         Adding Escape key handler, currently Escape key closes the window

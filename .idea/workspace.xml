@@ -7,9 +7,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="">
+    <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="Update help link">
+      <change afterPath="$PROJECT_DIR$/docs/resources/github.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,11 +24,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/docs/index.html">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/main/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="62" column="73" selection-start-line="62" selection-start-column="73" selection-end-line="62" selection-end-column="73" />
+            <state relative-caret-position="119">
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainGUI.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="258" column="11" lean-forward="true" selection-start-line="258" selection-start-column="11" selection-end-line="258" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ErrorMessages.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ErrorMessages.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginWindow.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.fxml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="47" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="47" />
+            </state>
+          </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file leaf-file-name="LoginWindow.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -69,8 +109,6 @@
         <option value="$PROJECT_DIR$/src/net/manpreet_singh/json/JSONConfigManager.java" />
         <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt" />
         <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.java" />
-        <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.kt" />
-        <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.fxml" />
         <option value="$PROJECT_DIR$/dependencies/main_config.properties" />
         <option value="$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java" />
         <option value="$PROJECT_DIR$/dependencies/version.json" />
@@ -78,6 +116,10 @@
         <option value="$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigParser.java" />
         <option value="$PROJECT_DIR$/docs/css/ChecklistProgram.css" />
         <option value="$PROJECT_DIR$/docs/index.html" />
+        <option value="$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java" />
+        <option value="$PROJECT_DIR$/src/net/manpreet_singh/gui/ErrorMessages.kt" />
+        <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.fxml" />
+        <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.kt" />
       </list>
     </option>
   </component>
@@ -98,6 +140,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -108,15 +153,48 @@
             <path>
               <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="ChecklistUpdater" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="ChecklistUpdater" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="ChecklistUpdater" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="updater" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
               <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="manpreet_singh" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="manpreet_singh" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -142,7 +220,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Kotlin.net.manpreet_singh.updater.LoginWindow">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.manpreet_singh.main.Main" />
       <module name="cl.ChecklistProgram" />
@@ -351,7 +429,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530592100940</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Names, fixed some names.">
+      <created>1530593234261</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1530593234261</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -360,6 +445,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" sideWeight="0.4993573" visible="true" weight="0.3293011" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -370,7 +456,7 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3293011" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49731183" visible="true" weight="0.19023137" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49731183" visible="true" weight="0.19537275" />
       <window_info id="Structure" order="1" sideWeight="0.50268817" side_tool="true" weight="0.18251929" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
@@ -378,7 +464,6 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.45967743" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.3293011" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -406,7 +491,9 @@
     <MESSAGE value="Forgot to add image" />
     <MESSAGE value="Started work on updater. Looks like I might need to create a login window to get through the proxy firewall" />
     <MESSAGE value="Fixed issues with changing data stored in the configuration files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed issues with changing data stored in the configuration files" />
+    <MESSAGE value="Names, fixed some names." />
+    <MESSAGE value="Update help link" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update help link" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -553,13 +640,6 @@
     <entry file="file://$PROJECT_DIR$/.gitattributes">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ErrorMessages.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Documents/JavaDK/jre/lib/rt.jar!/java/util/Set.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="274">
@@ -586,13 +666,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/resources/routes_checklist_example.PNG">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/main/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/resources/program_settings.png">
       <provider selected="true" editor-type-id="images" />
@@ -641,13 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="246" column="11" selection-start-line="246" selection-start-column="11" selection-end-line="246" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dependencies/SELGYAKI01.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -658,21 +724,6 @@
     <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/json/JSONConfigManager.java" />
     <entry file="file://$PROJECT_DIR$/dependencies/simple.json" />
     <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.java" />
-    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.fxml">
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -734,8 +785,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="62" column="73" selection-start-line="62" selection-start-column="73" selection-end-line="62" selection-end-column="73" />
+        <state relative-caret-position="353">
+          <caret line="68" column="19" lean-forward="true" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/main/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ErrorMessages.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="40" column="24" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="47" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="47" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="258" column="11" lean-forward="true" selection-start-line="258" selection-start-column="11" selection-end-line="258" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
         </state>
       </provider>
     </entry>

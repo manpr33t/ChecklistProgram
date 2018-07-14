@@ -8,8 +8,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.travix.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,12 +50,12 @@
       </file>
       <file leaf-file-name="LoginWindow.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
               <caret line="29" column="47" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="47" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file leaf-file-name="LoginWindow.kt" pinned="false" current-in-tab="false">
@@ -79,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".travix.yml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.travix.yml">
+      <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+            <state relative-caret-position="34">
+              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -139,6 +139,7 @@
         <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.fxml" />
         <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.kt" />
         <option value="$PROJECT_DIR$/.travix.yml" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -159,6 +160,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -166,65 +170,10 @@
               <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-              <item name="libraries" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="ChecklistUpdater" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="ChecklistUpdater" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="ChecklistUpdater" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="updater" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="docs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="manpreet_singh" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="manpreet_singh" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,7 +182,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SearchEverywhereHistoryKey" value="color&#9;ACTION&#9;ShowColorPicker" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ChecklistProgram.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
@@ -473,7 +422,21 @@
       <option name="project" value="LOCAL" />
       <updated>1531369099811</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Testing out Travis CI integration">
+      <created>1531372959784</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1531372959784</updated>
+    </task>
+    <task id="LOCAL-00019" summary="If only i could speel things">
+      <created>1531373107871</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1531373107871</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -492,22 +455,22 @@
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3293011" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49731183" visible="true" weight="0.19794345" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49731183" visible="true" weight="0.20308483" />
       <window_info id="Structure" order="1" sideWeight="0.50268817" side_tool="true" weight="0.18251929" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.45967743" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.3293011" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.3293011" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4993573" weight="0.3293011" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" x="0" y="0" width="354" height="676" id="Documentation" order="4" side_tool="true" weight="0.32969153" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3293011" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4993573" weight="0.3293011" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -530,7 +493,9 @@
     <MESSAGE value="Fixed issues with changing data stored in the configuration files" />
     <MESSAGE value="Names, fixed some names." />
     <MESSAGE value="Update help link" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update help link" />
+    <MESSAGE value="Testing out Travis CI integration" />
+    <MESSAGE value="If only i could speel things" />
+    <option name="LAST_COMMIT_MESSAGE" value="If only i could speel things" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -828,12 +793,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="29" column="47" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="47" />
         </state>
       </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -850,6 +815,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="68">
@@ -858,12 +824,11 @@
           <second_editor />
         </state>
       </provider>
-      <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travix.yml">
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="15" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+        <state relative-caret-position="34">
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
         </state>
       </provider>
     </entry>

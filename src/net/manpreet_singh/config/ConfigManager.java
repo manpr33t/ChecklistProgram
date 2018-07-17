@@ -194,7 +194,6 @@ public class ConfigManager {
     }
 
     public void updateData(ObservableList<Map> map, String[] columnKeys) throws Exception {
-        // TODO update data stored in the ObservableMap
         for (Map m : map) {
             if (m.get(columnKeys[1]).toString().contains(",")) {
                 mConfigMap.get(m.get(columnKeys[1]).toString().replaceAll(",", "-")).setOutputFileName(m.get(columnKeys[0]).toString());

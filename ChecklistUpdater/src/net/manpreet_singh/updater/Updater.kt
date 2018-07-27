@@ -3,11 +3,6 @@ package net.manpreet_singh.updater
 import org.json.simple.JSONObject
 import org.json.simple.parser.JSONParser
 import java.io.FileReader
-import java.net.URL
-import org.apache.commons.io.FileUtils
-import java.io.File
-
-
 
 class Updater {
     class Version(fileName: String) {

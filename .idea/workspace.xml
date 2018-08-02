@@ -6,12 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="Build updates">
+    <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="Fixed botcher refactoring">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cl.ChecklistProgram.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cl.ChecklistProgram.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependencies/version.json" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies/version.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/css/ChecklistProgram.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/css/ChecklistProgram.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -35,21 +31,21 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="25" />
-          <entry key="html" value="35" />
+          <entry key="html" value="47" />
           <entry key="java" value="79" />
           <entry key="json" value="1" />
           <entry key="kt" value="211" />
-          <entry key="txt" value="13" />
+          <entry key="txt" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="25" />
-          <entry key="HTML" value="35" />
+          <entry key="HTML" value="47" />
           <entry key="JAVA" value="79" />
           <entry key="JSON" value="1" />
           <entry key="Kotlin" value="211" />
-          <entry key="PLAIN_TEXT" value="13" />
+          <entry key="PLAIN_TEXT" value="38" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -72,7 +68,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/css/ChecklistProgram.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="510">
@@ -81,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="33" column="143" lean-forward="true" selection-start-line="33" selection-start-column="143" selection-end-line="33" selection-end-column="143" />
+            <state relative-caret-position="519">
+              <caret line="77" column="120" selection-start-line="77" selection-start-column="120" selection-end-line="77" selection-end-column="120" />
               <folding>
                 <element signature="e#7831#7837#0" expanded="true" />
               </folding>
@@ -143,8 +139,8 @@
         <option value="$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java" />
         <option value="$PROJECT_DIR$/dependencies/version.json" />
         <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt" />
-        <option value="$PROJECT_DIR$/docs/index.html" />
         <option value="$PROJECT_DIR$/docs/css/ChecklistProgram.css" />
+        <option value="$PROJECT_DIR$/docs/index.html" />
       </list>
     </option>
   </component>
@@ -203,7 +199,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SearchEverywhereHistoryKey" value="color&#9;ACTION&#9;ShowColorPicker" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533181636267" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533181830020" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ChecklistProgram.jar!/" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15234375" />
@@ -464,7 +460,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532664886348</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Fixed botcher refactoring">
+      <created>1533181676687</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1533181676687</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
@@ -560,7 +563,8 @@
     <MESSAGE value="If only i could speel things" />
     <MESSAGE value="Project page content updates" />
     <MESSAGE value="Build updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Build updates" />
+    <MESSAGE value="Fixed botcher refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed botcher refactoring" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -795,20 +799,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/docs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="33" column="143" lean-forward="true" selection-start-line="33" selection-start-column="143" selection-end-line="33" selection-end-column="143" />
-          <folding>
-            <element signature="e#7831#7837#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/docs/css/ChecklistProgram.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="111" column="49" lean-forward="true" selection-start-line="111" selection-start-column="49" selection-end-line="111" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/docs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="77" column="120" selection-start-line="77" selection-start-column="120" selection-end-line="77" selection-end-column="120" />
+          <folding>
+            <element signature="e#7831#7837#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

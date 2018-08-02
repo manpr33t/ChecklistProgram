@@ -109,7 +109,7 @@ footer {
     position: relative;
     left: 30px;
 }
-.wrapper .content .download_link .download_buton:hover{
+.wrapper .content .download_link .download_button:hover{
     background-color: #3280ff;
 }
 

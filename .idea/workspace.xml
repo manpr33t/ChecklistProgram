@@ -6,13 +6,9 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="Removed unnecessary image">
-      <change afterPath="$PROJECT_DIR$/docs/resources/linkedin.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/resources/mail.png" afterDir="false" />
+    <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="Project page content updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/css/ChecklistProgram.css" beforeDir="false" afterPath="$PROJECT_DIR$/docs/css/ChecklistProgram.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/resources/github.png" beforeDir="false" afterPath="$PROJECT_DIR$/docs/resources/github.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,7 +35,7 @@
           <entry key="java" value="79" />
           <entry key="json" value="1" />
           <entry key="kt" value="211" />
-          <entry key="txt" value="95" />
+          <entry key="txt" value="129" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -49,7 +45,7 @@
           <entry key="JAVA" value="79" />
           <entry key="JSON" value="1" />
           <entry key="Kotlin" value="211" />
-          <entry key="PLAIN_TEXT" value="95" />
+          <entry key="PLAIN_TEXT" value="129" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -84,8 +80,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="99" column="216" lean-forward="true" selection-start-line="99" selection-start-column="216" selection-end-line="99" selection-end-column="216" />
+            <state relative-caret-position="525">
+              <caret line="113" column="18" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -201,7 +197,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SearchEverywhereHistoryKey" value="color&#9;ACTION&#9;ShowColorPicker" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533269809467" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533272091750" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ChecklistProgram.jar!/" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15234375" />
@@ -483,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1533261031234</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Project page content updates">
+      <created>1533269906807</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1533269906807</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TodoView">
@@ -497,6 +500,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49731183" visible="true" weight="0.22622108" />
       <window_info id="Structure" order="1" sideWeight="0.50268817" side_tool="true" weight="0.18251929" />
@@ -576,12 +580,12 @@
     <MESSAGE value="Update help link" />
     <MESSAGE value="Testing out Travis CI integration" />
     <MESSAGE value="If only i could speel things" />
-    <MESSAGE value="Project page content updates" />
     <MESSAGE value="Build updates" />
     <MESSAGE value="Fixed botcher refactoring" />
     <MESSAGE value="Some of the typos were fixed" />
     <MESSAGE value="Removed unnecessary image" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed unnecessary image" />
+    <MESSAGE value="Project page content updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project page content updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -825,8 +829,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="99" column="216" lean-forward="true" selection-start-line="99" selection-start-column="216" selection-end-line="99" selection-end-column="216" />
+        <state relative-caret-position="525">
+          <caret line="113" column="18" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
         </state>
       </provider>
     </entry>

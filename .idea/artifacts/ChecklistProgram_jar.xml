@@ -2,7 +2,7 @@
   <artifact type="jar" name="ChecklistProgram:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/ChecklistProgram_jar</output-path>
     <root id="archive" name="ChecklistProgram.jar">
-      <element id="module-output" name="cl.ChecklistProgram" />
+      <element id="module-output" name="ChecklistProgram" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-stdlib.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-reflect.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/lib/kotlin-test.jar" path-in-jar="/" />

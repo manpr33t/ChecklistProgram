@@ -1,4 +1,4 @@
-package test.java
+package test.kotlin
 
 import net.manpreet_singh.checklist.Utility
 import net.manpreet_singh.config.UCRParser

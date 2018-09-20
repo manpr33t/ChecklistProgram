@@ -48,8 +48,10 @@ class UCRParser {
 
         val rowIterator: Iterator<Row> = spreadSheet.rowIterator()
 
+        // Go through row by row and add it to the rows array list
         while (rowIterator.hasNext()) spreadSheetRows?.add(rowIterator.next() as HSSFRow)
 
+        // For each of the rows, parse its data and add to the appropriate data structure
         spreadSheetRows!!.forEach { it ->
             if (checkForData(it)) {
                 try {
@@ -83,6 +85,30 @@ class UCRParser {
      */
     fun getDataMap(): MutableMap<String, MutableSet<String>>? {
         return dataMap
+    }
+
+    fun getTrips(): MutableMap<String, MutableSet<String>>? {
+        val tripMap: MutableMap<String, MutableSet<String>>? = HashMap()
+        if (!spreadSheetRows!!.isEmpty()) {
+            spreadSheetRows!!.forEach { it ->
+                if (checkForData(it)) {
+                    try {
+                        if (it.getCell(9) != null) {
+                            if (!tripMap!!.containsKey(it.getCell(9).toString()))
+                                tripMap!![it.getCell(9).toString()] = HashSet()
+
+                            tripMap!![it.getCell(9).toString()]!!.add(
+                                    Utility.removeZipcodePrefix(it.getCell(it.firstCellNum.toInt()).toString())
+                            )
+                        }
+                    } catch (e: Exception) {
+                        println(e.localizedMessage)
+                        println("Row:${it.rowNum + 1}")
+                    }
+                }
+            }
+        }
+        return tripMap;
     }
 
     /**

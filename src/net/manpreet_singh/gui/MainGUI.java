@@ -270,9 +270,9 @@ public class MainGUI extends Application{
 
         stage.addEventHandler(KeyEvent.KEY_RELEASED, (KeyEvent event) -> {
             String s = "";
-            s += System.getProperty("java.vendor");
+            s += System.getProperty("kotlin.vendor");
             s += "\nJava Version: ";
-            s += System.getProperty("java.version");
+            s += System.getProperty("kotlin.version");
             if (INFO_KEY.match(event))
                 ErrorMessagesKt.message(s);
         });

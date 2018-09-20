@@ -6,12 +6,12 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="Fixing IntelliJ module names">
-      <change afterPath="$PROJECT_DIR$/src/test/java/Checklist Extractor.kt" afterDir="false" />
+    <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="Added checklist extractor, a little program that extracts a list from a bigger list">
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/LoadMaster.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependencies/truck2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependencies/version.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet_singh/config/UCRParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/manpreet_singh/config/UCRParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Checklist Extractor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/Checklist Extractor.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,54 +24,56 @@
     <session id="-789953767">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.6" value="5" />
-          <entry key="project.open.time.7" value="2" />
+          <entry key="project.closed" value="14" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="6" />
+          <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="2" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="166" />
-          <entry key="html" value="153" />
+          <entry key="html" value="218" />
           <entry key="java" value="79" />
           <entry key="json" value="1" />
-          <entry key="kt" value="1197" />
-          <entry key="txt" value="332" />
+          <entry key="kt" value="2103" />
+          <entry key="txt" value="425" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="166" />
-          <entry key="HTML" value="153" />
+          <entry key="HTML" value="218" />
           <entry key="JAVA" value="79" />
           <entry key="JSON" value="1" />
-          <entry key="Kotlin" value="1197" />
-          <entry key="PLAIN_TEXT" value="332" />
+          <entry key="Kotlin" value="2103" />
+          <entry key="PLAIN_TEXT" value="425" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="3" />
-          <entry key="html" value="4" />
-          <entry key="java" value="3" />
+          <entry key="html" value="5" />
+          <entry key="java" value="11" />
           <entry key="json" value="1" />
-          <entry key="kt" value="5" />
+          <entry key="kt" value="13" />
           <entry key="png" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="3" />
-          <entry key="HTML" value="4" />
+          <entry key="HTML" value="5" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="3" />
+          <entry key="JAVA" value="11" />
           <entry key="JSON" value="1" />
-          <entry key="Kotlin" value="5" />
+          <entry key="Kotlin" value="13" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
@@ -79,29 +81,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/docs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+            <state relative-caret-position="510">
+              <caret line="81" column="54" selection-start-line="81" selection-start-column="54" selection-end-line="81" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Checklist Extractor.kt">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/LoadMaster.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+            <state relative-caret-position="408">
+              <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
               <folding>
-                <element signature="e#19#208#0" expanded="true" />
+                <element signature="e#21#83#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/config/UCRParser.kt">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/Checklist Extractor.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-754">
-              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            <state relative-caret-position="34">
+              <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -158,8 +160,11 @@
         <option value="$PROJECT_DIR$/dependencies/version.json" />
         <option value="$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt" />
         <option value="$PROJECT_DIR$/docs/css/ChecklistProgram.css" />
-        <option value="$PROJECT_DIR$/docs/index.html" />
         <option value="$PROJECT_DIR$/src/test/java/Checklist Extractor.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/Checklist Extractor.kt" />
+        <option value="$PROJECT_DIR$/docs/index.html" />
+        <option value="$PROJECT_DIR$/src/net/manpreet_singh/config/UCRParser.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/LoadMaster.kt" />
       </list>
     </option>
   </component>
@@ -180,7 +185,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -192,6 +197,11 @@
             <path>
               <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
+              <item name="docs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -199,13 +209,6 @@
               <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="manpreet_singh" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="manpreet_singh" type="462c0819:PsiDirectoryNode" />
-              <item name="checklist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
@@ -218,13 +221,13 @@
               <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -232,7 +235,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SearchEverywhereHistoryKey" value="color&#9;ACTION&#9;ShowColorPicker" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534469748467" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1537423459847" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/ChecklistProgram.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
@@ -251,7 +254,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.test.java.Extractor">
+  <component name="RunManager" selected="Kotlin.test.kotlin.LoadMaster">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.manpreet_singh.main.Main" />
       <module name="ChecklistProgram" />
@@ -313,14 +316,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test.java.Extractor" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="test.kotlin.Extractor" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="ChecklistProgram" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="test.java.Extractor" />
+      <option name="MAIN_CLASS_NAME" value="test.kotlin.Extractor" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test.kotlin.LoadMaster" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+      <module name="ChecklistProgram" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="test.kotlin.LoadMaster" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -339,11 +355,13 @@
       <item itemvalue="Application.Test" />
       <item itemvalue="Kotlin.net.manpreet_singh.updater.Updater" />
       <item itemvalue="Kotlin.net.manpreet_singh.updater.LoginWindow" />
-      <item itemvalue="Kotlin.test.java.Extractor" />
+      <item itemvalue="Kotlin.test.kotlin.Extractor" />
+      <item itemvalue="Kotlin.test.kotlin.LoadMaster" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.test.java.Extractor" />
+        <item itemvalue="Kotlin.test.kotlin.LoadMaster" />
+        <item itemvalue="Kotlin.test.kotlin.Extractor" />
         <item itemvalue="Kotlin.net.manpreet_singh.updater.Updater" />
         <item itemvalue="Kotlin.net.manpreet_singh.updater.LoginWindow" />
         <item itemvalue="Application.Test" />
@@ -557,7 +575,14 @@
       <option name="project" value="LOCAL" />
       <updated>1533273402501</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Added checklist extractor, a little program that extracts a list from a bigger list">
+      <created>1534469794336</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1534469794337</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TodoView">
@@ -571,9 +596,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49731183" weight="0.23521851" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49731183" weight="0.24807198" />
       <window_info id="Structure" order="1" sideWeight="0.50268817" side_tool="true" weight="0.18251929" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -581,7 +605,7 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3293011" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32839838" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32839838" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4589502" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
@@ -633,7 +657,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Adding jar artifact settings" />
     <MESSAGE value="Adding project page files" />
     <MESSAGE value="Adding project page files etc." />
     <MESSAGE value="adding CNAME file" />
@@ -658,7 +681,8 @@
     <MESSAGE value="Removed under construction message" />
     <MESSAGE value="There's no way I'm going to be able to get through FedEx's proxy, so scrapping the self updating feature" />
     <MESSAGE value="Fixing IntelliJ module names" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing IntelliJ module names" />
+    <MESSAGE value="Added checklist extractor, a little program that extracts a list from a bigger list" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checklist extractor, a little program that extracts a list from a bigger list" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -780,10 +804,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.kt" />
+    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt" />
+    <entry file="file://$PROJECT_DIR$/dependencies/version.json" />
+    <entry file="file://$PROJECT_DIR$/docs/css/ChecklistProgram.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dependencies/truck2.png" />
+    <entry file="jar://$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar!/kotlin/Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="312" column="24" selection-start-line="312" selection-start-column="24" selection-end-line="312" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/main/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2652">
+          <caret line="199" column="44" selection-start-line="199" selection-start-column="44" selection-end-line="199" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/checklist/Checklist.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="95" column="48" lean-forward="true" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
         </state>
       </provider>
     </entry>
@@ -801,17 +857,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2754">
-          <caret line="202" column="59" selection-start-line="202" selection-start-column="59" selection-end-line="202" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2176">
           <caret line="164" column="55" selection-start-line="164" selection-start-column="55" selection-end-line="164" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3094">
+          <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
         </state>
       </provider>
     </entry>
@@ -822,31 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/LoginWindow.kt" />
-    <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/manpreet_singh/updater/Updater.kt" />
-    <entry file="file://$PROJECT_DIR$/dependencies/version.json" />
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="199" column="44" selection-start-line="199" selection-start-column="44" selection-end-line="199" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/css/ChecklistProgram.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="112" column="28" selection-start-line="112" selection-start-column="28" selection-end-line="112" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dependencies/truck2.png" />
     <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/checklist/OutputChecklist.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -854,40 +885,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/kotlin-stdlib-sources.jar!/kotlin/Collections.kt">
+    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/ConfigManagerGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="312" column="24" selection-start-line="312" selection-start-column="24" selection-end-line="312" selection-end-column="24" />
+        <state relative-caret-position="2754">
+          <caret line="202" column="59" selection-start-line="202" selection-start-column="59" selection-end-line="202" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/checklist/Checklist.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="95" column="48" lean-forward="true" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
+        <state relative-caret-position="510">
+          <caret line="81" column="54" selection-start-line="81" selection-start-column="54" selection-end-line="81" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/config/UCRParser.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-754">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        <state relative-caret-position="573">
+          <caret line="69" column="13" lean-forward="true" selection-start-line="69" selection-start-column="13" selection-end-line="69" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Checklist Extractor.kt">
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/Checklist Extractor.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+        <state relative-caret-position="34">
+          <caret line="7" column="26" lean-forward="true" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/LoadMaster.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
           <folding>
-            <element signature="e#19#208#0" expanded="true" />
+            <element signature="e#21#83#0" expanded="true" />
           </folding>
         </state>
       </provider>

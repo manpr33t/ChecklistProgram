@@ -1,6 +1,5 @@
 package test.kotlin
 
-import com.sun.org.apache.xml.internal.utils.StringToIntTable
 import net.manpreet_singh.checklist.Utility
 import net.manpreet_singh.config.UCRParser
 import java.io.BufferedReader

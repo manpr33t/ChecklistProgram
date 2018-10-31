@@ -69,15 +69,19 @@ class UCRParser {
                 }
             }
         }
+        workBook.close()
+        fileSystem.close()
     }
 
     /**
      * Check if the row contains actual usable data
      */
     private fun checkForData(row: HSSFRow): Boolean {
-        return row.getCell(row.firstCellNum.toInt()).toString().startsWith("D") ||
-                row.getCell(row.firstCellNum.toInt()).toString().startsWith("P") ||
-                !row.getCell(row.firstCellNum.toInt()).toString().startsWith("S")
+        val str = row.getCell(row.firstCellNum.toInt()).toString()
+        return str.matches(Regex("(DDU|P5D|\\d)"))
+//        return row.getCell(row.firstCellNum.toInt()).toString().startsWith("D") ||
+//                row.getCell(row.firstCellNum.toInt()).toString().startsWith("P") ||
+//                !row.getCell(row.firstCellNum.toInt()).toString().startsWith("S")
     }
 
     /**

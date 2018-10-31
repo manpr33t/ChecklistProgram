@@ -26,7 +26,7 @@ class LoadMaster {
         var choice = readLine()
         choice = choice!!.toDouble().toString()
         if (tripData!!.containsKey(choice)) {
-            val checklistFile = FileReader("checklists/SpokaneDispatchCheckListMASTER.csv")
+            val checklistFile = FileReader("checklists/" + askForChecklistFile())
             val br = BufferedReader(checklistFile)
             val iterator = br.lineSequence().iterator()
             while (iterator.hasNext()) {
@@ -41,6 +41,17 @@ class LoadMaster {
         printWriter.close()
     }
 
+    fun askForChecklistFile(): String {
+        val f = File("checklists")
+        var subDir: Array<out File>
+        subDir = f.listFiles()
+        subDir.forEachIndexed {index, file ->
+            println(index.toString() + ") " + file.name)
+        }
+        print("\nMake your choice: ")
+        val index = readLine()
+        return subDir[index!!.toInt()].name
+    }
 
     companion object {
         @JvmStatic

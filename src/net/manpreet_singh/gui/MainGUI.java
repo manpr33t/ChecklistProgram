@@ -27,10 +27,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyCodeCombination;
-import javafx.scene.input.KeyCombination;
-import javafx.scene.input.KeyEvent;
+import javafx.scene.input.*;
 import javafx.scene.layout.Border;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Paint;
@@ -46,6 +43,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 
 /**
  * Graphical User Interface for the Checklist Generator Program
@@ -156,7 +154,7 @@ public class MainGUI extends Application{
         mGridPane.setVgap(25);
         mGridPane.setPadding(new Insets(10,10,10,10));
 
-        // Place objects onto the gridpane
+        // Place objects onto the grid pane
         mGridPane.add(mOpenFile, 0, 0);
         mGridPane.add(mGenerateFiles, 1,0);
         mGridPane.add(mLogScrollPane, 0, 1,3,1);
@@ -167,6 +165,13 @@ public class MainGUI extends Application{
 
         GridPane.setHalignment(mConfigButton, HPos.RIGHT);
         GridPane.setHalignment(mHelpButton, HPos.RIGHT);
+
+        // Allow users to drag files onto the program
+        mGridPane.setOnDragOver(event -> {
+            if (event.getGestureSource() != mGridPane && event.getDragboard().hasFiles())
+                event.acceptTransferModes(TransferMode.MOVE);
+            event.consume();
+        });
 
         // For debug purposes
 //        mGridPane.setGridLinesVisible(true);
@@ -276,7 +281,31 @@ public class MainGUI extends Application{
             if (INFO_KEY.match(event))
                 ErrorMessagesKt.message(s);
         });
-    }
+
+
+        // Allow handle any files dragged onto the program window
+        mGridPane.setOnDragDropped(event -> {
+            System.out.println("OMG, somebody dropped a file!!");
+            List<File> files = event.getDragboard().getFiles();
+            if (!files.isEmpty()) {
+                event.setDropCompleted(true);
+                event.consume();
+                File file = files.get(0);
+                if (file != null) {
+                    mLog.appendText("Opening file: " + file.getName() + "\n");
+                    try {
+                        if (Utility.deleteFile("UCR.xls")) // Delete the previous saved file
+                            Files.copy(file.toPath(), Utility.makeFile("UCR.xls").toPath(), StandardCopyOption.REPLACE_EXISTING); // Copy the current input file for debugging etc.
+                        mConfigManagerGUI.parseUCR(file, this.mDesktop);
+                    } catch (Exception e) {
+                        mLog.appendText(e.getLocalizedMessage() + "\n");
+                        e.printStackTrace();
+                        ErrorMessagesKt.exception(e);
+                    }
+                }
+            }
+        });
+}
 
     /**
      * Open the specified file with the Default program on the current Desktop

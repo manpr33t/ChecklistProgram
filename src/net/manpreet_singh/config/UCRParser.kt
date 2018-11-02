@@ -78,10 +78,7 @@ class UCRParser {
      */
     private fun checkForData(row: HSSFRow): Boolean {
         val str = row.getCell(row.firstCellNum.toInt()).toString()
-        return str.matches(Regex("(DDU|P5D|\\d)"))
-//        return row.getCell(row.firstCellNum.toInt()).toString().startsWith("D") ||
-//                row.getCell(row.firstCellNum.toInt()).toString().startsWith("P") ||
-//                !row.getCell(row.firstCellNum.toInt()).toString().startsWith("S")
+        return "DDU|P5D|\\d".toRegex().containsMatchIn(str)
     }
 
     /**
@@ -99,9 +96,9 @@ class UCRParser {
                     try {
                         if (it.getCell(9) != null) {
                             if (!tripMap!!.containsKey(it.getCell(9).toString()))
-                                tripMap!![it.getCell(9).toString()] = HashSet()
+                                tripMap[it.getCell(9).toString()] = HashSet()
 
-                            tripMap!![it.getCell(9).toString()]!!.add(
+                            tripMap[it.getCell(9).toString()]!!.add(
                                     Utility.removeZipcodePrefix(it.getCell(it.firstCellNum.toInt()).toString())
                             )
                         }
@@ -112,7 +109,7 @@ class UCRParser {
                 }
             }
         }
-        return tripMap;
+        return tripMap
     }
 
     /**

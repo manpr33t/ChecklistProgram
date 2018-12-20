@@ -39,6 +39,7 @@ import net.manpreet_singh.config.ConfigManager;
 import java.awt.*;
 import java.io.File;
 import java.util.Map;
+import java.util.Set;
 
 
 /**
@@ -242,6 +243,10 @@ public class ConfigManagerGUI {
      */
     public void parseUCR(File in, Desktop desktop) throws Exception {
         this.mConfigManager.parseUCR(in, desktop);
+    }
+
+    public void parseUCRdata(Set<File> files, Desktop desktop) throws Exception {
+        this.mConfigManager.parseUCRdata(files, desktop);
     }
 
     /**

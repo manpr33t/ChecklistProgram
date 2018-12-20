@@ -131,5 +131,8 @@ class UCRParser {
         pw.close()
     }
 
+    fun clearData() {
+        this.dataMap!!.clear()
+    }
 
 }

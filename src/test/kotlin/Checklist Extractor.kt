@@ -16,6 +16,8 @@ class Extractor {
         parser.readDataFromFile(File("UCR.xls"))
         val ucrData = parser.getDataMap()
 
+        val sortGroup = "SELGTACO01"
+
         val checklistFile = FileReader("checklists/LVDDispatchChecklistMASTER.csv")
 
         val br = BufferedReader(checklistFile)
@@ -24,8 +26,8 @@ class Extractor {
         while (iterator.hasNext()) {
             val line = iterator.next()
             val buffer = line.split(",")
-            if (ucrData!!["SELGTACO01"]?.contains(Utility.removeZipcodePrefix(buffer[1]))!!) {
-                pw.println("SELGTACO01,${buffer[1]}, ${buffer[2]}")
+            if (ucrData!![sortGroup]?.contains(Utility.removeZipcodePrefix(buffer[1]))!!) {
+                pw.println("${sortGroup},${buffer[1]}, ${buffer[2]}")
             }
         }
         pw.close()

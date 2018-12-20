@@ -83,7 +83,7 @@ public class Checklist {
     }
 
     /**
-     * Filter the date passed into this Method based on the filters set up prior to calling this method.
+     * Filter the data passed into this Method based on the filters set up prior to calling this method.
      * @param list The Set of date to filter.
      */
     public void generateDifference(Collection<String> list) throws FileNotFoundException{
@@ -116,7 +116,7 @@ public class Checklist {
     private void generateFinalCutlist() {
         // Go through the Hash set generated earlier which includes all the zipcodes that need to be activated.
         for (String s : mDifferent) {
-            // Go through the output buffer, and find all the information assocated with a certain zipcode,
+            // Go through the output buffer, and find all the information associated with a certain zipcode,
             // I.E. The Location name, the Pallet Location, and such.
             for (String[] anOutputBuffer : outputBuffer) {
                 String temp = anOutputBuffer[1];

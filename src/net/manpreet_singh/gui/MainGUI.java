@@ -113,10 +113,10 @@ public class MainGUI extends Application{
         mFileChooser = new FileChooser();
         mFileChooser.setTitle("Open UCR File ...");
 
-        mOpenFile = new Button("Open Excel File");
+        mOpenFile = new Button("Open Single File");
         mOpenFile.setStyle("-fx-font: 14 arial; -fx-base: #AfffB9;");
 
-        mGenerateFiles = new Button("Generate From File");
+        mGenerateFiles = new Button("Open Multiple Files");
         mGenerateFiles.setStyle("-fx-font:14 arial; -fx-base: #C3FAFF;");
 
         mConfigButton = new Button();
@@ -227,13 +227,22 @@ public class MainGUI extends Application{
         /*
          Currently a debug button, was previously used to recreate checklists from a saved UCR file
          */
-        mGenerateFiles.setOnAction(event -> {
-            mLog.appendText("Generating checklists from saved UCR file\n");
+//        mGenerateFiles.setOnAction(event -> {
+//            mLog.appendText("Generating checklists from saved UCR file\n");
+//            try {
+//                File file = new File("UCR.xls");
+//                mConfigManagerGUI.parseUCR(file, this.mDesktop);
+//            } catch (Exception e) {
+//                mLog.appendText(e.getLocalizedMessage() + "\n");
+//                ErrorMessagesKt.exception(e);
+//            }
+//        });
+
+        mGenerateFiles.setOnAction( event -> {
+            mLog.appendText("Generating Checklists from Multiple Files.\n");
             try {
-                File file = new File("UCR.xls");
-                mConfigManagerGUI.parseUCR(file, this.mDesktop);
+                mConfigManagerGUI.parseUCRData(stage, this.mDesktop);
             } catch (Exception e) {
-                mLog.appendText(e.getLocalizedMessage() + "\n");
                 ErrorMessagesKt.exception(e);
             }
         });

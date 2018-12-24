@@ -245,8 +245,8 @@ public class ConfigManagerGUI {
         this.mConfigManager.parseUCR(in, desktop);
     }
 
-    public void parseUCRdata(Set<File> files, Desktop desktop) throws Exception {
-        this.mConfigManager.parseUCRdata(files, desktop);
+    public void parseUCRData(Stage stage, Desktop desktop) throws Exception {
+        this.mConfigManager.parseUCRData(stage, desktop);
     }
 
     /**

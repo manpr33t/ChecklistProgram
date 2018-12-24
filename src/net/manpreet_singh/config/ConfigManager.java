@@ -19,7 +19,9 @@ package net.manpreet_singh.config;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
+import javafx.stage.Stage;
 import net.manpreet_singh.checklist.Utility;
+import net.manpreet_singh.gui.MultipleFiles;
 
 import java.awt.*;
 import java.io.*;
@@ -148,6 +150,7 @@ public class ConfigManager {
      */
     public void parseUCR(File inputFile, Desktop desktop) throws Exception {
         mUCRData.readDataFromFile(inputFile);
+        assert mUCRData.getDataMap() != null;
         for (String s : mConfigMap.keySet()) {
             if (mConfigMap.get(s).isMultipleRoutes()) {
                 Set<String> temp = new HashSet<>();
@@ -163,15 +166,11 @@ public class ConfigManager {
         openOutputFiles(desktop);
     }
 
-    public void parseUCRdata(Set<File> files, Desktop desktop) throws Exception {
-        Map<String, Set<String>> tempDataMap = new HashMap<>();
-        for (File f : files) {
-            mUCRData.readDataFromFile(f);
-            if (!Objects.requireNonNull(mUCRData.getDataMap()).isEmpty())
-                tempDataMap.putAll(mUCRData.getDataMap());
-            mUCRData.clearData();
-        }
+    public void parseUCRData(Stage stage, Desktop desktop) throws Exception {
 
+        MultipleFiles mpf = new MultipleFiles();
+        Map<String, Set<String>> tempDataMap = mpf.run(stage);
+        assert tempDataMap != null;
         for (String s : mConfigMap.keySet()) {
             if (mConfigMap.get(s).isMultipleRoutes()) {
                 Set<String> tempSet = new HashSet<>();
@@ -181,6 +180,7 @@ public class ConfigManager {
                 }
                 mConfigMap.get(s).run(tempSet);
             } else {
+
                 mConfigMap.get(s).run(tempDataMap.get(s));
             }
         }

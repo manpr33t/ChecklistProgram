@@ -27,8 +27,8 @@ import java.io.PrintWriter
 
 class UCRParser {
 
-    private var spreadSheetRows: ArrayList<HSSFRow>? = null
-    private var dataMap: MutableMap<String, MutableSet<String>>? = null
+    private var mSpreadSheetRows: ArrayList<HSSFRow>? = null
+    private var mDataMap: MutableMap<String, MutableSet<String>>? = null
 
     /**
      * Create a Map from a UCR Excel Spreadsheet
@@ -39,8 +39,8 @@ class UCRParser {
             throw IllegalArgumentException("Unsupported File type")
 
         // Re-establish objects every time this method is run
-        spreadSheetRows = ArrayList()
-        dataMap = HashMap()
+        mSpreadSheetRows = ArrayList()
+        mDataMap = HashMap()
 
         val fileSystem = POIFSFileSystem(inputFile)
         val workBook = HSSFWorkbook(fileSystem)
@@ -49,17 +49,17 @@ class UCRParser {
         val rowIterator: Iterator<Row> = spreadSheet.rowIterator()
 
         // Go through row by row and add it to the rows array list
-        while (rowIterator.hasNext()) spreadSheetRows?.add(rowIterator.next() as HSSFRow)
+        while (rowIterator.hasNext()) mSpreadSheetRows?.add(rowIterator.next() as HSSFRow)
 
         // For each of the rows, parse its data and add to the appropriate data structure
-        spreadSheetRows!!.forEach { it ->
+        mSpreadSheetRows!!.forEach { it ->
             if (checkForData(it)) {
                 try {
                     if (it.getCell(8) != null) {
-                        if (!dataMap!!.containsKey(it.getCell(8).toString()))
-                            dataMap!![it.getCell(8).toString()] = HashSet()
+                        if (!mDataMap!!.containsKey(it.getCell(8).toString()))
+                            mDataMap!![it.getCell(8).toString()] = HashSet()
 
-                        dataMap!![it.getCell(8).toString()]!!.add(
+                        mDataMap!![it.getCell(8).toString()]!!.add(
                                 Utility.removeZipcodePrefix(it.getCell(it.firstCellNum.toInt()).toString())
                         )
                     }
@@ -85,13 +85,13 @@ class UCRParser {
      * Get the mapped data
      */
     fun getDataMap(): MutableMap<String, MutableSet<String>>? {
-        return dataMap
+        return mDataMap
     }
 
     fun getTrips(): MutableMap<String, MutableSet<String>>? {
         val tripMap: MutableMap<String, MutableSet<String>>? = HashMap()
-        if (!spreadSheetRows!!.isEmpty()) {
-            spreadSheetRows!!.forEach { it ->
+        if (!mSpreadSheetRows!!.isEmpty()) {
+            mSpreadSheetRows!!.forEach { it ->
                 if (checkForData(it)) {
                     try {
                         if (it.getCell(9) != null) {
@@ -132,7 +132,7 @@ class UCRParser {
     }
 
     fun clearData() {
-        this.dataMap!!.clear()
+        this.mDataMap!!.clear()
     }
 
 }

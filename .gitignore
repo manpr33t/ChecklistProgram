@@ -6,4 +6,5 @@ jre/
 *.xlsx
 *.xls
 *.csv
+*.txt
 *.jar

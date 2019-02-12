@@ -21,8 +21,6 @@ import javafx.application.Application
 import javafx.stage.FileChooser
 import javafx.stage.Stage
 import net.manpreet_singh.config.UCRParser
-import net.manpreet_singh.gui.MultipleFiles.Companion.Test
-import org.apache.poi.hssf.usermodel.HSSFRow
 import org.apache.poi.hssf.usermodel.HSSFWorkbook
 import org.apache.poi.poifs.filesystem.POIFSFileSystem
 import org.apache.poi.ss.usermodel.CellType
@@ -175,6 +173,7 @@ class MultipleFiles {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
+
             Application.launch(Companion.Test::class.java, *args)
         }
 

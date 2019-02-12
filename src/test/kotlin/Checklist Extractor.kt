@@ -9,16 +9,16 @@ import java.io.PrintWriter
 
 class Extractor {
     init {
-        val outputFile = File("Output.csv")
-        val pw = PrintWriter(outputFile)
 
         val parser = UCRParser()
         parser.readDataFromFile(File("UCR.xls"))
         val ucrData = parser.getDataMap()
 
-        val sortGroup = "SELGTACO01"
-
-        val checklistFile = FileReader("checklists/LVDDispatchChecklistMASTER.csv")
+        val sortGroup = "SELRSASW10"
+        val outputFile = File("$sortGroup.csv")
+        println(outputFile.name)
+        val pw = PrintWriter(outputFile)
+        val checklistFile = FileReader("checklists/AllPalletsListShogun.csv")
 
         val br = BufferedReader(checklistFile)
 
@@ -32,12 +32,12 @@ class Extractor {
         }
         pw.close()
 
-        var keyNumbers = 0
-        println("Available Sort Groups: ")
-        ucrData!!.keys.forEach {
-            print(keyNumbers++)
-            println(") $it")
-        }
+//        var keyNumbers = 0
+//        println("Available Sort Groups: ")
+//        ucrData!!.keys.forEach {
+//            print(keyNumbers++)
+//            println(") $it")
+//        }
     }
 
     companion object {

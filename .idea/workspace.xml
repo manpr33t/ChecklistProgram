@@ -6,9 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="Finished adding the multiple files functionality">
+    <list default="true" id="9d0a1569-d461-4dfd-88df-fcc519371d17" name="Default" comment="Finished merge implementation">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/net/manpreet_singh/gui/MultipleFiles.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/manpreet_singh/gui/MultipleFiles.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/Checklist Extractor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/Checklist Extractor.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,63 +20,45 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/test/kotlin/Checklist Extractor.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="731">
-                  <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MultipleFiles.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="290">
-                  <caret line="81" column="7" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
-                  <folding>
-                    <element signature="n#!!doc;n#run#0;n#!!block;n#MultipleFiles#0" />
-                    <element signature="n#!!block;n#run#0;n#!!block;n#MultipleFiles#0" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/config/UCRParser.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="391">
-                  <caret line="44" column="51" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/checklist/OutputChecklist.kt">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="294">
-                  <caret line="69" selection-start-line="69" selection-end-line="69" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/MatchNames.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/kotlin/ScrubFile.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+              <folding>
+                <element signature="e#21#76#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
         <option value="Kotlin File" />
       </list>
     </option>
@@ -121,7 +105,6 @@
         <option value="$PROJECT_DIR$/docs/index.html" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/test/kotlin/LoadMaster.kt" />
-        <option value="$PROJECT_DIR$/src/test/kotlin/Checklist Extractor.kt" />
         <option value="$PROJECT_DIR$/src/net/manpreet_singh/checklist/Checklist.java" />
         <option value="$PROJECT_DIR$/src/net/manpreet_singh/gui/AdvancedFunctions.kt" />
         <option value="$PROJECT_DIR$/src/net/manpreet_singh/config/UCRParser.kt" />
@@ -129,7 +112,12 @@
         <option value="$PROJECT_DIR$/src/net/manpreet_singh/config/ConfigManager.java" />
         <option value="$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java" />
         <option value="$PROJECT_DIR$/src/test/kotlin/FileTest.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/Test.java" />
         <option value="$PROJECT_DIR$/src/net/manpreet_singh/gui/MultipleFiles.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/Checklist Extractor.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/MatchNames.kt" />
+        <option value="$PROJECT_DIR$/src/test/kotlin/ScrubFile.kt" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -140,7 +128,7 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1890" />
+    <option name="x" value="1447" />
     <option name="y" value="-16" />
     <option name="width" value="1616" />
     <option name="height" value="876" />
@@ -150,8 +138,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -163,40 +151,6 @@
               <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
               <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="manpreet_singh" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="manpreet_singh" type="462c0819:PsiDirectoryNode" />
-              <item name="checklist" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="manpreet_singh" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="manpreet_singh" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ChecklistProgram" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="manpreet_singh" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChecklistProgram" type="b2602c69:ProjectViewProjectNode" />
@@ -215,12 +169,12 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="SearchEverywhereHistoryKey" value="color&#9;ACTION&#9;ShowColorPicker" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547189206251" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ChecklistProgram.jar!/" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549954296384" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15234375" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -234,11 +188,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Kotlin.net.manpreet_singh.gui.MultipleFiles">
+  <component name="RunManager" selected="Kotlin.test.kotlin.ScrubFileKt">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="net.manpreet_singh.main.Main" />
       <module name="ChecklistProgram" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.kotlin.Test" />
+      <module name="ChecklistProgram" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.kotlin.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -251,6 +219,7 @@
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -258,64 +227,51 @@
     </configuration>
     <configuration name="net.manpreet_singh.gui.MultipleFiles" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="ChecklistProgram" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
+      <option name="VM_PARAMETERS" value="-Xms512m" />
+      <option name="PROGRAM_PARAMETERS" value="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" value="net.manpreet_singh.gui.MultipleFiles" />
-      <option name="WORKING_DIRECTORY" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="net.manpreet_singh.gui.Test" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
-      <module name="ChecklistProgram" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="net.manpreet_singh.gui.Test" />
-      <option name="WORKING_DIRECTORY" />
+      <option name="WORKING_DIRECTORY" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="test.kotlin.Extractor" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="ChecklistProgram" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="MAIN_CLASS_NAME" value="test.kotlin.Extractor" />
-      <option name="WORKING_DIRECTORY" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test.kotlin.FileTestKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="test.kotlin.MatchNames" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="ChecklistProgram" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="test.kotlin.FileTestKt" />
+      <option name="MAIN_CLASS_NAME" value="test.kotlin.MatchNames" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="test.kotlin.LoadMaster" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
+    <configuration name="test.kotlin.ScrubFileKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
       <module name="ChecklistProgram" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" value="test.kotlin.LoadMaster" />
+      <option name="MAIN_CLASS_NAME" value="test.kotlin.ScrubFileKt" />
       <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -331,19 +287,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Kotlin.net.manpreet_singh.gui.Test" />
-      <item itemvalue="Kotlin.test.kotlin.Extractor" />
-      <item itemvalue="Kotlin.test.kotlin.FileTestKt" />
-      <item itemvalue="Kotlin.test.kotlin.LoadMaster" />
+      <item itemvalue="Application.Test" />
       <item itemvalue="Kotlin.net.manpreet_singh.gui.MultipleFiles" />
+      <item itemvalue="Kotlin.test.kotlin.Extractor" />
+      <item itemvalue="Kotlin.test.kotlin.MatchNames" />
+      <item itemvalue="Kotlin.test.kotlin.ScrubFileKt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.net.manpreet_singh.gui.MultipleFiles" />
-        <item itemvalue="Kotlin.net.manpreet_singh.gui.Test" />
-        <item itemvalue="Kotlin.test.kotlin.LoadMaster" />
-        <item itemvalue="Kotlin.test.kotlin.FileTestKt" />
+        <item itemvalue="Kotlin.test.kotlin.ScrubFileKt" />
+        <item itemvalue="Kotlin.test.kotlin.MatchNames" />
         <item itemvalue="Kotlin.test.kotlin.Extractor" />
+        <item itemvalue="Kotlin.net.manpreet_singh.gui.MultipleFiles" />
+        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -641,7 +597,14 @@
       <option name="project" value="LOCAL" />
       <updated>1545622444007</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Finished merge implementation">
+      <created>1547189241006</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1547189241006</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TodoView">
@@ -657,7 +620,7 @@
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48862407" visible="true" weight="0.1684435" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48862407" visible="true" weight="0.18710022" />
       <window_info id="Image Layers" order="1" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -666,14 +629,14 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5687974" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32827735" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32827735" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32827735" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50064266" side_tool="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989339" weight="0.32827735" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5010661" side_tool="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4993573" weight="0.32827735" />
       <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.3293011" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -759,7 +722,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Fixed issues with changing data stored in the configuration files" />
     <MESSAGE value="Names, fixed some names." />
     <MESSAGE value="Update help link" />
     <MESSAGE value="Testing out Travis CI integration" />
@@ -784,7 +746,8 @@
     <MESSAGE value="Release Build updates" />
     <MESSAGE value="Started to add functionality to accept multiple files." />
     <MESSAGE value="Finished adding the multiple files functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished adding the multiple files functionality" />
+    <MESSAGE value="Finished merge implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished merge implementation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -809,13 +772,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MultipleFiles.kt</url>
-          <line>160</line>
+          <line>158</line>
           <properties />
           <option name="timeStamp" value="32" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MultipleFiles.kt</url>
-          <line>165</line>
+          <line>163</line>
           <properties />
           <option name="timeStamp" value="33" />
         </line-breakpoint>
@@ -827,16 +790,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ChecklistProgram.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/net/singh/manpreet/updater/Updater.java" />
     <entry file="file://$PROJECT_DIR$/ChecklistUpdater/src/META-INF/MANIFEST.MF" />
     <entry file="file://$PROJECT_DIR$/.gitattributes">
@@ -1000,13 +953,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTest.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="16" lean-forward="true" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="409">
@@ -1014,10 +960,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/Checklist Extractor.kt">
+    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/checklist/OutputChecklist.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
+        <state relative-caret-position="22">
+          <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="43" selection-end-column="48" />
+          <folding>
+            <element signature="e#2422#2991#1" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1028,21 +977,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/checklist/OutputChecklist.kt">
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="306">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/manpreet_singh/gui/MultipleFiles.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="81" column="7" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
+        <state relative-caret-position="833">
+          <caret line="143" column="44" lean-forward="true" selection-start-line="143" selection-start-column="44" selection-end-line="143" selection-end-column="44" />
           <folding>
             <element signature="n#!!doc;n#run#0;n#!!block;n#MultipleFiles#0" />
             <element signature="n#!!block;n#run#0;n#!!block;n#MultipleFiles#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/Checklist Extractor.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="38" column="30" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/FileTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp/reptPRfinalContainer_02112019_1100145.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1496">
+          <caret line="2959" column="31" lean-forward="true" selection-start-line="2959" selection-start-column="31" selection-end-line="2959" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/MatchNames.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="51" column="17" lean-forward="true" selection-start-line="51" selection-start-column="17" selection-end-line="51" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp/output.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="35" selection-start-line="35" selection-end-line="41" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/ScrubFile.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="9" lean-forward="true" selection-start-line="26" selection-start-column="9" selection-end-line="26" selection-end-column="9" />
+          <folding>
+            <element signature="e#21#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
         </state>
       </provider>
     </entry>

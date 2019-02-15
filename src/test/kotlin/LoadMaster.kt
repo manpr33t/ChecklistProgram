@@ -43,7 +43,7 @@ class LoadMaster {
 
     fun askForChecklistFile(): String {
         val f = File("checklists")
-        var subDir: Array<out File>
+        val subDir: Array<out File>
         subDir = f.listFiles()
         subDir.forEachIndexed {index, file ->
             println(index.toString() + ") " + file.name)

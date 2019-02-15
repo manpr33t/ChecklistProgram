@@ -3,7 +3,6 @@ package test.kotlin
 import javafx.application.Application
 import javafx.stage.FileChooser
 import javafx.stage.Stage
-import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
@@ -14,7 +13,6 @@ class MatchNames : Application() {
     private var mFileChooser: FileChooser? = null
     private var dataMap: MutableMap<String, Array<String>>? = null
     private var mLayoutFile: FileReader?  = null
-    private var mChecklistFiles: MutableSet<File>? = null
 
     init {
         dataMap = HashMap()
@@ -39,7 +37,7 @@ class MatchNames : Application() {
 
     fun readChecklistFiles(stage: Stage?) {
         val checklistFiles = mFileChooser!!.showOpenMultipleDialog(stage)
-        checklistFiles.forEach{ it ->
+        checklistFiles.forEach{
             val output = File("temp/${it.name}-Master.csv").printWriter()
             val iterator = BufferedReader(FileReader(it.absoluteFile)).lineSequence().iterator()
             iterator.forEach { s ->

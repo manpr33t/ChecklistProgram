@@ -5,7 +5,7 @@ import net.manpreet_singh.config.UCRParser
 import java.io.BufferedReader
 import java.io.File
 import java.io.FileReader
-import java.io.PrintWriter
+import java.io.Reader
 
 class Extractor {
     init {
@@ -13,31 +13,42 @@ class Extractor {
         val parser = UCRParser()
         parser.readDataFromFile(File("UCR.xls"))
         val ucrData = parser.getDataMap()
+        val checklistData: MutableMap<String, String> = HashMap()
 
-        val sortGroup = "SELRSASW10"
-        val outputFile = File("$sortGroup.csv")
-        println(outputFile.name)
-        val pw = PrintWriter(outputFile)
         val checklistFile = FileReader("checklists/AllPalletsListShogun.csv")
 
-        val br = BufferedReader(checklistFile)
+        val br = BufferedReader(checklistFile as Reader?)
 
         val iterator = br.lineSequence().iterator()
         while (iterator.hasNext()) {
             val line = iterator.next()
             val buffer = line.split(",")
-            if (ucrData!![sortGroup]?.contains(Utility.removeZipcodePrefix(buffer[1]))!!) {
-                pw.println("${sortGroup},${buffer[1]}, ${buffer[2]}")
+            checklistData[Utility.removeZipcodePrefix(buffer[1])] = buffer[2]
+//            try {
+//                if (ucrData!![sortGroup]?.contains(Utility.removeZipcodePrefix(buffer[1]))!!)
+//                    pw.println("$sortGroup,${buffer[1]}, ${buffer[2]}")
+//            } catch (e: Exception) {
+//                e.printStackTrace()
+//                println(buffer)
+//            }
+        }
+
+        for (key in ucrData!!.keys) {
+            if (key.startsWith("S")) {
+                val printW = File("temp/$key-new.csv").printWriter()
+                ucrData[key]!!.forEach {
+                    val zipcode = Utility.removeZipcodePrefix(it)
+                    try {
+                        printW.println("$key,$it,${checklistData[zipcode]}")
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                        println("[$key,$it]")
+                    }
+                }
+                printW.close()
             }
         }
-        pw.close()
 
-//        var keyNumbers = 0
-//        println("Available Sort Groups: ")
-//        ucrData!!.keys.forEach {
-//            print(keyNumbers++)
-//            println(") $it")
-//        }
     }
 
     companion object {

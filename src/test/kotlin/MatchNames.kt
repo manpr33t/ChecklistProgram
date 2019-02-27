@@ -43,8 +43,7 @@ class MatchNames : Application() {
             iterator.forEach { s ->
                 val line  = s.split(",")
                 if (dataMap!!.keys.contains(line[1])) {
-                    val loc = if (dataMap!![line[1]]!![1].length > 3) dataMap!![line[1]]!![1].substring(2,5) else dataMap!![line[1]]!![1]
-                    output.println("${dataMap!![line[1]]!![0]},${line[1]},$loc")
+                    output.println("${dataMap!![line[1]]!![0]},${line[1]},${line[2].substring(3,6)}")
                 } else {
                     output.println(s)
                 }

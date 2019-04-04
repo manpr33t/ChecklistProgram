@@ -21,6 +21,7 @@ import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
 import javafx.stage.Stage;
 import net.manpreet_singh.checklist.Utility;
+import net.manpreet_singh.gui.ErrorMessagesKt;
 import net.manpreet_singh.gui.MultipleFiles;
 
 import java.awt.*;
@@ -167,10 +168,12 @@ public class ConfigManager {
     }
 
     public void parseUCRData(Stage stage, Desktop desktop) throws Exception {
-
         MultipleFiles mpf = new MultipleFiles();
         Map<String, Set<String>> tempDataMap = mpf.run(stage);
-        assert tempDataMap != null;
+        if (tempDataMap == null) {
+            ErrorMessagesKt.message("No Files Provided");
+            return;
+        }
         for (String s : mConfigMap.keySet()) {
             if (mConfigMap.get(s).isMultipleRoutes()) {
                 Set<String> tempSet = new HashSet<>();

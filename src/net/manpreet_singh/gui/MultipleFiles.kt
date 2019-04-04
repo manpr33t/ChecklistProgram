@@ -54,7 +54,7 @@ class MultipleFiles {
         var badFiles: Stack<File>? = null
 
         // Check each of the files to make sure they're all spreadsheets.
-        files.forEach{ it ->
+        files!!.forEach{
             if (it.extension != "xls" || !it.canExecute()) {
                 if (badFiles == null)
                     badFiles = Stack()
@@ -84,7 +84,7 @@ class MultipleFiles {
         val mergedWorkbook = HSSFWorkbook() // One workbook to merge all the other workbooks into
 
         // Go through all the files and add them to the set of workbooks
-        files!!.forEach { it ->
+        files!!.forEach {
             val fs = POIFSFileSystem(it)
             workbooks.add(HSSFWorkbook(fs))
         }
@@ -111,13 +111,12 @@ class MultipleFiles {
     fun run(stage: Stage) : MutableMap<String, MutableSet<String>?>? {
         try {
             mFiles = askForFiles(stage)
-            println("Success")
         } catch (e: Exception) {
-            exception(e)
+             throw e
         }
 
         // Pull data from all the files
-        mFiles!!.forEach { it ->
+        mFiles!!.forEach {
             // Read the data
             mUCRParser!!.readDataFromFile(it)
 

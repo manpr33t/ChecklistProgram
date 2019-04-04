@@ -243,7 +243,7 @@ public class MainGUI extends Application{
             try {
                 mConfigManagerGUI.parseUCRData(stage, this.mDesktop);
             } catch (Exception e) {
-                ErrorMessagesKt.exception(e);
+                //ErrorMessagesKt.exception(e);
             }
         });
 

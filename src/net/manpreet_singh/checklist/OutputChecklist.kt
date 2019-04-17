@@ -63,7 +63,7 @@ fun outputList(data: MutableCollection<String>, fileName: String, header: String
         var colNum = 0
         i.split(",").forEach { t ->
             val cell = row.createCell(colNum++)
-            cell.setCellValue(t)
+            cell.setCellValue(t.replace("\n",""))
             cell.setCellStyle(mainStyle)
         }
     }

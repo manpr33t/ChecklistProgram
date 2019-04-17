@@ -74,8 +74,8 @@ public class MainGUI extends Application{
 
     private FileChooser mFileChooser;
 
-    private Button      mOpenFile;
-    private Button      mGenerateFiles;
+//    private Button      mOpenFile;
+    private Button mInputFiles;
     private Button      mConfigButton;
     private Button      mHelpButton;
 
@@ -113,11 +113,12 @@ public class MainGUI extends Application{
         mFileChooser = new FileChooser();
         mFileChooser.setTitle("Open UCR File ...");
 
-        mOpenFile = new Button("Open Single File");
-        mOpenFile.setStyle("-fx-font: 14 arial; -fx-base: #AfffB9;");
+//        mOpenFile = new Button("Open Single File");
+//        mOpenFile.setStyle("-fx-font: 14 arial; -fx-base: #AfffB9;");
 
-        mGenerateFiles = new Button("Open Multiple Files");
-        mGenerateFiles.setStyle("-fx-font:14 arial; -fx-base: #C3FAFF;");
+        mInputFiles = new Button("Input Files...");
+//        mInputFiles.setStyle("-fx-font:14 arial; -fx-base: #C3FAFF;");
+        mInputFiles.setStyle("-fx-font: 14 arial; -fx-base: #AfffB9;");
 
         mConfigButton = new Button();
         mConfigButton.setStyle("-fx-font:14 arial; -fx-base: #FF5100;");
@@ -155,8 +156,8 @@ public class MainGUI extends Application{
         mGridPane.setPadding(new Insets(10,10,10,10));
 
         // Place objects onto the grid pane
-        mGridPane.add(mOpenFile, 0, 0);
-        mGridPane.add(mGenerateFiles, 1,0);
+//        mGridPane.add(mOpenFile, 0, 0);
+        mGridPane.add(mInputFiles, 0,0,1,1);
         mGridPane.add(mLogScrollPane, 0, 1,3,1);
         mGridPane.add(mName, 1, 2);
         mGridPane.add(mLocation, 0, 2);
@@ -208,26 +209,26 @@ public class MainGUI extends Application{
         Assign action to the Open File button, show a file choose dialog and input that file
         And of course it runs the actual program
          */
-        mOpenFile.setOnAction(event -> {
-            File file = mFileChooser.showOpenDialog(stage);
-            if (file != null) {
-                mLog.appendText("Opening file: " + file.getName() + "\n");
-                try {
-                    if (Utility.deleteFile("UCR.xls")) // Delete the previous saved file
-                        Files.copy(file.toPath(), Utility.makeFile("UCR.xls").toPath(), StandardCopyOption.REPLACE_EXISTING); // Copy the current input file for debugging etc.
-                    mConfigManagerGUI.parseUCR(file, this.mDesktop);
-                } catch (Exception e) {
-                    mLog.appendText(e.getLocalizedMessage() + "\n");
-                    e.printStackTrace();
-                    ErrorMessagesKt.exception(e);
-                }
-            }
-        });
+//        mOpenFile.setOnAction(event -> {
+//            File file = mFileChooser.showOpenDialog(stage);
+//            if (file != null) {
+//                mLog.appendText("Opening file: " + file.getName() + "\n");
+//                try {
+//                    if (Utility.deleteFile("UCR.xls")) // Delete the previous saved file
+//                        Files.copy(file.toPath(), Utility.makeFile("UCR.xls").toPath(), StandardCopyOption.REPLACE_EXISTING); // Copy the current input file for debugging etc.
+//                    mConfigManagerGUI.parseUCR(file, this.mDesktop);
+//                } catch (Exception e) {
+//                    mLog.appendText(e.getLocalizedMessage() + "\n");
+//                    e.printStackTrace();
+//                    ErrorMessagesKt.exception(e);
+//                }
+//            }
+//        });
 
         /*
          Currently a debug button, was previously used to recreate checklists from a saved UCR file
          */
-//        mGenerateFiles.setOnAction(event -> {
+//        mInputFiles.setOnAction(event -> {
 //            mLog.appendText("Generating checklists from saved UCR file\n");
 //            try {
 //                File file = new File("UCR.xls");
@@ -238,10 +239,10 @@ public class MainGUI extends Application{
 //            }
 //        });
 
-        mGenerateFiles.setOnAction( event -> {
-            mLog.appendText("Generating Checklists from Multiple Files.\n");
+        mInputFiles.setOnAction(event -> {
             try {
                 mConfigManagerGUI.parseUCRData(stage, this.mDesktop);
+                mLog.appendText("Generating Checklists from Multiple Files.\n");
             } catch (Exception e) {
                 //ErrorMessagesKt.exception(e);
             }

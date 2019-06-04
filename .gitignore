@@ -2,7 +2,7 @@ dependencies/poi-3.17
 out/
 lib/
 jre/
-.idea/
+.idea/*
 *.properties
 *.xlsx
 *.xls

@@ -35,7 +35,7 @@ class UCRParser {
      */
     fun readDataFromFile(inputFile: File) {
 
-        if (inputFile.name.split('.')[1] != "xls")
+        if (inputFile.extension != "xls")
             throw IllegalArgumentException("Unsupported File type")
 
         // Re-establish objects every time this method is run

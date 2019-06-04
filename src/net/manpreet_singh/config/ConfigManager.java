@@ -27,6 +27,7 @@ import net.manpreet_singh.gui.MultipleFiles;
 import java.awt.*;
 import java.io.*;
 import java.util.*;
+import java.util.List;
 
 import static javafx.collections.FXCollections.observableMap;
 
@@ -167,12 +168,12 @@ public class ConfigManager {
         openOutputFiles(desktop);
     }
 
-    public void parseUCRData(Stage stage, Desktop desktop) throws Exception {
+    public List<File> parseUCRData(Stage stage, Desktop desktop) throws Exception {
         MultipleFiles mpf = new MultipleFiles();
         Map<String, Set<String>> tempDataMap = mpf.run(stage);
         if (tempDataMap == null) {
             ErrorMessagesKt.message("No Files Provided");
-            return;
+            return null;
         }
         for (String s : mConfigMap.keySet()) {
             if (mConfigMap.get(s).isMultipleRoutes()) {
@@ -188,6 +189,7 @@ public class ConfigManager {
             }
         }
         openOutputFiles(desktop);
+        return mpf.getFiles();
     }
 
     /**

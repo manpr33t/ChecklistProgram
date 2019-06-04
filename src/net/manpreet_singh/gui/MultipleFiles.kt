@@ -33,7 +33,7 @@ import kotlin.system.exitProcess
 
 class MultipleFiles {
 
-    private var mFiles: MutableList<File>? = null
+    var files: MutableList<File>? = null
     private var mFileChooser: FileChooser? = null
     private var mUCRParser: UCRParser? = null
 
@@ -50,16 +50,18 @@ class MultipleFiles {
      * @param stage Stage Object to use when opening the file chooser
      */
     private fun askForFiles(stage: Stage) : MutableList<File>? {
-        val files = mFileChooser!!.showOpenMultipleDialog(stage)
+        val files = mFileChooser?.showOpenMultipleDialog(stage)
         var badFiles: Stack<File>? = null
 
         // Check each of the files to make sure they're all spreadsheets.
-        files!!.forEach{
+        if (files != null) files.forEach {
             if (it.extension != "xls" || !it.canExecute()) {
                 if (badFiles == null)
                     badFiles = Stack()
                 badFiles!!.add(it)
             }
+        } else {
+            throw Exception("No Files Inputted")
         }
 
         // If we had any bad files, throw an exception.
@@ -110,13 +112,13 @@ class MultipleFiles {
      */
     fun run(stage: Stage) : MutableMap<String, MutableSet<String>?>? {
         try {
-            mFiles = askForFiles(stage)
+            files = askForFiles(stage)
         } catch (e: Exception) {
              throw e
         }
 
         // Pull data from all the files
-        mFiles!!.forEach {
+        files!!.forEach {
             // Read the data
             mUCRParser!!.readDataFromFile(it)
 

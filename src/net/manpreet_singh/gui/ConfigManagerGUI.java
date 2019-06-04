@@ -38,6 +38,7 @@ import net.manpreet_singh.config.ConfigManager;
 
 import java.awt.*;
 import java.io.File;
+import java.util.List;
 import java.util.Map;
 
 
@@ -244,8 +245,8 @@ public class ConfigManagerGUI {
         this.mConfigManager.parseUCR(in, desktop);
     }
 
-    public void parseUCRData(Stage stage, Desktop desktop) throws Exception {
-        this.mConfigManager.parseUCRData(stage, desktop);
+    public List<File> parseUCRData(Stage stage, Desktop desktop) throws Exception {
+        return this.mConfigManager.parseUCRData(stage, desktop);
     }
 
     /**

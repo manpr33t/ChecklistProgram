@@ -241,10 +241,12 @@ public class MainGUI extends Application{
 
         mInputFiles.setOnAction(event -> {
             try {
-                mConfigManagerGUI.parseUCRData(stage, this.mDesktop);
-                mLog.appendText("Generating Checklists from Multiple Files.\n");
+                List<File> files = mConfigManagerGUI.parseUCRData(stage, this.mDesktop);
+                mLog.appendText("Generating Checklists from the following files:\n");
+                for (File f : files)
+                    mLog.appendText("\t" + f.getName() + "\n");
             } catch (Exception e) {
-                //ErrorMessagesKt.exception(e);
+                ErrorMessagesKt.exception(e);
             }
         });
 
@@ -293,7 +295,7 @@ public class MainGUI extends Application{
         });
 
 
-        // Allow handle any files dragged onto the program window
+        // Allow program to handle any files dragged onto the program window
         mGridPane.setOnDragDropped(event -> {
             System.out.println("OMG, somebody dropped a file!!");
             List<File> files = event.getDragboard().getFiles();

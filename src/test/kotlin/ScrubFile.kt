@@ -5,7 +5,7 @@ import java.io.File
 import java.io.FileReader
 
 fun scrubFile() {
-    val bfr = BufferedReader(FileReader("temp/reptPRfinalContainer_02142019_4104804.txt"))
+    val bfr = BufferedReader(FileReader("temp/reptPRfinalContainer_05152019_3124621.txt"))
     val iterator = bfr.lineSequence().iterator()
     val output = File("temp/output.txt").printWriter()
 

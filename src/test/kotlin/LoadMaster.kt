@@ -23,8 +23,8 @@ class LoadMaster {
         }
 
         println("\nYou decide: ")
-        var choice = readLine()
-        choice = choice!!.toDouble().toString()
+        val userChoice = readLine()!!.toInt()
+        val choice = userChoice.toString()
         if (tripData!!.containsKey(choice)) {
             val checklistFile = FileReader("checklists/" + askForChecklistFile())
             val br = BufferedReader(checklistFile)

@@ -15,7 +15,7 @@ class Extractor {
         val ucrData = parser.getDataMap()
         val checklistData: MutableMap<String, String> = HashMap()
 
-        val checklistFile = FileReader("checklists/AllPalletsListShogun.csv")
+        val checklistFile = FileReader("temp/output.csv")
 
         val br = BufferedReader(checklistFile as Reader?)
 
@@ -23,32 +23,26 @@ class Extractor {
         while (iterator.hasNext()) {
             val line = iterator.next()
             val buffer = line.split(",")
-            checklistData[Utility.removeZipcodePrefix(buffer[1])] = buffer[2]
-//            try {
-//                if (ucrData!![sortGroup]?.contains(Utility.removeZipcodePrefix(buffer[1]))!!)
-//                    pw.println("$sortGroup,${buffer[1]}, ${buffer[2]}")
-//            } catch (e: Exception) {
-//                e.printStackTrace()
-//                println(buffer)
-//            }
+            checklistData[Utility.removeZipcodePrefix(buffer[2])] = buffer[1] // Map Sort Group to Location
         }
-
+        val keyOutput = File("temp/Keys.txt").printWriter()
         for (key in ucrData!!.keys) {
-            if (key.startsWith("S")) {
-                val printW = File("temp/$key-new.csv").printWriter()
+            keyOutput.println(key)
+            if (key.startsWith("D")) {
+                val fileOutput = File("temp/$key-new.csv").printWriter()
                 ucrData[key]!!.forEach {
                     val zipcode = Utility.removeZipcodePrefix(it)
                     try {
-                        printW.println("$key,$it,${checklistData[zipcode]}")
+                        fileOutput.println("$key,$it,${checklistData[zipcode]}")
                     } catch (e: Exception) {
                         e.printStackTrace()
                         println("[$key,$it]")
                     }
                 }
-                printW.close()
+                fileOutput.close()
             }
         }
-
+        keyOutput.close()
     }
 
     companion object {

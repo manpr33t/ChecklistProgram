@@ -5,12 +5,12 @@ import java.io.File
 import java.io.FileReader
 
 fun scrubFile() {
-    val bfr = BufferedReader(FileReader("temp/reptPRfinalContainer_05152019_3124621.txt"))
+    val bfr = BufferedReader(FileReader("temp/DLTX.txt"))
     val iterator = bfr.lineSequence().iterator()
     val output = File("temp/output.txt").printWriter()
 
     iterator.forEach {
-        if (it.startsWith("PP"))
+        if (it.startsWith("PP") || it.startsWith("CR") || it.startsWith("WP"))
             output.println(it)
     }
     output.close()
@@ -25,8 +25,10 @@ fun parseLocations() {
 
     iterator.forEach {
         val line = it.split(Regex("  *"))
-        if (line.size > 10) {
-            dataMap.put(line[1], line[2]+ " " + line[3].dropLast(1))
+        if (it.startsWith("WP"))
+            println(line.size)
+        if (line.size >= 10) {
+            dataMap.put(line[1], line[2]+ " " + line[3].dropLast(1)) // Map Location to sort Group
 //            output.println("*,${line[1]},${line[2]+ " " + line[3].dropLast(1)}")
         }
     }

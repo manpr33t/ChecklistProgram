@@ -28,7 +28,7 @@ fun parseLocations() {
         if (it.startsWith("WP"))
             println(line.size)
         if (line.size >= 10) {
-            dataMap.put(line[1], line[2]+ " " + line[3].dropLast(1)) // Map Location to sort Group
+            dataMap[line[1]] = line[2]+ " " + line[3].dropLast(1) // Map Location to sort Group
 //            output.println("*,${line[1]},${line[2]+ " " + line[3].dropLast(1)}")
         }
     }

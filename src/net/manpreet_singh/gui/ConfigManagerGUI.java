@@ -163,7 +163,11 @@ public class ConfigManagerGUI {
                 System.out.println(((Map) mDataTable.getSelectionModel().getSelectedItem()).get(COLUMN_KEYS[1]));
                 String filename = ((Map) mDataTable.getSelectionModel().getSelectedItem()).get(COLUMN_KEYS[1]).toString();
                 filename.replaceAll(",", "-");
-                mConfigManager.removeConfig(filename);
+                try {
+                    mConfigManager.removeConfig(filename);
+                } catch (Exception e) {
+                    ErrorMessagesKt.exception(e);
+                }
             }
             redisplayData();
         });

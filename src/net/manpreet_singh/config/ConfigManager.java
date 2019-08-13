@@ -113,10 +113,11 @@ public class ConfigManager {
      * Remove a config file from the list of available configs
      * @param configName Name of the Config File to remove
      */
-    public void removeConfig(String configName) {
+    public void removeConfig(String configName) throws Exception{
         String filePath = String.format("dependencies/%s.properties", configName);
         mConfigFileNames.remove(configName+".properties");
-        Utility.deleteFile(filePath);
+        if (!Utility.deleteFile(filePath))
+            throw new Exception("Unable to delete selected item");
         mConfigMap.remove(configName);
         System.out.println("removed " + configName);
     }

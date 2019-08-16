@@ -175,9 +175,7 @@ public class ConfigManagerGUI {
         /*
         When user edits and commits a change to the Output Column
          */
-        mOutputColumn.setOnEditCommit(event -> {
-            event.getRowValue().put(COLUMN_KEYS[0], event.getNewValue());
-        });
+        mOutputColumn.setOnEditCommit(event -> event.getRowValue().put(COLUMN_KEYS[0], event.getNewValue()));
 
         /*
         When user edits and commits a change to the Title Column

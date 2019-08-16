@@ -2,10 +2,7 @@ package test.kotlin
 
 import net.manpreet_singh.checklist.Utility
 import net.manpreet_singh.config.UCRParser
-import java.io.BufferedReader
-import java.io.File
-import java.io.FileReader
-import java.io.PrintWriter
+import java.io.*
 
 class LoadMaster {
     private var tripData: MutableMap<String, MutableSet<String>>? = null
@@ -18,7 +15,7 @@ class LoadMaster {
         printWriter.println("Here's what's Loaded")
 
         println("Available Trips: ")
-        tripData!!.keys.forEach { it ->
+        tripData!!.keys.forEach {
             println(it)
         }
 
@@ -27,7 +24,7 @@ class LoadMaster {
         val choice = userChoice.toString()
         if (tripData!!.containsKey(choice)) {
             val checklistFile = FileReader("checklists/" + askForChecklistFile())
-            val br = BufferedReader(checklistFile)
+            val br = BufferedReader(checklistFile as Reader)
             val iterator = br.lineSequence().iterator()
             while (iterator.hasNext()) {
                 val line = iterator.next()
@@ -56,7 +53,7 @@ class LoadMaster {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            val lm = LoadMaster()
+            LoadMaster()
         }
     }
 }

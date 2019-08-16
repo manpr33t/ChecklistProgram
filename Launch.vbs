@@ -1,3 +1,3 @@
 Set WshShell = CreateObject("WScript.Shell") 
-WshShell.Run chr(34) & "CheckListsLaunch.bat" & Chr(34), 0
+WshShell.Run chr(34) & "jwrap.bat" & Chr(34), 0
 Set WshShell = Nothing

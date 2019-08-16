@@ -203,18 +203,18 @@ public class ConfigManager {
         if (columnKeys.length == 3) {
             for (String s : mConfigMap.keySet()) {
                 Map<String, String> dataRow = new HashMap<>();
-                String temp = "";
+                StringBuilder temp = new StringBuilder();
                 if (mConfigMap.get(s).isMultipleRoutes()) {
                     for (String k : mConfigMap.get(s).getMultipleRoute()) {
-                        temp += k;
-                        temp += ",";
+                        temp.append(k);
+                        temp.append(",");
                     }
-                    temp = temp.substring(0, temp.length()-1);
+                    temp = new StringBuilder(temp.substring(0, temp.length() - 1));
                 } else {
-                    temp = mConfigMap.get(s).getTitle();
+                    temp = Optional.ofNullable(mConfigMap.get(s).getTitle()).map(StringBuilder::new).orElse(null);
                 }
                 dataRow.put(columnKeys[0], mConfigMap.get(s).getOutputFileName());
-                dataRow.put(columnKeys[1], temp);
+                dataRow.put(columnKeys[1], temp == null ? null : temp.toString());
                 dataRow.put(columnKeys[2], mConfigMap.get(s).getInputFileName());
                 mapData.add(dataRow);
             }
